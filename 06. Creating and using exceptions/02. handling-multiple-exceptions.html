@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript Exceptions - Handling Multiple Exceptions</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function throwException(type) {
+            switch (type) {
+                case "type":
+                    5();
+                    break;
+                case "reference":
+                    nonExistingFunction();
+                    break;
+                case "syntax":
+                    eval("var q=5 5;");
+                    break;
+            }
+        }
+
+        try {
+            //throwException("type");
+            //throwException("reference");
+            //throwException("syntax");
+        } catch (ex) {
+            if (ex instanceof TypeError) {
+                console.log("Not correct use of an object");
+            } else if (ex instanceof ReferenceError) {
+                console.log("Trying to use non-existing object");
+            } else if (ex instanceof SyntaxError) {
+                console.log("Invalid JavaScript code detected");
+            }
+        }
+    </script>
+</body>
+</html>

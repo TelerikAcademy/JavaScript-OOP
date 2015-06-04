@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript Exceptions - Creating Exceptions</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function tryCatchException(msg) {
+            try {
+                var typeEx;
+                if (msg) {
+                    typeEx = new TypeError(msg);
+                } else {
+                    typeEx = new TypeError();
+                }
+
+                throw typeEx;
+            } catch (ex) {
+                console.log(ex.message);
+            }
+        }
+
+        tryCatchException();
+        tryCatchException("Not correct use of an object!");
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Revealing Prototype</title>
+</head>
+<body>
+    <script src="Scripts/revealing-prototype.js"></script>
+    <script>
+		var calc = new Calculator('Ivaylo');
+        console.log(calc.publicVar());
+        calc.changeVar('qshu');
+        console.log(calc.publicVar());
+    </script>
+</body>
+</html>
