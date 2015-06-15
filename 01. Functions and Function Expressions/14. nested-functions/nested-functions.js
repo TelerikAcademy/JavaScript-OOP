@@ -16,3 +16,4 @@ function getPrint(type) {
 var printType = (this.document) ? 'dom' : 'server';
 var print = getPrint(printType);
 print('Message');
+
