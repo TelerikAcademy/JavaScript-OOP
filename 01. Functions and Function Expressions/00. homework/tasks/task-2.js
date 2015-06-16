@@ -6,8 +6,8 @@
 		3) it must throw an Error if any of the range params is missing
 */
 
-function solve() {
+function findPrimes() {
 	
 }
 
-module.exports = solve;
+module.exports = findPrimes;
