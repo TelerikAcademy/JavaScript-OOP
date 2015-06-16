@@ -1,15 +1,19 @@
-Functions and Function Expressions
+Classical Inheritance
 ==================================
 
 ### Task 1.
-*	Write a function that sums an array of numbers:
-	*	Numbers must be always of type `Number`
-	*	Returns `null` if the array is empty
-	*	Throws Error if the parameter is not passed (undefined)
-	*	Throws if any of the elements is not convertible to `Number`
 
-### Task 2.
-*	Write a function that finds all the prime numbers in a range
-	* It should return the prime numbers in an array
-	* It must throw an Error if any of the range params is not convertible to `Number`
-	* It must throw an Error if any of the range params is missing
+*	Create a function constructor for Person. Each Person must have:
+	*	properties `firstname`, `lastname` and `age`
+		*	firstname and lastname must always be strings between 3 and 20 characters, containing only Latin letters
+		*	age must always be a number in the range (0, 150), inclusive
+			*	the setter of age can receive a convertible-to-number value
+		*	if any of the above is not met, throw Error 		
+	*	property `fullname`
+		*	the getter returns a string in the format 'FIRST_NAME LAST_NAME'
+		*	the setter receives a string is the format 'FIRST_NAME LAST_NAME'
+			*	it must parse it and set `firstname` and `lastname`
+	*	method `introduce()` that returns a string in the format 'Hello! My name is FULL_NAME and I am AGE-years-old'
+	*	all methods and properties must be attached to the prototype of the Person
+	*	all methods and property setters must return this, if they are not supposed to return other value
+		*	enables method-chaining
