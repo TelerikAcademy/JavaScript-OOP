@@ -15,5 +15,3 @@ Classical Inheritance
 			*	it must parse it and set `firstname` and `lastname`
 	*	method `introduce()` that returns a string in the format 'Hello! My name is FULL_NAME and I am AGE-years-old'
 	*	all methods and properties must be attached to the prototype of the Person
-	*	all methods and property setters must return this, if they are not supposed to return other value
-		*	enables method-chaining

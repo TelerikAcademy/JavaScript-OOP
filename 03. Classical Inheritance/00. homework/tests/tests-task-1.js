@@ -51,7 +51,7 @@ describe('Tests for Classical Inheritance in JavaScript', function () {
 
 		it('expect new Person with short fistname to throw error', function () {
 			function fn() {
-				new Person(CONSTS.INVALID.FIRSTNAME.SHORT,
+				Person(CONSTS.INVALID.FIRSTNAME.SHORT,
 					CONSTS.VALID.LASTNAME,
 					CONSTS.VALID.AGE);
 			}
@@ -106,6 +106,18 @@ describe('Tests for Classical Inheritance in JavaScript', function () {
 
 		it('expect introduce to be attached to prototype', function () {
 			expect(Person.prototype).to.has.property('introduce');
+		});		
+		
+		it('expect fullname setter to set firstname and lastname', function () {
+			var person = new Person(CONSTS.VALID.FIRSTNAME, CONSTS.VALID.LASTNAME, CONSTS.VALID.AGE);
+			var old = {
+				fname: person.fname,
+				lname: person.lname
+			};
+			
+			person.fullname = person.fullname + 'z';
+			expect(person.firstname).to.equal(old.firstname);
+			expect(person.lastname).to.equal(old.lastname + 'z');			
 		});
 	});
 });
