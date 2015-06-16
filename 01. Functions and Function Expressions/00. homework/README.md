@@ -8,9 +8,8 @@ Functions and Function Expressions
 	*	Throws Error if the parameter is not passed (undefined)
 	*	Throws if any of the elements is not convertible to `Number`
 
-
 ### Task 2.
 *	Write a function that finds all the prime numbers in a range
-	1. It should return the prime numbers in an array
-	2. It must throw an Error if any of the range params is not convertible to `Number`
-	3. It must throw an Error if any of the range params is missing
+	* It should return the prime numbers in an array
+	* It must throw an Error if any of the range params is not convertible to `Number`
+	* It must throw an Error if any of the range params is missing
