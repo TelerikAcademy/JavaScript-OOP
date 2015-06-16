@@ -7,7 +7,7 @@ describe('Tests for "Task 1"', function () {
 		expect(solve([1, 2, 3])).to.equal(6);
 	});
 
-	it('expect solve[] to return null', function () {
+	it('expect solve([]) to return null', function () {
 		expect(solve([])).to.be.null;
 	});
 
