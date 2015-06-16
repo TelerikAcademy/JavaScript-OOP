@@ -18,6 +18,9 @@ JavaScript OOP Course Repository
 ## Running the tests
 
 *	Navigate to the folder of the particular homework in CMD/Terminal
+*	Requirements:
+	*	JavaScript files must be called task-1.js, task-2.js ecc..
+	*	Each .js file must contain `module.exports=[name of the function]`
 * 	Run `npm test`
 	*	Test results should appear on the CMD/Terminal
 	
