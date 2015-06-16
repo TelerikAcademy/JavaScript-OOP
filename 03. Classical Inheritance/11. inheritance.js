@@ -22,11 +22,13 @@
 			this._height = height;
 		}
 
+	    Rect.prototype = new Shape();
+
 		Rect.prototype.calcArea = function () {
 			return this._width * this._height;
 		};
 
-		return Shape;
+		return Rect;
 	}());
 
 
