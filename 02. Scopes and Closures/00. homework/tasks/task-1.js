@@ -45,7 +45,7 @@ function solve() {
 			},
 			categories: {
 				list: listCategories,
-				addCategory
+				add: addCategory
 			}
 		};
 	} ());
