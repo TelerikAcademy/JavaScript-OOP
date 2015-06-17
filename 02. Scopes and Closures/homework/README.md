@@ -10,9 +10,11 @@ Closures and Scopes
 			*	It must return the newly created book with assigned ID
 			*	If the category is missing, it must be automatically created
 		*	List all books
+			*	Return an array of books 
 			*	Books are sorted by ID
 			*	This can be done by author, by category or all
 		*	List all categories
+			*	Return an array of categories
 			*	Categories are sorted by ID
 	*	Each book/catagory has a unique identifier (ID) that is a number greater than 1
 		*	When adding a book/category, the ID is generated automatically
