@@ -30,7 +30,7 @@ JavaScript OOP Course Repository
 *	Select the task you will be sending
 *	Wrap your result in:
 
-	function solve() {
-		return [your solution object/function];
-	}
+		function solve() {
+			return [your solution object/function];
+		}
 	
