@@ -154,7 +154,7 @@ describe('Tests for Closures and Scopes in JavaScript', function () {
 					category: 'NOT-' + book.category
 				})).to.eql([]);
 			});
-		});
+		}); 
 
 		it('expect library.categories to exist', function () {
 			expect(library.categories).to.exist;

@@ -22,7 +22,7 @@
 */
 function solve() {
 	var library = (function () {
-
+		
 		function listBooks() {
 
 		}
