@@ -22,48 +22,12 @@
 */
 function solve() {
 	var library = (function () {
-		var lastCategoryId = 0,
-			lastBookId = 0,
-			books = {
-				bycategory: {
-
-				},
-				byauthor: {},
-				all: []
-			},
-			generate = {
-				nextBookId: function () {
-					return lastBookId += 1;
-				},
-				nextCategoryId: function () {
-					return lastCategoryId += 1;
-				}
-			};
-		function loadOrCreate(propName, name) {
-			propName = 'by' + propName;
-			if (!(books[propName].hasOwnProperty(name))) {
-				books[propName][name] = [];
-			}
-			return books[propName][name];
-		}
-		
-		function validateBook(book){
-			
-		}
 
 		function listBooks() {
 
 		}
 
 		function addBook(book) {
-			validateBook(book);
-			book.id = generate.nextBookId();
-			var category = loadOrCreate('category', book.category),
-				author = loadOrCreate('author', book.author)
-			category.push(book);
-			author.push(book);
-			books.all.push(book);
-			return book;
 		}
 
 		function listCategories() {
