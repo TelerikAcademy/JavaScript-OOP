@@ -178,6 +178,18 @@ describe('Tests for Closures and Scopes in JavaScript', function () {
 				expect(library.books.list()).to.eql([book]);
 			});
 
+			it('expect to return empty array, when category is provided and no book in that category is added', function () {
+					var book = library.books.add({
+						title: CONSTS.VALID.BOOK_TITLE,
+						isbn: CONSTS.VALID.BOOK_ISBN.THIRTEEN_DIGITS,
+						author: CONSTS.VALID.AUTHOR,
+						category: CONSTS.VALID.CATEGORY
+					});
+					expect(library.books.list({
+						category: book.category + (Math.random()*1000 + '')
+					})).to.eql([]);
+			});
+
 			it('expect to return array with single book, ' +
 				'when category is provided and single book in that category is added', function () {
 					var book = library.books.add({
@@ -254,6 +266,24 @@ describe('Tests for Closures and Scopes in JavaScript', function () {
 
 			it('expect to return empty array, when no books are added', function () {
 				expect(library.categories.list()).to.eql([]);
+			});
+
+			it('expect to return array with single category, when books from the same category are added', function () {
+				var book = {
+					title: CONSTS.VALID.BOOK_TITLE + 1,
+					isbn: CONSTS.VALID.BOOK_ISBN.TEN_DIGITS,
+					author: CONSTS.VALID.AUTHOR,
+					category: CONSTS.VALID.CATEGORY
+				},
+					book2 = {
+					title: CONSTS.VALID.BOOK_TITLE + 2,
+					isbn: CONSTS.VALID.BOOK_ISBN.THIRTEEN_DIGITS,
+					author: CONSTS.VALID.AUTHOR,
+					category: CONSTS.VALID.CATEGORY
+				};
+				library.books.add(book);
+				library.books.add(book2);
+				expect(library.categories.list()).to.eql([book.category]);
 			});
 
 			it('expect to return array with single category, when a single book is added', function () {
