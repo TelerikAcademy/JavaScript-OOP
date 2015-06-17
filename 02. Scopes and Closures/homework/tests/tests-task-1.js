@@ -28,11 +28,17 @@ describe('Tests for Closures and Scopes in JavaScript', function () {
 			library = require('../tasks/task-1')();
 			done();
 		});
+
 		it('expect library to exist', function () {
 			expect(library).to.exist;
 		});
+
 		it('expect library.books to exist', function () {
 			expect(library.books).to.exist;
+		});
+
+		it('expect library.categories to exist', function () {
+			expect(library.categories).to.exist;
 		});
 
 		describe('library.books.add', function () {
@@ -154,10 +160,26 @@ describe('Tests for Closures and Scopes in JavaScript', function () {
 					category: 'NOT-' + book.category
 				})).to.eql([]);
 			});
+
+
+			it('expect to return empty array, when author is provided and there is no book of this author', function () {
+				var book = library.books.add({
+					title: CONSTS.VALID.BOOK_TITLE,
+					isbn: CONSTS.VALID.BOOK_ISBN.TEN_DIGITS,
+					author: CONSTS.VALID.AUTHOR,
+					category: CONSTS.VALID.CATEGORY
+				});
+				expect(library.books.list({
+					author: 'NOT-' + book.author
+				})).to.eql([]);
+			});
 		});
 
-		it('expect library.categories to exist', function () {
-			expect(library.categories).to.exist;
+		describe('library.categories.list', function () {
+			it('expect to exist and to be a function', function () {
+				expect(library.categories.list).to.exist;
+				expect(library.categories.list).to.be.a('function');
+			});
 		});
 	});
 });
