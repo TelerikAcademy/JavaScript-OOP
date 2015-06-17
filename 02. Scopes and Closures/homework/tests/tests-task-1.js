@@ -1,29 +1,33 @@
-/* globals describe, it */
-var library = require('../tasks/task-1')();
+/* globals describe, it, beforeEach */
 var expect = require('chai').expect;
 
 describe('Tests for Closures and Scopes in JavaScript', function () {
-	var CONSTS = {
-		VALID: {
-			BOOK_TITLE: 'BOOK #',
-			BOOK_ISBN: {
-				TEN_DIGITS: '1234567890',
-				THIRTEEN_DIGITS: '1234567890123',
+	var library,
+		CONSTS = {
+			VALID: {
+				BOOK_TITLE: 'BOOK #',
+				BOOK_ISBN: {
+					TEN_DIGITS: '1234567890',
+					THIRTEEN_DIGITS: '1234567890123',
+				},
+				AUTHOR: 'John Doe',
+				CATEGORY: 'Book Category'
 			},
-			AUTHOR: 'John Doe',
-			CATEGORY: 'Book Category'
-		},
-		INVALID: {
-			BOOK_TITLE: {
-				SHORT: 'B',
-				LONG: new Array(101).join('A')
-			},
-			AUTHOR: '',
-			BOOK_ISBN: '1234'
-		}
-	};
+			INVALID: {
+				BOOK_TITLE: {
+					SHORT: 'B',
+					LONG: new Array(101).join('A')
+				},
+				AUTHOR: '',
+				BOOK_ISBN: '1234'
+			}
+		};
 
 	describe('"Task 1: Library"', function () {
+		beforeEach(function (done) {
+			library = require('../tasks/task-1')();
+			done();
+		});
 		it('expect library to exist', function () {
 			expect(library).to.exist;
 		});
@@ -108,9 +112,48 @@ describe('Tests for Closures and Scopes in JavaScript', function () {
 			});
 		});
 
-		it('expect library.books.add to exist and to be a function', function () {
-			expect(library.books.add).to.exist;
-			expect(library.books.add).to.be.a('function');
+
+		describe('library.books.list', function () {
+			it('expect to exist and to be a function', function () {
+				expect(library.books.list).to.exist;
+				expect(library.books.list).to.be.a('function');
+			});
+			it('expect to return empty array, when no books are added', function () {
+				expect(library.books.list()).to.eql([]);
+			});
+			it('expect to return array with single book, when a single book is added', function () {
+				var book = library.books.add({
+					book: CONSTS.VALID.BOOK_TITLE,
+					isbn: CONSTS.VALID.BOOK_ISBN,
+					author: CONSTS.VALID.AUTHOR,
+					category: CONSTS.VALID.CATEGORY
+				});
+				expect(library.books.list()).to.eql([book]);
+			});
+
+			it('expect to return array with single book, when category is provided and single book in that category is added', function () {
+				var book = library.books.add({
+					book: CONSTS.VALID.BOOK_TITLE,
+					isbn: CONSTS.VALID.BOOK_ISBN,
+					author: CONSTS.VALID.AUTHOR,
+					category: CONSTS.VALID.CATEGORY
+				});
+				expect(library.books.list({
+					category: book.category
+				})).to.eql([book]);
+			});
+
+			it('expect to return empty array, when category is provided and there is no book with this category', function () {
+				var book = library.books.add({
+					book: CONSTS.VALID.BOOK_TITLE,
+					isbn: CONSTS.VALID.BOOK_ISBN,
+					author: CONSTS.VALID.AUTHOR,
+					category: CONSTS.VALID.CATEGORY
+				});
+				expect(library.books.list({
+					category: 'NOT-' + book.category
+				})).to.eql([]);
+			});
 		});
 
 		it('expect library.categories to exist', function () {
