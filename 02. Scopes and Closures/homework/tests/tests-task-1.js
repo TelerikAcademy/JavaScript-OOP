@@ -266,6 +266,44 @@ describe('Tests for Closures and Scopes in JavaScript', function () {
 				library.books.add(book);
 				expect(library.categories.list()).to.eql([book.category]);
 			});
+
+			it('expect to return array with correctly ordered categories, when there are books of a different category', function () {
+				var books = [{
+					title: CONSTS.VALID.BOOK_TITLE + 0,
+					isbn: CONSTS.VALID.BOOK_ISBN.TEN_DIGITS.substring(0, 9) + '5',
+					author: CONSTS.VALID.AUTHOR,
+					category: CONSTS.VALID.CATEGORY + '5'
+				}, {
+					title: CONSTS.VALID.BOOK_TITLE + 1,
+					isbn: CONSTS.VALID.BOOK_ISBN.TEN_DIGITS.substring(0, 9) + '4',
+					author: CONSTS.VALID.AUTHOR,
+					category: CONSTS.VALID.CATEGORY + '3'
+				}, {
+					title: CONSTS.VALID.BOOK_TITLE + 2,
+					isbn: CONSTS.VALID.BOOK_ISBN.TEN_DIGITS.substring(0, 9) + '3',
+					author: CONSTS.VALID.AUTHOR,
+					category: CONSTS.VALID.CATEGORY + '7'
+				}, {
+					title: CONSTS.VALID.BOOK_TITLE + 5,
+					isbn: CONSTS.VALID.BOOK_ISBN.TEN_DIGITS.substring(0, 9) + '0',
+					author: CONSTS.VALID.AUTHOR,
+					category: CONSTS.VALID.CATEGORY + '3'
+				}, {
+					title: CONSTS.VALID.BOOK_TITLE + 4,
+					isbn: CONSTS.VALID.BOOK_ISBN.TEN_DIGITS.substring(0, 9) + '1',
+					author: CONSTS.VALID.AUTHOR,
+					category: CONSTS.VALID.CATEGORY + '5'
+				}, {
+					title: CONSTS.VALID.BOOK_TITLE + 3,
+					isbn: CONSTS.VALID.BOOK_ISBN.TEN_DIGITS.substring(0, 9) + '2',
+					author: CONSTS.VALID.AUTHOR,
+					category: CONSTS.VALID.CATEGORY + '7'
+				}];
+				for(i in books) {
+					library.books.add(books[i]);
+				}
+				expect(library.categories.list()).to.eql([books[0].category, books[1].category, books[2].category]);
+			});
 		});
 	});
 });
