@@ -162,23 +162,39 @@ describe('Tests for Closures and Scopes in JavaScript', function () {
 			});
 
 
-			it('expect to return empty array, when author is provided and there is no book of this author', function () {
-				var book = library.books.add({
-					title: CONSTS.VALID.BOOK_TITLE,
-					isbn: CONSTS.VALID.BOOK_ISBN.TEN_DIGITS,
-					author: CONSTS.VALID.AUTHOR,
-					category: CONSTS.VALID.CATEGORY
+			it('expect to return empty array, ' +
+				'when author is provided and there is no book of this author', function () {
+					var book = library.books.add({
+						title: CONSTS.VALID.BOOK_TITLE,
+						isbn: CONSTS.VALID.BOOK_ISBN.TEN_DIGITS,
+						author: CONSTS.VALID.AUTHOR,
+						category: CONSTS.VALID.CATEGORY
+					});
+					expect(library.books.list({
+						author: 'NOT-' + book.author
+					})).to.eql([]);
 				});
-				expect(library.books.list({
-					author: 'NOT-' + book.author
-				})).to.eql([]);
-			});
 		});
 
 		describe('library.categories.list', function () {
 			it('expect to exist and to be a function', function () {
 				expect(library.categories.list).to.exist;
 				expect(library.categories.list).to.be.a('function');
+			});
+
+			it('expect to return empty array, when no books are added', function () {
+				expect(library.categories.list()).to.eql([]);
+			});
+
+			it('expect to return array with single category, when a single book is added', function () {
+				var book = library.books.add({
+					title: CONSTS.VALID.BOOK_TITLE,
+					isbn: CONSTS.VALID.BOOK_ISBN.TEN_DIGITS,
+					author: CONSTS.VALID.AUTHOR,
+					category: CONSTS.VALID.CATEGORY
+				});
+				library.books.add(book);
+				expect(library.categories.list()).to.eql([book.category]);
 			});
 		});
 	});
