@@ -49,9 +49,9 @@ describe('Tests for Closures and Scopes in JavaScript', function () {
 					category: CONSTS.VALID.CATEGORY
 				};
 				var book = library.books.add(bookToAdd);
-				expect(book.id).to.exist;
-				expect(book.id).to.be.a('number');
-				expect(book.id).to.be.at.least(1);
+				expect(book.ID).to.exist;
+				expect(book.ID).to.be.a('number');
+				expect(book.ID).to.be.at.least(1);
 				expect(book.title).to.equal(bookToAdd.title);
 				expect(book.isbn).to.equal(bookToAdd.isbn);
 				expect(book.author).to.equal(bookToAdd.author);
@@ -133,7 +133,7 @@ describe('Tests for Closures and Scopes in JavaScript', function () {
 
 			it('expect to return array with single book, when category is provided and single book in that category is added', function () {
 				var book = library.books.add({
-					book: CONSTS.VALID.BOOK_TITLE,
+					title: CONSTS.VALID.BOOK_TITLE,
 					isbn: CONSTS.VALID.BOOK_ISBN,
 					author: CONSTS.VALID.AUTHOR,
 					category: CONSTS.VALID.CATEGORY
@@ -145,7 +145,7 @@ describe('Tests for Closures and Scopes in JavaScript', function () {
 
 			it('expect to return empty array, when category is provided and there is no book with this category', function () {
 				var book = library.books.add({
-					book: CONSTS.VALID.BOOK_TITLE,
+					title: CONSTS.VALID.BOOK_TITLE,
 					isbn: CONSTS.VALID.BOOK_ISBN,
 					author: CONSTS.VALID.AUTHOR,
 					category: CONSTS.VALID.CATEGORY
@@ -154,7 +154,7 @@ describe('Tests for Closures and Scopes in JavaScript', function () {
 					category: 'NOT-' + book.category
 				})).to.eql([]);
 			});
-		}); 
+		});
 
 		it('expect library.categories to exist', function () {
 			expect(library.categories).to.exist;
