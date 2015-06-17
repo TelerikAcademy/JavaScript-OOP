@@ -16,7 +16,7 @@ describe('Tests for Closures and Scopes in JavaScript', function () {
 			INVALID: {
 				BOOK_TITLE: {
 					SHORT: 'B',
-					LONG: new Array(101).join('A')
+					LONG: new Array(102).join('A')
 				},
 				AUTHOR: '',
 				BOOK_ISBN: '1234'
