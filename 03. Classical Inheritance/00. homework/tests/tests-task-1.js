@@ -51,7 +51,7 @@ describe('Tests for Classical Inheritance in JavaScript', function () {
 
 		it('expect new Person with short fistname to throw error', function () {
 			function fn() {
-				Person(CONSTS.INVALID.FIRSTNAME.SHORT,
+				new Person(CONSTS.INVALID.FIRSTNAME.SHORT,
 					CONSTS.VALID.LASTNAME,
 					CONSTS.VALID.AGE);
 			}
@@ -111,8 +111,8 @@ describe('Tests for Classical Inheritance in JavaScript', function () {
 		it('expect fullname setter to set firstname and lastname', function () {
 			var person = new Person(CONSTS.VALID.FIRSTNAME, CONSTS.VALID.LASTNAME, CONSTS.VALID.AGE);
 			var old = {
-				fname: person.fname,
-				lname: person.lname
+				firstname: person.firstname,
+				lastname: person.lastname
 			};
 
 			person.fullname = person.fullname + 'z';
