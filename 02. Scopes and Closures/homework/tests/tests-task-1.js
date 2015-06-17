@@ -124,7 +124,7 @@ describe('Tests for Closures and Scopes in JavaScript', function () {
 			it('expect to return array with single book, when a single book is added', function () {
 				var book = library.books.add({
 					book: CONSTS.VALID.BOOK_TITLE,
-					isbn: CONSTS.VALID.BOOK_ISBN,
+					isbn: CONSTS.VALID.BOOK_ISBN.TEN_DIGITS,
 					author: CONSTS.VALID.AUTHOR,
 					category: CONSTS.VALID.CATEGORY
 				});
@@ -134,7 +134,7 @@ describe('Tests for Closures and Scopes in JavaScript', function () {
 			it('expect to return array with single book, when category is provided and single book in that category is added', function () {
 				var book = library.books.add({
 					title: CONSTS.VALID.BOOK_TITLE,
-					isbn: CONSTS.VALID.BOOK_ISBN,
+					isbn: CONSTS.VALID.BOOK_ISBN.THIRTEEN_DIGITS,
 					author: CONSTS.VALID.AUTHOR,
 					category: CONSTS.VALID.CATEGORY
 				});
@@ -146,7 +146,7 @@ describe('Tests for Closures and Scopes in JavaScript', function () {
 			it('expect to return empty array, when category is provided and there is no book with this category', function () {
 				var book = library.books.add({
 					title: CONSTS.VALID.BOOK_TITLE,
-					isbn: CONSTS.VALID.BOOK_ISBN,
+					isbn: CONSTS.VALID.BOOK_ISBN.TEN_DIGITS,
 					author: CONSTS.VALID.AUTHOR,
 					category: CONSTS.VALID.CATEGORY
 				});
