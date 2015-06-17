@@ -117,16 +117,42 @@ describe('Tests for Closures and Scopes in JavaScript', function () {
 				expect(test).to.throw();
 			});
 
-			it('expect to throw, when book with repeating name is added', function () {
+			it('expect to throw, when book with repeating title is added', function () {
 				var book = {
 					title: CONSTS.VALID.BOOK_TITLE,
 					isbn: CONSTS.VALID.BOOK_ISBN.TEN_DIGITS,
 					author: CONSTS.VALID.AUTHOR,
 					category: CONSTS.VALID.CATEGORY
+				},
+					book2 = {
+					title: CONSTS.VALID.BOOK_TITLE, // same title
+					isbn: CONSTS.VALID.BOOK_ISBN.THIRTEEN_DIGITS, // different ISBN
+					author: CONSTS.VALID.AUTHOR,
+					category: CONSTS.VALID.CATEGORY
 				};
 				library.books.add(book);
 				function test() {
-					library.books.add(Object.create(book));
+					library.books.add(Object.create(book2));
+				}
+				expect(test).to.throw();
+			});
+
+			it('expect to throw, when book with repeating ISBN is added', function () {
+				var book = {
+					title: CONSTS.VALID.BOOK_TITLE,
+					isbn: CONSTS.VALID.BOOK_ISBN.TEN_DIGITS,
+					author: CONSTS.VALID.AUTHOR,
+					category: CONSTS.VALID.CATEGORY
+				},
+					book2 = {
+					title: CONSTS.VALID.BOOK_TITLE + (Math.random()*1000 + ''), // different title
+					isbn: CONSTS.VALID.BOOK_ISBN.TEN_DIGITS, // same ISBN
+					author: CONSTS.VALID.AUTHOR,
+					category: CONSTS.VALID.CATEGORY
+				};
+				library.books.add(book);
+				function test() {
+					library.books.add(Object.create(book2));
 				}
 				expect(test).to.throw();
 			});
