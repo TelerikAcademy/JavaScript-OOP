@@ -24,3 +24,13 @@ JavaScript OOP Course Repository
 * 	Run `npm test`
 	*	Test results should appear on the CMD/Terminal
 	
+## Upload in [BGCoder.com](http://bgcoder.com/)
+
+*	Go to the specific homework
+*	Select the task you will be sending
+*	Wrap your result in:
+
+	function solve() {
+		return [your solution object/function];
+	}
+	
