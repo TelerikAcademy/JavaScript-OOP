@@ -13,6 +13,7 @@ Closures and Scopes
 			*	Return an array of books 
 			*	Books are sorted by ID
 			*	This can be done by author, by category or all
+				*	They are provided by an options object {category: ...} or {author: ...}			
 		*	List all categories
 			*	Return an array of categories
 			*	Categories are sorted by ID
