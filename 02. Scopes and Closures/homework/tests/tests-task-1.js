@@ -116,6 +116,21 @@ describe('Tests for Closures and Scopes in JavaScript', function () {
 				}
 				expect(test).to.throw();
 			});
+
+			it('expect to throw, when book with repeating name is added', function () {
+				var book = {
+					title: CONSTS.VALID.BOOK_TITLE,
+					isbn: CONSTS.VALID.BOOK_ISBN.TEN_DIGITS,
+					author: CONSTS.VALID.AUTHOR,
+					category: CONSTS.VALID.CATEGORY
+				};
+				library.books.add(book);
+				function test() {
+					library.books.add(Object.create(book));
+				}
+				expect(test).to.throw();
+			});
+
 		});
 
 
@@ -137,29 +152,58 @@ describe('Tests for Closures and Scopes in JavaScript', function () {
 				expect(library.books.list()).to.eql([book]);
 			});
 
-			it('expect to return array with single book, when category is provided and single book in that category is added', function () {
-				var book = library.books.add({
-					title: CONSTS.VALID.BOOK_TITLE,
-					isbn: CONSTS.VALID.BOOK_ISBN.THIRTEEN_DIGITS,
-					author: CONSTS.VALID.AUTHOR,
-					category: CONSTS.VALID.CATEGORY
+			it('expect to return array with single book, ' +
+				'when category is provided and single book in that category is added', function () {
+					var book = library.books.add({
+						title: CONSTS.VALID.BOOK_TITLE,
+						isbn: CONSTS.VALID.BOOK_ISBN.THIRTEEN_DIGITS,
+						author: CONSTS.VALID.AUTHOR,
+						category: CONSTS.VALID.CATEGORY
+					});
+					expect(library.books.list({
+						category: book.category
+					})).to.eql([book]);
 				});
-				expect(library.books.list({
-					category: book.category
-				})).to.eql([book]);
-			});
+			it('expect to return array with single book, ' +
+				'when category is provided, there are other books ' +
+				'and single book in that category is added', function () {
+					library.books.add({
+						title: CONSTS.VALID.BOOK_TITLE + (Math.random() * 1000 + '').substr(3, 10),
+						isbn: CONSTS.VALID.BOOK_ISBN.TEN_DIGITS,
+						author: CONSTS.VALID.AUTHOR + 'test',
+						category: CONSTS.VALID.CATEGORY + (Math.random() * 1000 + '').substr(3, 10)
+					});
 
-			it('expect to return empty array, when category is provided and there is no book with this category', function () {
-				var book = library.books.add({
-					title: CONSTS.VALID.BOOK_TITLE,
-					isbn: CONSTS.VALID.BOOK_ISBN.TEN_DIGITS,
-					author: CONSTS.VALID.AUTHOR,
-					category: CONSTS.VALID.CATEGORY
+					var book = library.books.add({
+						title: CONSTS.VALID.BOOK_TITLE,
+						isbn: CONSTS.VALID.BOOK_ISBN.THIRTEEN_DIGITS.substr(0, 11) + '11',
+						author: CONSTS.VALID.AUTHOR,
+						category: CONSTS.VALID.CATEGORY
+					});
+
+					library.books.add({
+						title: CONSTS.VALID.BOOK_TITLE + 'test',
+						isbn: CONSTS.VALID.BOOK_ISBN.THIRTEEN_DIGITS,
+						author: CONSTS.VALID.AUTHOR + 'test',
+						category: CONSTS.VALID.CATEGORY + 'another'
+					});
+
+					expect(library.books.list({
+						category: book.category
+					})).to.eql([book]);
 				});
-				expect(library.books.list({
-					category: 'NOT-' + book.category
-				})).to.eql([]);
-			});
+			it('expect to return empty array, ' +
+				'when category is provided and there is no book with this category', function () {
+					var book = library.books.add({
+						title: CONSTS.VALID.BOOK_TITLE,
+						isbn: CONSTS.VALID.BOOK_ISBN.TEN_DIGITS,
+						author: CONSTS.VALID.AUTHOR,
+						category: CONSTS.VALID.CATEGORY
+					});
+					expect(library.books.list({
+						category: 'NOT-' + book.category
+					})).to.eql([]);
+				});
 
 
 			it('expect to return empty array, ' +
@@ -187,12 +231,12 @@ describe('Tests for Closures and Scopes in JavaScript', function () {
 			});
 
 			it('expect to return array with single category, when a single book is added', function () {
-				var book = library.books.add({
-					title: CONSTS.VALID.BOOK_TITLE,
+				var book = {
+					title: CONSTS.VALID.BOOK_TITLE + 1,
 					isbn: CONSTS.VALID.BOOK_ISBN.TEN_DIGITS,
 					author: CONSTS.VALID.AUTHOR,
 					category: CONSTS.VALID.CATEGORY
-				});
+				};
 				library.books.add(book);
 				expect(library.categories.list()).to.eql([book.category]);
 			});
