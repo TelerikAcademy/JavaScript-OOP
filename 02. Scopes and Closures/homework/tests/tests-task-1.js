@@ -170,7 +170,7 @@ describe('Tests for Closures and Scopes in JavaScript', function () {
 			});
 			it('expect to return array with single book, when a single book is added', function () {
 				var book = library.books.add({
-					book: CONSTS.VALID.BOOK_TITLE,
+					title: CONSTS.VALID.BOOK_TITLE,
 					isbn: CONSTS.VALID.BOOK_ISBN.TEN_DIGITS,
 					author: CONSTS.VALID.AUTHOR,
 					category: CONSTS.VALID.CATEGORY
