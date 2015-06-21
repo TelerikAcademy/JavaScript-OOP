@@ -73,7 +73,7 @@ describe('Tests for Closures and Scopes in JavaScript', function () {
 			it('expect to throw, when with invalid title (short)', function () {
 				function test() {
 					library.books.add({
-						title: CONSTS.INVALID.BOOK_TITTE.SHORT,
+						title: CONSTS.INVALID.BOOK_TITLE.SHORT,
 						isbn: CONSTS.VALID.BOOK_ISBN.TEN_DIGITS,
 						author: CONSTS.VALID.AUTHOR,
 						category: CONSTS.VALID.CATEGORY
@@ -85,7 +85,7 @@ describe('Tests for Closures and Scopes in JavaScript', function () {
 			it('expect to throw, when with invalid title (long)', function () {
 				function test() {
 					library.books.add({
-						title: CONSTS.INVALID.BOOK_TITTE.LONG,
+						title: CONSTS.INVALID.BOOK_TITLE.LONG,
 						isbn: CONSTS.VALID.BOOK_ISBN.TEN_DIGITS,
 						author: CONSTS.VALID.AUTHOR,
 						category: CONSTS.VALID.CATEGORY
