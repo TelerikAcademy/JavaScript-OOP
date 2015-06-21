@@ -14,7 +14,7 @@ Rect.prototype = {
 	}
 };
 
-var rectCac = new Rect(50, 55, 15, 10);
+var rect = new Rect(50, 55, 15, 10);
 var rectCalcArea = rect.calcArea;
 
 console.log(rectCalcArea());
