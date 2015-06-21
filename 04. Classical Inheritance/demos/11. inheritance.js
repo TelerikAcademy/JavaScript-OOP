@@ -7,8 +7,8 @@
 		}
 
 		Shape.prototype.move = function (to) {
-			this._x = to.x || this._x;
-			this._y = to.y || this._y;
+			this._x += to || this._x;
+			this._y += to || this._y;
 		};
 
 		return Shape;
@@ -31,6 +31,5 @@
 		return Rect;
 	}());
 
-
-
+	console.log(new Rect(1, 2, 30, 30).move(10));
 }());
