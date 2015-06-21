@@ -104,10 +104,6 @@ describe('Tests for Classical Inheritance in JavaScript', function () {
 			expect(Person.prototype).to.has.property('introduce');
 		});
 
-		it('expect introduce to be attached to prototype', function () {
-			expect(Person.prototype).to.has.property('introduce');
-		});
-
 		it('expect fullname setter to set firstname and lastname', function () {
 			var person = new Person(CONSTS.VALID.FIRSTNAME, CONSTS.VALID.LASTNAME, CONSTS.VALID.AGE);
 			var old = {
