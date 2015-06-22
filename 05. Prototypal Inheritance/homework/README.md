@@ -27,7 +27,7 @@
     * throw Error if type is not valid
   * // method removeAttribute(attribute)
 
-_Example
+_Example:_
   
   var meta = Object.create(domElement)
   	.init('meta')
@@ -55,5 +55,7 @@ _Example
   	.appendChild(body);
   
   console.log(root.innerHTML);
-  Outputs:
+  
+  _Outputs:_
+  
   \<html\>\<head\>\<meta charset="utf-8"\>\</meta\>\</head\>\<body bgcolor="#012345" id="cuki"\>\<div style="font-size: 42px"\>Hello, world!\</div\>\</body\>\</html\>
