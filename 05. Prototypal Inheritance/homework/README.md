@@ -56,4 +56,4 @@ _Example
   
   console.log(root.innerHTML);
   Outputs:
-  <html><head><meta charset="utf-8"></meta></head><body bgcolor="#012345" id="cuki"><div style="font-size: 42px">Hello, world!</div></body></html>
+  \<html\>\<head\>\<meta charset="utf-8"\>\</meta\>\</head\>\<body bgcolor="#012345" id="cuki"\>\<div style="font-size: 42px"\>Hello, world!\</div\>\</body\>\</html\>
