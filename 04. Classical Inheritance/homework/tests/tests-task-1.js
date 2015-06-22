@@ -14,11 +14,13 @@ describe('Tests for Classical Inheritance in JavaScript', function () {
 			INVALID: {
 				FIRSTNAME: {
 					SHORT: 'Ff',
-					LONG: 'F' + (new Array(21).join('f'))
+					LONG: 'F' + (new Array(21).join('f')),
+					SYMBOLS: 'Abc&'
 				},
 				LASTNAME: {
 					SHORT: 'Ll',
-					LONG: 'L' + (new Array(21).join('l'))
+					LONG: 'L' + (new Array(21).join('l')),
+					SYMBOLS: 'Abc12'
 				},
 				AGE: {
 					SMALLER: -1,
@@ -57,6 +59,25 @@ describe('Tests for Classical Inheritance in JavaScript', function () {
 			}
 			expect(fn).to.throw();
 		});
+
+		it('expect new Person with fistname of not valid chars to throw error', function () {
+			function fn() {
+				new Person(CONSTS.INVALID.FIRSTNAME.SYMBOLS,
+					CONSTS.VALID.LASTNAME,
+					CONSTS.VALID.AGE);
+			}
+			expect(fn).to.throw();
+		});
+
+		it('expect new Person with lastname of not valid chars to throw error', function () {
+			function fn() {
+				new Person(CONSTS.VALID.FIRSTNAME,
+					CONSTS.INVALID.LASTNAME.SYMBOLS,
+					CONSTS.VALID.AGE);
+			}
+			expect(fn).to.throw();
+		});
+
 		it('expect new Person with long fistname to throw error', function () {
 			function fn() {
 				new Person(CONSTS.INVALID.FIRSTNAME.LONG, CONSTS.VALID.LASTNAME, CONSTS.VALID.AGE);
@@ -98,6 +119,10 @@ describe('Tests for Classical Inheritance in JavaScript', function () {
 			var actual = (new Person(CONSTS.VALID.FIRSTNAME, CONSTS.VALID.LASTNAME, CONSTS.VALID.AGE))
 				.introduce();
 			expect(actual).to.equal(expected);
+		});
+
+		it('expect introduce to be attached to prototype', function () {
+			expect(Person.prototype).to.has.property('introduce');
 		});
 
 		it('expect introduce to be attached to prototype', function () {
