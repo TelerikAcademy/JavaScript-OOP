@@ -29,29 +29,29 @@
 
 _Example:_
   
-  var meta = Object.create(domElement)
-  	.init('meta')
+  var meta = Object.create(domElement)<br/>
+  	.init('meta')<br/>
   	.addAttribute('charset', 'utf-8');
   
-  var head = Object.create(domElement)
-  	.init('head')
+  var head = Object.create(domElement)<br/>
+  	.init('head')<br/>
   	.appendChild(meta)
   
-  var div = Object.create(domElement)
-  	.init('div')
+  var div = Object.create(domElement)<br/>
+  	.init('div')<br/>
   	.addAttribute('style', 'font-size: 42px');
   
   div.content = 'Hello, world!';
   
-  var body = Object.create(domElement)
-  	.init('body')
-  	.appendChild(div)
-  	.addAttribute('id', 'cuki')
+  var body = Object.create(domElement)<br/>
+  	.init('body')<br/>
+  	.appendChild(div)<br/>
+  	.addAttribute('id', 'cuki')<br/>
   	.addAttribute('bgcolor', '#012345');
   
-  var root = Object.create(domElement)
-  	.init('html')
-  	.appendChild(head)
+  var root = Object.create(domElement)<br/>
+  	.init('html')<br/>
+  	.appendChild(head)<br/>
   	.appendChild(body);
   
   console.log(root.innerHTML);
