@@ -14,7 +14,7 @@ var animal = (function () {
         .reduce(function (result, prop) {
         return result + '(' + prop[0].toUpperCase() + prop.substr(1) + ': ' + self[prop] + ') ';
       }, '')
-        .trim();
+        .trim();жар 
     }
   });
   return animal;

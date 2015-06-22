@@ -6,9 +6,7 @@ var animal = {
 
 var dog = {
   type: 'dog',
-  noise: 'Djaf',
-  makeNoise: function(){
-  }
+  noise: 'Djaf'
 };
 
 dog.__proto__ = animal;
