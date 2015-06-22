@@ -14,7 +14,7 @@ var animal = (function () {
         .reduce(function (result, prop) {
         return result + '(' + prop[0].toUpperCase() + prop.substr(1) + ': ' + self[prop] + ') ';
       }, '')
-        .trim();жар 
+        .trim();
     }
   });
   return animal;
@@ -35,7 +35,7 @@ var dog = (function (parent) {
 
   Object.defineProperty(dog, 'toString', {
     value: function () {
-      return parent.toString.call(this) + ' (Breed: ' + this.breed + ')';
+      return parent.toString.call(this) + ' (Type: dog)';
     }
   });
 
@@ -45,4 +45,4 @@ var dog = (function (parent) {
 
 var johny = Object.create(dog)
   .init('Johny', 13, 'husky');
-console.log(johny + '');
+console.log(johny.toString());
