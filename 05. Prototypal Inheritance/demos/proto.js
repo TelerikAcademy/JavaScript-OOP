@@ -1,1 +1,0 @@
-//demos for __proto__ 
