@@ -1,36 +1,39 @@
 ﻿var controls = (function () {
-
+  
   //hidden function  
   function formatResult(name, value) {
     return name + ' says the result is ' + value;
   }
 
-  var Calculator = (function () {
-    var Calculator = function (name) {
+  var calculator = {
+    init: function (name) {
       this.name = name;
       this.result = 0;
-    };
-
-    Calculator.prototype.add = function (x) {
+      return this;
+    },
+    add: function (x) {
       this.result += x;
-    };
-    Calculator.prototype.subtract = function (x) {
+    },
+    subtract: function (x) {
       this.result -= x;
-    };
-    Calculator.prototype.showResult = function () {
+    },
+    showResult: function () {
       console.log(formatResult(this.name, this.result));
-    };
-
-    return Calculator;
-  }());
+    }
+  };
+  
+  function getCalculator(name){
+      return Object.create(calculator)
+        .init(name);
+  }
 
   //return only a reference to the function
   return {
-    Calculator: Calculator
+    getCalculator: getCalculator
   };
-}());
+} ());
 
-var calc = new controls.Calculator('First');
+var calc = controls.getCalculator('First');
 
 calc.add(7);
 calc.showResult();
