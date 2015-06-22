@@ -64,59 +64,15 @@ function solve() {
 	var domElement = (function () {
 		var domElement = {
 			init: function(type) {
-				if((typeof type !== 'string')
-				 || (type === '')
-				 || (!!type.match(/[^0-9a-zA-Z]/)))
-					throw new Error();
-
-				this.type = type;
-				this.content = '';
-				this.parrent = {};
-				this.children = [];
-				this.attributes = {};
-				return this;
 			},
 			appendChild: function(child) {
-				this.children.push(child);
-				child.parent = this;
-				return this;
 			},
 			addAttribute: function(name, value) {
-				if((typeof name !== 'string')
-				 || (name === '')
-				 || (!!name.match(/[^0-9a-zA-Z-]/)))
-					throw new Error();
-
-				this.attributes[name] = value;
-				return this;
 			},
+      get innerHTML(){
+        
+      }
 		};
-
-		Object.defineProperty(domElement, 'innerHTML', {
-			get: function() {
-				var iHtml = '<' + this.type;
-
-				Object.keys(this.attributes)
-					.sort()
-					.forEach(function(name) {
-						iHtml += ' ' + name + '="' + this.attributes[name] + '"';
-				}, this);
-
-				iHtml += '>';
-
-				if(this.children.length === 0)
-					iHtml += this.content;
-				else this.children.forEach(function(child) {
-					if(typeof child === 'string')
-						iHtml += child;
-					else iHtml += child.innerHTML;
-				});
-
-				iHtml += '</' + this.type + '>';
-				return iHtml;
-			}
-		});
-
 		return domElement;
 	} ());
 	return domElement;
