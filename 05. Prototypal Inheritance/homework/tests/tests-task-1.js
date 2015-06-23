@@ -126,6 +126,38 @@ describe('Tests for "Task 1"', function() {
 
 	});
 
+	describe('Parent control', function() {
+		it('expect children to know their parents (one parent, one child)', function() {
+			var child = Object.create(domElement)
+					.init('child'),
+				parent = Object.create(domElement)
+					.init('parent')
+					.appendChild(child);
+			expect(child.parent).to.equal(parent);
+		});
+		it('expect children to know their parents (one parent, two children)', function() {
+			var child1 = Object.create(domElement).init('child'),
+				child2 = Object.create(domElement).init('child'),
+				parent = Object.create(domElement)
+					.init('parent')
+					.appendChild(child1)
+					.appendChild(child2);
+			expect(child1.parent).to.equal(parent);
+			expect(child2.parent).to.equal(parent);
+		});
+		it('expect children to know their parents (grandparent, parent and child)', function() {
+			var child = Object.create(domElement).init('child'),
+				middle = Object.create(domElement)
+					.init('middleblq')
+					.appendChild(child);
+				parent = Object.create(domElement)
+					.init('parent')
+					.appendChild(middle);
+			expect(child.parent).to.equal(middle);
+			expect(middle.parent).to.equal(parent);
+		});
+	});
+
 	describe('Adding children', function() {
 		it('expect correct HTML when child is a string', function() {
 			var text = 'Some text here, doesn\'t really matter that much what it is.',
