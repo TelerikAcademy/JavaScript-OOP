@@ -21,6 +21,6 @@ var dog = (function (parent) {
     }
   });
   return dog;
-});
+}(animal));
 
 dog.makeNoise();
