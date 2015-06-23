@@ -54,7 +54,7 @@ describe('Tests for "Task 1"', function() {
 		});
 		it('expect domElement with valid type not to throw', function() {
 			function test() {
-				Object.create(domElement).init('grO0zen1TagnaMe');
+				Object.create(domElement).init('TagnaMe');
 			}
 			expect(test).to.not.throw();
 		});
@@ -96,9 +96,9 @@ describe('Tests for "Task 1"', function() {
 		it('expect domElement with a single attribute to generate correct HTML', function() {
 			var root = Object.create(domElement)
 				.init('div')
-				.addAttribute('data-id', 'cuki');
+				.addAttribute('data-id', 'myid');
 
-			expect(root.innerHTML).to.eql('<div data-id="cuki"></div>');
+			expect(root.innerHTML).to.eql('<div data-id="myid"></div>');
 		});
 		it('expect attribute value to be in double quotes when it is a number', function() {
 			var root = Object.create(domElement)
@@ -232,7 +232,7 @@ describe('Tests for "Task 1"', function() {
 			var body = Object.create(domElement)
 				.init('body')
 				.appendChild(div)
-				.addAttribute('id', 'cuki')
+				.addAttribute('id', 'myid')
 				.addAttribute('bgcolor', '#012345');
 
 			var root = Object.create(domElement)
@@ -240,7 +240,7 @@ describe('Tests for "Task 1"', function() {
 				.appendChild(head)
 				.appendChild(body);
 
-			expect(root.innerHTML).to.eql('<html><head><meta charset="utf-8"></meta></head><body bgcolor="#012345" id="cuki"><div style="font-size: 42px">Hello, world!</div></body></html>');
+			expect(root.innerHTML).to.eql('<html><head><meta charset="utf-8"></meta></head><body bgcolor="#012345" id="myid"><div style="font-size: 42px">Hello, world!</div></body></html>');
 		});
 
 		it('expect this big test to work', function() {
