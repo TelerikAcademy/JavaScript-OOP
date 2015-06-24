@@ -15,8 +15,8 @@ describe('Test for Modules and Patterns in JavaScript', function() {
 		it('expect Course.submitHomework to be a function', function() {
 			expect(Course.submitHomework).to.be.a('function');
 		});
-		it('expect Course.examResults to be a function', function() {
-			expect(Course.examResults).to.be.a('function');
+		it('expect Course.pushExamResults to be a function', function() {
+			expect(Course.pushExamResults).to.be.a('function');
 		});
 		it('expect Course.getTopStudents to be a function', function() {
 			expect(Course.getTopStudents).to.be.a('function');
