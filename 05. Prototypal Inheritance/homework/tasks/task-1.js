@@ -8,7 +8,7 @@
     * a valid type is any non-empty string that contains only Latin letters and digits
   * property innerHTML of type string
     * gets the domElement, parsed as valid HTML
-	  * <type attr1="value1" attr2="value2" ...> .. content / children's.innerHTML .. </type>
+      * <type attr1="value1" attr2="value2" ...> .. content / children's.innerHTML .. </type>
   * property content of type string
     * sets the content of the element
     * works only if there are no children
@@ -23,7 +23,8 @@
     * appends to the end of children list
   * method addAttribute(name, value)
     * throw Error if type is not valid
-  * // method removeAttribute(attribute)
+  * method removeAttribute(attribute)
+    * throw Error if attribute does not exist in the domElement
 */
 
 
