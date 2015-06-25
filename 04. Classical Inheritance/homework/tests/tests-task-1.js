@@ -51,7 +51,7 @@ describe('Tests for Classical Inheritance in JavaScript', function () {
 			expect(p.fullname).to.equal(CONSTS.VALID.FIRSTNAME + ' ' + CONSTS.VALID.LASTNAME);
 		});
 
-		it('expect new Person with short fistname to throw error', function () {
+		it('expect new Person with short firstname to throw error', function () {
 			function fn() {
 				new Person(CONSTS.INVALID.FIRSTNAME.SHORT,
 					CONSTS.VALID.LASTNAME,
@@ -60,7 +60,7 @@ describe('Tests for Classical Inheritance in JavaScript', function () {
 			expect(fn).to.throw();
 		});
 
-		it('expect new Person with fistname of not valid chars to throw error', function () {
+		it('expect new Person with firstname of not valid chars to throw error', function () {
 			function fn() {
 				new Person(CONSTS.INVALID.FIRSTNAME.SYMBOLS,
 					CONSTS.VALID.LASTNAME,
@@ -78,7 +78,7 @@ describe('Tests for Classical Inheritance in JavaScript', function () {
 			expect(fn).to.throw();
 		});
 
-		it('expect new Person with long fistname to throw error', function () {
+		it('expect new Person with long firstname to throw error', function () {
 			function fn() {
 				new Person(CONSTS.INVALID.FIRSTNAME.LONG, CONSTS.VALID.LASTNAME, CONSTS.VALID.AGE);
 			}
