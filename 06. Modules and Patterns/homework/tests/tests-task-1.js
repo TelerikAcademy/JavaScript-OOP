@@ -246,7 +246,7 @@ describe('Test for Modules and Patterns in JavaScript', function() {
 				id = jsoop.addStudent(getValidName() + ' ' + getValidName());
 				jsoop.submitHomework(id, 1);
 			}
-			expect(test).to.throw();
+			expect(test).to.not.throw();
 		});
 	});
 
