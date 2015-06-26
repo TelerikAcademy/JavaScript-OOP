@@ -30,7 +30,7 @@
       * homeworkID 2 is for the second one
       * ...
     * Throws if any of the IDs are invalid
-  * Create method examResults
+  * Create method pushExamResults
     * Accepts an array of items in the format {StudentID: ..., Score: ...}
       * StudentIDs which are not listed get 0 points
     * Throw if there is an invalid StudentID
@@ -54,7 +54,7 @@ function solve() {
 		},
 		submitHomework: function(studentID, homeworkID) {
 		},
-		examResults: function(results) {
+		pushExamResults: function(results) {
 		},
 		getTopStudents: function() {
 		}

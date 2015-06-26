@@ -28,6 +28,7 @@
   10. Method `addAttribute(name, value)`
     * `throw Error` if type is not valid
   11. Method `removeAttribute(attribute)`
+    * `throw Error` if attribute does not exist in the domElement
 
 _Example:_
 
@@ -49,7 +50,7 @@ _Example:_
   var body = Object.create(domElement)
     .init('body')
     .appendChild(div)
-    .addAttribute('id', 'cuki')
+    .addAttribute('id', 'myid')
     .addAttribute('bgcolor', '#012345');
 
   var root = Object.create(domElement)
@@ -63,5 +64,5 @@ _Example:_
   _Outputs:_
 
 ```
-<html><head><meta charset="utf-8"></meta></head><body bgcolor="#012345" id="cuki"><div style="font-size: 42px">Hello, world!</div></body></html>
+<html><head><meta charset="utf-8"></meta></head><body bgcolor="#012345" id="myid"><div style="font-size: 42px">Hello, world!</div></body></html>
 ```

@@ -15,8 +15,8 @@ describe('Test for Modules and Patterns in JavaScript', function() {
 		it('expect Course.submitHomework to be a function', function() {
 			expect(Course.submitHomework).to.be.a('function');
 		});
-		it('expect Course.examResults to be a function', function() {
-			expect(Course.examResults).to.be.a('function');
+		it('expect Course.pushExamResults to be a function', function() {
+			expect(Course.pushExamResults).to.be.a('function');
 		});
 		it('expect Course.getTopStudents to be a function', function() {
 			expect(Course.getTopStudents).to.be.a('function');
@@ -246,7 +246,44 @@ describe('Test for Modules and Patterns in JavaScript', function() {
 				id = jsoop.addStudent(getValidName() + ' ' + getValidName());
 				jsoop.submitHomework(id, 1);
 			}
-			expect(test).to.throw();
+			expect(test).to.not.throw();
+		});
+	});
+
+	describe('Getting students', function() {
+		it('expect getAllStudents to return an array of the listed students (no students)', function() {
+			var jsoop = Object.create(Course)
+				.init(getValidTitle(), [getValidTitle()]);
+			expect(jsoop.getAllStudents()).to.be.eql([]);
+		});
+		it('expect getAllStudents to return an array of the listed students (one student)', function() {
+			var jsoop = Object.create(Course)
+				.init(getValidTitle(), [getValidTitle()]);
+
+			var student = {
+				firstname: getValidName(),
+				lastname: getValidName(),
+			};
+			student.id = jsoop.addStudent(student.firstname + ' ' + student.lastname);
+
+			expect(checkStudentList([student], jsoop.getAllStudents())).to.be.true;
+		});
+		it('expect getAllStudents to return an array of the listed students (many students)', function() {
+			var jsoop = Object.create(Course)
+				.init(getValidTitle(), [getValidTitle()]);
+
+			var firstname, lastname, listed = [];
+			for(var i=0; i<100; ++i) {
+				firstname = getValidName();
+				lastname = getValidName();
+				listed.push({
+					firstname: firstname,
+					lastname: lastname,
+					id: jsoop.addStudent(firstname + ' ' + lastname)
+				});
+			}
+
+			expect(checkStudentList(listed, jsoop.getAllStudents())).to.be.true;
 		});
 	});
 });
@@ -287,4 +324,26 @@ function getValidTitle() {
 }
 function getValidName() {
 	return validNames[(Math.random() * validNames.length) | 0];
-};
+}
+
+function checkStudentList(list1, list2) {
+	if(list1.length !== list2.length)
+		return false;
+
+	function compare(a, b) {
+		return a.id < b.id;
+	}
+
+	list1.sort(compare);
+	list2.sort(compare);
+
+	for(var i in list1) {
+		if(list1[i].id !== list2[i].id)
+			return false;
+		if(list1[i].firstname !== list2[i].firstname)
+			return false;
+		if(list1[i].lastname !== list2[i].lastname)
+			return false;
+	}
+	return true;
+}
