@@ -331,7 +331,7 @@ function checkStudentList(list1, list2) {
 		return false;
 
 	function compare(a, b) {
-		return a.id < b.id;
+		return a.id - b.id;
 	}
 
 	list1.sort(compare);
