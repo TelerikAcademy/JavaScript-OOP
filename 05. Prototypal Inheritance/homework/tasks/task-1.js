@@ -70,6 +70,8 @@ function solve() {
 			},
 			addAttribute: function(name, value) {
 			},
+			removeAttribute: function(attribute) {
+			},
       get innerHTML(){
         
       }
