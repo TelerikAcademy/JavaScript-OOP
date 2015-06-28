@@ -164,7 +164,7 @@ describe('Tests for "Task 1"', function() {
 			var child = Object.create(domElement).init('child'),
 				middle = Object.create(domElement)
 					.init('middleblq')
-					.appendChild(child);
+					.appendChild(child),
 				parent = Object.create(domElement)
 					.init('parent')
 					.appendChild(middle);
@@ -203,7 +203,7 @@ describe('Tests for "Task 1"', function() {
 			var child = Object.create(domElement).init('child'),
 				middle = Object.create(domElement)
 					.init('middleBlq')
-					.appendChild(child);
+					.appendChild(child),
 				parent = Object.create(domElement)
 					.init('parent')
 					.appendChild(middle);
@@ -263,71 +263,71 @@ describe('Tests for "Task 1"', function() {
 	describe('Removing attributes', function() {
 		it('expect removing an attribute to work (removing the only attribute)', function() {
 			var root = Object.create(domElement)
-				.init('table')
-				.addAttribute('style', 'something: beautiful')
-				.removeAttribute('style');
+					.init('table')
+					.addAttribute('style', 'something: beautiful')
+					.removeAttribute('style');
 
 			expect(root.innerHTML).to.eql('<table></table>');
 		});
 		it('expect removing an attribute to work (removing one of the attributes)', function() {
 			var root = Object.create(domElement)
-				.init('table')
-				.addAttribute('style', 'something: beautiful')
-				.addAttribute('id', 'the_id')
-				.removeAttribute('style')
-				.addAttribute('class', 'the_class');
+					.init('table')
+					.addAttribute('style', 'something: beautiful')
+					.addAttribute('id', 'the_id')
+					.removeAttribute('style')
+					.addAttribute('class', 'the_class');
 
 			expect(root.innerHTML).to.eql('<table class="the_class" id="the_id"></table>');
 		});
 		it('expect removing an attribute to work (removing attribute that was added twice)', function() {
 			var root = Object.create(domElement)
-				.init('table')
-				.addAttribute('class', 'word')
-				.addAttribute('class', 'two words')
-				.addAttribute('style', 'something: beautiful')
-				.removeAttribute('class');
+					.init('table')
+					.addAttribute('class', 'word')
+					.addAttribute('class', 'two words')
+					.addAttribute('style', 'something: beautiful')
+					.removeAttribute('class');
 
 			expect(root.innerHTML).to.eql('<table style="something: beautiful"></table>');
 		});
 		it('expect removing an attribute to work (removing an attribute and then adding it again)', function() {
 			var root = Object.create(domElement)
-				.init('table')
-				.addAttribute('class', 'word')
-				.removeAttribute('class')
-				.addAttribute('class', 'word');
+					.init('table')
+					.addAttribute('class', 'word')
+					removeAttribute('class')
+					.addAttribute('class', 'word');
 
 			expect(root.innerHTML).to.eql('<table class="word"></table>');
 		});
 
 		it('expect removing an attribute to work (nested domElements)', function() {
 			var parent = Object.create(domElement)
-				.init('html')
-				.addAttribute('id', 'myindex.html');
-			var child = Object.create(domElement)
-				.init('head')
-				.addAttribute('id', 'myhead');
+					.init('html')
+					.addAttribute('id', 'myindex.html'),
+				child = Object.create(domElement)
+					.init('head')
+					.addAttribute('id', 'myhead');
 			parent.appendChild(child);
 			parent.removeAttribute('id');
 			expect(parent.innerHTML).to.eql('<html><head id="myhead"></head></html>');
 		});
 		it('expect removing an attribute to work (nested domElements)', function() {
 			var parent = Object.create(domElement)
-				.init('html')
-				.addAttribute('id', 'myindex.html');
-			var child = Object.create(domElement)
-				.init('head')
-				.addAttribute('id', 'myhead');
+					.init('html')
+					.addAttribute('id', 'myindex.html'),
+				child = Object.create(domElement)
+					.init('head')
+					.addAttribute('id', 'myhead');
 			parent.appendChild(child);
 			child.removeAttribute('id');
 			expect(parent.innerHTML).to.eql('<html id="myindex.html"><head></head></html>');
 		});
 		it('expect removing an attribute to work (nested domElements)', function() {
 			var parent = Object.create(domElement)
-				.init('html')
-				.addAttribute('id', 'myindex.html');
-			var child = Object.create(domElement)
-				.init('head')
-				.addAttribute('id', 'myhead');
+					.init('html')
+					.addAttribute('id', 'myindex.html'),
+				child = Object.create(domElement)
+					.init('head')
+					.addAttribute('id', 'myhead');
 			parent.appendChild(child);
 			parent.removeAttribute('id');
 			child.removeAttribute('id');
@@ -338,29 +338,26 @@ describe('Tests for "Task 1"', function() {
 	describe('Mixing it all together', function() {
 		it('expect the example test given in the description to work', function() {
 			var meta = Object.create(domElement)
-				.init('meta')
-				.addAttribute('charset', 'utf-8');
-
-			var head = Object.create(domElement)
-				.init('head')
-				.appendChild(meta);
-
-			var div = Object.create(domElement)
-				.init('div')
-				.addAttribute('style', 'font-size: 42px');
+					.init('meta')
+					.addAttribute('charset', 'utf-8'),
+				head = Object.create(domElement)
+					.init('head')
+					.appendChild(meta),
+				div = Object.create(domElement)
+					.init('div')
+					.addAttribute('style', 'font-size: 42px');
 
 			div.content = 'Hello, world!';
 
 			var body = Object.create(domElement)
-				.init('body')
-				.appendChild(div)
-				.addAttribute('id', 'myid')
-				.addAttribute('bgcolor', '#012345');
-
-			var root = Object.create(domElement)
-				.init('html')
-				.appendChild(head)
-				.appendChild(body);
+					.init('body')
+					.appendChild(div)
+					.addAttribute('id', 'myid')
+					.addAttribute('bgcolor', '#012345'),
+				root = Object.create(domElement)
+					.init('html')
+					.appendChild(head)
+					.appendChild(body);
 
 			expect(root.innerHTML).to.eql('<html><head><meta charset="utf-8"></meta></head><body bgcolor="#012345" id="myid"><div style="font-size: 42px">Hello, world!</div></body></html>');
 		});
