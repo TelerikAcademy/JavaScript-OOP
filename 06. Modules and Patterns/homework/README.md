@@ -33,7 +33,7 @@
       * ...
     * Throws if any of the IDs are invalid
   * Create method `pushExamResults()`
-    * Accepts an array of items in the format `{StudentID: ..., Score: ...}`
+    * Accepts an array of items in the format `{StudentID: ..., score: ...}`
       * StudentIDs which are not listed get 0 points
     * Throw if there is an invalid StudentID
     * Throw if same StudentID is given more than once ( he tried to cheat (: )
