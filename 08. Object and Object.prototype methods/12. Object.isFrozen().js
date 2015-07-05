@@ -64,4 +64,4 @@
 
 // Also by definition, a frozen object is sealed.
     console.log('is "frozen" sealed: ' + Object.isSealed(frozen));
-});
+}());
