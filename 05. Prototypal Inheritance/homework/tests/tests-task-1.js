@@ -293,7 +293,7 @@ describe('Tests for "Task 1"', function() {
 			var root = Object.create(domElement)
 					.init('table')
 					.addAttribute('class', 'word')
-					removeAttribute('class')
+					.removeAttribute('class')
 					.addAttribute('class', 'word');
 
 			expect(root.innerHTML).to.eql('<table class="word"></table>');
