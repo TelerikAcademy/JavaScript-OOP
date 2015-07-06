@@ -93,7 +93,7 @@ describe('Test for Modules and Patterns in JavaScript', function () {
         it('expect not to throw if titles are legit and contain all kinds of symbols', function () {
             function test() {
                 var jsoop = Object.create(Course);
-                jsoop.init('!@#$ %^&*(', [
+                jsoop.init('!@a#$ %^&*(', [
                     getValidTitle() + ')(*&^%$#%^&',
                     getValidTitle() + 'lfeopwkfie hfy3r7 38r 4j',
                     getValidTitle() + 'lfeop,,wkfie hfy3r7 38r 4j',
