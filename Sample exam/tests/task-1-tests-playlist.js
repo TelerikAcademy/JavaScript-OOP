@@ -33,14 +33,17 @@ describe('Sample exam tests', function () {
                 expect(playlist1.id).not.to.equal(playlist2.id);
             });
 
-            it('expect playlist.addPlayable() to exists, to be a function and to take a single parameter', function () {
-                var name, playlist;
-                name = 'Rock and roll';
-                playlist = result.getPlaylist(name);
+            it('expect playlist.addPlayable() to exists, to be a function and to take a single parameter and to enable chaining', function () {
+                var name = 'Rock and roll',
+                    playlist = result.getPlaylist(name),
+                    playable = {id: 1, name: 'Banana Rock', author: 'Wombles'};
 
                 expect(playlist.addPlayable).to.exist;
                 expect(playlist.addPlayable).to.be.a('function');
                 expect(playlist.addPlayable).to.have.length(1);
+
+                returnedPlaylist = playlist.addPlayable(playable);
+                return expect(returnedPlaylist).to.equal(playlist);
             });
             it('expect playlist.getPlayableById() to exists, to be a function and to take a single parameter', function () {
                 var name, playlist;
@@ -52,21 +55,15 @@ describe('Sample exam tests', function () {
                 expect(playlist.getPlayableById).to.have.length(1);
             });
             it('expect playlist.addPlayable() to add the playable and playlist.getPlayableById() to retrieve the same playable', function () {
-                var gotten,
+                var returnedPlayable,
                     name = 'Rock and roll',
                     plName = 'Banana Rock',
                     plAuthor = 'Wombles',
                     playlist = result.getPlaylist(name),
                     playable = {id: 1, name: plName, author: plAuthor};
 
-                playlist.addPlayable(playable);
-                gotten = playlist.getPlayableById(1);
-
-                expect(gotten).to.exist;
-                console.log(gotten.type)
-                expect(gotten).to.be.a('object');
-                expect(gotten.name).to.equal(plName);
-                expect(gotten.author).to.equal(plAuthor);
+                returnedPlayable = playlist.addPlayable(playable).getPlayableById(1);
+                expect(returnedPlayable).to.equal(playable);
             });
 
             it('expect playlist.removePlayable() to exists, to be a function and to take a single parameter', function () {
@@ -92,6 +89,7 @@ describe('Sample exam tests', function () {
                 expect(gotten).not.to.exists;
                 expect(gotten).not.to.be.null;
             });
+
             it('expect playlist.listPlaylables() to exists, to be a function and to take 2 parameters', function () {
                 var name, playlist;
                 name = 'Rock and roll';
