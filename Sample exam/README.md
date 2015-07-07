@@ -106,17 +106,17 @@ that inherits `Playable` and adds the following:
 
 ## `The module should look as follows:`
 
-`var module = {
-	getPlayer: function (name){
-		// returns a new player instance with the provided name
-	},
-	getPlaylist: function(name){
-		//returns a new playlist instance with the provided name
-	},
-	getAudio: function(title, author, length){
-		//returns a new audio instance with the provided title, author and length
-	},
-	getVideo: function(title, author, imdbRating){
-		//returns a new video instance with the provided title, author and imdbRating
-	}
-};`
+	var module = {
+		getPlayer: function (name){
+			// returns a new player instance with the provided name
+		},
+		getPlaylist: function(name){
+			//returns a new playlist instance with the provided name
+		},
+		getAudio: function(title, author, length){
+			//returns a new audio instance with the provided title, author and length
+		},
+		getVideo: function(title, author, imdbRating){
+			//returns a new video instance with the provided title, author and imdbRating
+		}
+	};
