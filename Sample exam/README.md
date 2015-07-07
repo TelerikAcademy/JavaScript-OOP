@@ -49,10 +49,10 @@ that has the following:
 
 				//having player with name `Batman's playlist` with:
 				//playlist1 with id `1` and title `Cool` with playables:
-				//	'They are green' and 'Batman'
+				//	'They are green' and 'I am Batman'
 				//playlist2 with id `2` and title `Green` with playables:
 				//	`Green they are`, `Green is beautiful` and `To the green and beyond`
-				
+
 				//player.search('green') returns:
 				//	[{name: 'Cool', id: 1}, {name: 'Green', id: 2}]
 				
