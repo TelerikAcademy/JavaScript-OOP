@@ -116,11 +116,6 @@ that inherits `Playable` and adds the following:
 	
 *	You can use any Inheritance in JavaScript you like
 	*	For example: Prototypal or Classical
-*	Each player instance has an unique id
-*	Each playlist instance has an unique id
-*	Each playable instance has an unique id		
-*	Your can use any Inheritance in JavaScript you like
-	*	For example: Prototypal or Classical
 
 ## The module should look as follows:
 
