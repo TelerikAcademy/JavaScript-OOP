@@ -83,11 +83,18 @@ describe('Sample exam tests', function () {
                     playable = {id: 1, name: plName, author: plAuthor};
 
                 playlist.addPlayable(playable);
+                playlist.removePlayable(playable);
+                gotten = playlist.getPlayableById(1);
+                expect(gotten).not.to.exists;
+                expect(gotten).not.to.be.null;
+
+                playlist.addPlayable(playable);
                 playlist.removePlayable(1);
                 gotten = playlist.getPlayableById(1);
 
                 expect(gotten).not.to.exists;
                 expect(gotten).not.to.be.null;
+                expect(function() { playlist.removePlayable(10); }).to.throw();
             });
 
             it('expect playlist.listPlaylables() to exists, to be a function and to take 2 parameters', function () {
@@ -109,7 +116,6 @@ describe('Sample exam tests', function () {
                 }
 
                 expect(playlist.listPlaylables(2, 10).length).to.equal(10);
-                console.log('playlist.getPlayables.length: ' + playlist.getPlayables().length);
                 expect(playlist.listPlaylables(3, 10).length).to.equal(5);
 
                 expect(function() { playlist.listPlaylables(-1, 10) }).to.throw();
