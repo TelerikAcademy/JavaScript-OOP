@@ -33,6 +33,9 @@ that has the following:
 			*	page*size > COUNT_OF_PLAYLISTS_IN_PLAYER
 			*	page < 0
 			*	size <= 0
+	*	`contains(playable, playlist)`
+		*	checks whether a playlist contains a playable
+		*	returns true or false
 		*	__Example__:
 
 				//having 35 playlists:			
