@@ -1,20 +1,6 @@
 # JavaScript OOP 2015 - Audio Player
-*	General requirements:
-	*	All `id` are numbers, greater than 0
-	*	Each player instance has an unique `id`
-	*	Each playlist instance has an unique `id`
-	*	Each playable instance has an unique `id`
-	*	Properties `name`, `title` and `author` are a strings between **3** and **25** characters
-		
-		*	Your can use any Inheritance in JavaScript you like
-			*	For example: Prototypal or Classical
-	*	Each player instance has an unique id
-	*	Each playlist instance has an unique id
-	*	Each playable instance has an unique id		
-	*	Your can use any Inheritance in JavaScript you like
-		*	For example: Prototypal or Classical
 *	Create an object (module) that enables creation of the following:
-
+		
 ##	`Player`
 that has the following:
 
@@ -120,6 +106,21 @@ that inherits `Playable` and adds the following:
 *	methods:
 	*	`play()`
 		*	reuses the `play()` from `Playable` and adds: ` - [imdbRating]` at the end
+				
+##	General requirements:
+*	All `id` are numbers, greater than **0**
+*	Each player instance has an unique `id`
+*	Each playlist instance has an unique `id`
+*	Each playable instance has an unique `id`
+*	Properties `name`, `title` and `author` are a strings between **3** and **25** characters
+	
+*	You can use any Inheritance in JavaScript you like
+	*	For example: Prototypal or Classical
+*	Each player instance has an unique id
+*	Each playlist instance has an unique id
+*	Each playable instance has an unique id		
+*	Your can use any Inheritance in JavaScript you like
+	*	For example: Prototypal or Classical
 
 ## The module should look as follows:
 
