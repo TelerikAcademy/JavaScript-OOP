@@ -37,7 +37,7 @@ that has the following:
 
 				//having 35 playlists:			
 				//listPlaylists(2, 10) should return playlists with indices from 20 to 29, including			 
-				//listPlaylists(3, 10) should return playlists with indices from 30 to 35, including
+				//listPlaylists(3, 10) should return playlists with indices from 30 to 34, including
 
 ##	`PlayList`
 that has the following:
