@@ -1,9 +1,10 @@
 # JavaScript OOP 2015 - Audio Player
 *	General requirements:
 	*	All `id` are numbers, greater than 0
-	*	Each player instance has an unique id
-	*	Each playlist instance has an unique id
-	*	Each playable instance has an unique id
+	*	Each player instance has an unique `id`
+	*	Each playlist instance has an unique `id`
+	*	Each playable instance has an unique `id`
+	*	Properties `name`, `title` and `author` are a strings between **3** and **25** characters
 		
 		*	Your can use any Inheritance in JavaScript you like
 			*	For example: Prototypal or Classical
@@ -13,9 +14,7 @@
 that has the following:
 
 *	properties:	
-	*	`name`
-		*	provided through a constructor function or init method
-		*	string between **3** and **25** characters
+	*	`name` - provided through a constructor function or init method
 *	methods:
 	*	`getPlayer('name')`
 		*	returns a new `Player` with the provided `name`
@@ -53,12 +52,8 @@ that has the following:
 that has the following:
 
 *	properties:
-	*	`id`
-		*	generated when the playlist is created
-		*	number, greater than **0**
-	*	`name`
-		*	provided through a constructor function or init method
-		*	string between **3** and **25** characters
+	*	`id` - generated when the playlist is created
+	*	`name` - provided through a constructor function or init method
 *	methods:
 	*	`addPlayable(playable)`
 		*	Adds a playable to the `PlayList`
@@ -92,15 +87,9 @@ that has the following:
 ##	`Playable`
 that has the following :
 *	properties:
-	*	`id`
-		*	generated when the playable is created
-		*	number, greater than **0**
-	*	`title`
-		*	provided through a constructor function or init method
-		*	string between **3** and **25** characters
-	*	`author`
-		*	provided through a constructor function or init method
-		*	string between **3** and **25** characters
+	*	`id` - generated when the playable is created
+	*	`title` - provided through a constructor function or init method
+	*	`author` - provided through a constructor function or init method
 *	methods:
 	*	`play()`
 		*	returns a string in the format: `[id]. [title] - [author]`
