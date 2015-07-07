@@ -80,9 +80,9 @@ that has the following:
 ##	`Playable`
 that has the following :
 *	properties:
-	*	`id`
-	*	`title`
-	*	`author`
+	*	`id` - generated when the playable is created
+	*	`title` - provided through a constructor function or init method
+	*	`author` - provided through a constructor function or init method
 *	methods:
 	*	`play()`
 		*	returns a string in the format: `[id]. [title] - [author]`
@@ -91,7 +91,7 @@ that has the following :
 that inherits `Playable` and adds the following:
 
 *	properties:
-	*	`length`
+	*	`length` - provided through a constructor function or init method
 *	methods:
 	*	`play()`
 		*	reuses the `play()` from `Playable` and adds: ` - [length]` at the end
@@ -100,7 +100,7 @@ that inherits `Playable` and adds the following:
 that inherits `Playable` and adds the following:
 
 *	properties:
-	*	`imdbRating`
+	*	`imdbRating` - provided through a constructor function or init method
 *	methods:
 	*	`play()`
 		*	reuses the `play()` from `Playable` and adds: ` - [imdbRating]` at the end
