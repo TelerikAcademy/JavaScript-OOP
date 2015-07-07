@@ -73,7 +73,7 @@ that has the following:
 
 				//having 35 playables:
 				//rockPlaylist.listPlayables(2, 10) should return playables with indices from 20 to 29, including
-				//rockPlaylist.listPlayables(3, 10) should return playables with indices from 30 to 35, including
+				//rockPlaylist.listPlayables(3, 10) should return playables with indices from 30 to 34, including
 			
 ##	`Playable`
 that has the following :
