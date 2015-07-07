@@ -18,8 +18,12 @@ that has the following:
 	*	`getPlaylistById(id)`
 		*	Finds and returns a playlist from the playlists in this player instance
 		*	Returns null, if a playlist with the provided id is not contained in the player 
-	*	`removePlaylistById(id)`
-		*	Removes a playlists from this player instance, and the playlist must have the provided id
+	*	`removePlaylist(id)`
+		*	Removes a playlists from this player instance, and the playlist must have an `id` equal to the provided `id`
+		*	Enables chaining
+		*	Throws an error, if a playlist with the provided id is not contained in the player 
+	*	`removePlaylist(playlist)`
+		*	Removes a playlists from this player instance, and the playlist must have an `id` equal to the `id` of the provided playlist
 		*	Enables chaining
 		*	Throws an error, if a playlist with the provided id is not contained in the player 
 	*	`listPlaylists(page, size)`
@@ -34,7 +38,7 @@ that has the following:
 			`//having 35 playlists:
 			 //listPlaylists(2, 10) should return playlists with indices from 20 to 29, including
 			 //listPlaylists(3, 10) should return playlists with indices from 30 to 35, including`
-			 
+
 ##	`PlayList`
 that has the following:
 
