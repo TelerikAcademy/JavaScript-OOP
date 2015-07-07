@@ -60,7 +60,7 @@ that has the following:
 	*	`removePlayable(playable)`
 		*	Removes a playable from this playlist, and the playable must have an `id` equal to the `id` of the provided playable
 		*	Enables chaining
-		*	Throws an error, if a playlist with the provided id is not contained in the player
+		*	Throws an error, if a playable with the provided id is not contained in the playlist
 	*	`listPlaylables(page, size)`
 		*	Returns an array with at most size `size` and containing the playables with indices `page*size, page*size+1, page*size+2, ... page*(size+1)-1`
 			*	These are the indices after sorting the playables by `title`, then by `id`
