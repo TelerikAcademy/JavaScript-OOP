@@ -1,6 +1,7 @@
 # JavaScript OOP 2015 - Audio Player
 *	General requirements:
 	*	All `id` are numbers, greater than 0
+<<<<<<< HEAD
 	*	Each player instance has an unique `id`
 	*	Each playlist instance has an unique `id`
 	*	Each playable instance has an unique `id`
@@ -8,6 +9,13 @@
 		
 		*	Your can use any Inheritance in JavaScript you like
 			*	For example: Prototypal or Classical
+=======
+	*	Each player instance has an unique id
+	*	Each playlist instance has an unique id
+	*	Each playable instance has an unique id		
+	*	Your can use any Inheritance in JavaScript you like
+		*	For example: Prototypal or Classical
+>>>>>>> 79f08af6566a1b82738da674e43ea93c4652b4c2
 *	Create an object (module) that enables creation of the following:
 
 ##	`Player`
