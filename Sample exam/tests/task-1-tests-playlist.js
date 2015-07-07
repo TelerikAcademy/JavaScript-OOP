@@ -57,13 +57,13 @@ describe('Sample exam tests', function () {
             it('expect playlist.addPlayable() to add the playable and playlist.getPlayableById() to retrieve the same playable', function () {
                 var returnedPlayable,
                     name = 'Rock and roll',
-                    plName = 'Banana Rock',
-                    plAuthor = 'Wombles',
                     playlist = result.getPlaylist(name),
-                    playable = {id: 1, name: plName, author: plAuthor};
+                    playable = {id: 1, name: 'Banana Rock', author: 'Wombles'};
 
                 returnedPlayable = playlist.addPlayable(playable).getPlayableById(1);
-                expect(returnedPlayable).to.equal(playable);
+                expect(returnedPlayable.id).to.equal(playable.id);
+                expect(returnedPlayable.name).to.equal(playable.name);
+                expect(returnedPlayable.author).to.equal(playable.author);
             });
 
             it('expect playlist.removePlayable() to exists, to be a function and to take a single parameter', function () {
@@ -80,7 +80,7 @@ describe('Sample exam tests', function () {
                     plName = 'Banana Rock',
                     plAuthor = 'Wombles',
                     playlist = result.getPlaylist(name),
-                    playable = { id: 1, name: plName, author: plAuthor};
+                    playable = {id: 1, name: plName, author: plAuthor};
 
                 playlist.addPlayable(playable);
                 playlist.removePlayable(1);
@@ -98,6 +98,23 @@ describe('Sample exam tests', function () {
                 expect(playlist.listPlaylables).to.exist;
                 expect(playlist.listPlaylables).to.be.a('function');
                 expect(playlist.listPlaylables).to.have.length(2);
+            });
+            it('expect playlist.listPlaylables() to return correct number of playables and to throw errors when invalid data is passed', function () {
+                var i, name, playlist;
+                name = 'Hard Rock';
+                playlist = result.getPlaylist(name);
+
+                for (i = 0; i < 35; i += 1) {
+                    playlist.addPlayable({id: (i + 1), name: 'Rock' + (9 - (i % 10))});
+                }
+
+                expect(playlist.listPlaylables(2, 10).length).to.equal(10);
+                console.log('playlist.getPlayables.length: ' + playlist.getPlayables().length);
+                expect(playlist.listPlaylables(3, 10).length).to.equal(5);
+
+                expect(function() { playlist.listPlaylables(-1, 10) }).to.throw();
+                expect(function() { playlist.listPlaylables(5, 10) }).to.throw();
+                expect(function() { playlist.listPlaylables(1, -1) }).to.throw();
             });
         });
     });
