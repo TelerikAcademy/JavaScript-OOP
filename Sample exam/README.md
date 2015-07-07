@@ -34,13 +34,33 @@ that has the following:
 			*	page < 0
 			*	size <= 0
 	*	`contains(playable, playlist)`
-		*	checks whether a playlist contains a playable
-		*	returns true or false
+		*	Checks whether a playlist contains a playable
+		*	Returns true or false
 		*	__Example__:
 
 				//having 35 playlists:			
 				//listPlaylists(2, 10) should return playlists with indices from 20 to 29, including			 
 				//listPlaylists(3, 10) should return playlists with indices from 30 to 34, including
+	*	`search(pattern)`
+		*	Returns an array of all playlists, that contain a song, which title contains the `pattern`
+			*	In the returned array, only id and title of the playlists are returned
+		*	Returns empty array ig no such playlists exists
+		*	__Example__:
+
+				//having player with name `Batman's playlist` with:
+				//playlist1 with id `1` and title `Cool` with playables:
+				//	'They are green' and 'Batman'
+				//playlist2 with id `2` and title `Green` with playables:
+				//	`Green they are`, `Green is beautiful` and `To the green and beyond`
+				
+				//player.search('green') returns:
+				//	[{name: 'Cool', id: 1}, {name: 'Green', id: 2}]
+				
+				//player.search('batman') returns:
+				//	[{name: 'Cool', id: 1}]
+
+				//player.search('John') returns:
+				//	[]
 
 ##	`PlayList`
 that has the following:
