@@ -1,5 +1,6 @@
 # JavaScript OOP 2015 - Audio Player
-
+*	Your can use any Inheritance in JavaScript you like
+	*	For example: Prototypal or Classical
 *	Create an object (module) that enables creation of the following:
 
 ##	`Player`
@@ -104,7 +105,7 @@ that inherits `Playable` and adds the following:
 	*	`play()`
 		*	reuses the `play()` from `Playable` and adds: ` - [imdbRating]` at the end
 
-## `The module should look as follows:`
+## The module should look as follows:
 
 	var module = {
 		getPlayer: function (name){
