@@ -56,7 +56,7 @@ describe('Sample exam tests', function() {
         }
         return expect(player.getPlaylistById(playlist.id)).to.equal(playlist);
       });
-      it('expect player.getPlaylistById() with id, not contianed in the player to return null, when there are other playlists and when there are no playlists at all', function() {
+      it('expect player.getPlaylistById() with id, not contained in the player to return null, when there are other playlists and when there are no playlists at all', function() {
         var count, i, ids, invalidID, j, name, player, playlist, ref;
         name = 'Rock and Roll';
         player = result.getPlayer(name);
