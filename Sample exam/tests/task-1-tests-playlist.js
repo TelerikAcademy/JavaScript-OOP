@@ -95,16 +95,16 @@ describe('Sample exam tests', function () {
                 expect(function() { playlist.removePlayable(10); }).to.throw();
             });
 
-            it('expect playlist.listPlaylables() to exists, to be a function and to take 2 parameters', function () {
+            it('expect playlist.listPlayables() to exists, to be a function and to take 2 parameters', function () {
                 var name, playlist;
                 name = 'Rock and roll';
                 playlist = result.getPlaylist(name);
 
-                expect(playlist.listPlaylables).to.exist;
-                expect(playlist.listPlaylables).to.be.a('function');
-                expect(playlist.listPlaylables).to.have.length(2);
+                expect(playlist.listPlayables).to.exist;
+                expect(playlist.listPlayables).to.be.a('function');
+                expect(playlist.listPlayables).to.have.length(2);
             });
-            it('expect playlist.listPlaylables() to return correct number of playables and to throw errors when invalid data is passed', function () {
+            it('expect playlist.listPlayables() to return correct number of playables and to throw errors when invalid data is passed', function () {
                 var i, name, playlist;
                 name = 'Hard Rock';
                 playlist = result.getPlaylist(name);
@@ -113,12 +113,12 @@ describe('Sample exam tests', function () {
                     playlist.addPlayable({id: (i + 1), name: 'Rock' + (9 - (i % 10))});
                 }
 
-                expect(playlist.listPlaylables(2, 10).length).to.equal(10);
-                expect(playlist.listPlaylables(3, 10).length).to.equal(5);
+                expect(playlist.listPlayables(2, 10).length).to.equal(10);
+                expect(playlist.listPlayables(3, 10).length).to.equal(5);
 
-                expect(function() { playlist.listPlaylables(-1, 10) }).to.throw();
-                expect(function() { playlist.listPlaylables(5, 10) }).to.throw();
-                expect(function() { playlist.listPlaylables(1, -1) }).to.throw();
+                expect(function() { playlist.listPlayables(-1, 10) }).to.throw();
+                expect(function() { playlist.listPlayables(5, 10) }).to.throw();
+                expect(function() { playlist.listPlayables(1, -1) }).to.throw();
             });
         });
     });
