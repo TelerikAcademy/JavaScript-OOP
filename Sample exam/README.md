@@ -7,8 +7,6 @@ that has the following:
 *	properties:	
 	*	`name` - provided through a constructor function or init method
 *	methods:
-	*	`getPlayer('name')`
-		*	returns a new `Player` with the provided `name`
 	*	`addPlaylist(playlistToAdd)`
 		*	Adds a playlist to the player
 		*	`playlistToAdd` must be a `PlayList` instance
