@@ -60,7 +60,7 @@ describe('Sample exam tests', function() {
         var count, i, ids, invalidID, j, name, player, playlist, ref;
         name = 'Rock and Roll';
         player = result.getPlayer(name);
-        expect(player.getPlaylist(2)).to.be["null"];
+        expect(player.getPlaylistById(2)).to.be["null"];
         count = 5;
         ids = {};
         for (i = j = 0, ref = count; 0 <= ref ? j <= ref : j >= ref; i = 0 <= ref ? ++j : --j) {
@@ -72,7 +72,7 @@ describe('Sample exam tests', function() {
         while (ids[invalidID]) {
           invalidID = (Math.random() * 100000000) | 0;
         }
-        return expect(player.getPlaylist(invalidID)).to.be["null"];
+        return expect(player.getPlaylistById(invalidID)).to.be["null"];
       });
       return it('expect player.removePlaylist() to remove the playlist, when id is provided', function() {
         var i, j, name, player, playlist, results;
