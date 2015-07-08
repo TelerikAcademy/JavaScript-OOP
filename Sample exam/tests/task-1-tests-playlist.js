@@ -86,7 +86,14 @@ describe('Sample exam tests', function () {
                 playlist.removePlayable(playable);
                 gotten = playlist.getPlayableById(1);
                 expect(gotten).not.to.exists;
-                expect(gotten).to.be["null"];
+                expect(gotten).not.to.be.null;
+
+                playlist.addPlayable(playable);
+                playlist.removePlayable(1);
+                gotten = playlist.getPlayableById(1);
+
+                expect(gotten).not.to.exists;
+                expect(gotten).not.to.be.null;
                 expect(function() { playlist.removePlayable(10); }).to.throw();
             });
 
