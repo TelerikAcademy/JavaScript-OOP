@@ -83,7 +83,7 @@ describe('Sample exam tests', function() {
         expect(player.getPlaylistById(playlist.id)).to.be["null"];
         results = [];
         for (i = j = 0; j <= 5; i = ++j) {
-          results.push(player.addPlaylist(name + i));
+          results.push(player.addPlaylist(result.getPlaylist(name + i)));
         }
         return results;
       });
