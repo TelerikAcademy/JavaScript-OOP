@@ -24,7 +24,7 @@ that has the following:
 		*	Enables chaining
 		*	Throws an error, if a playlist with the provided id is not contained in the player 
 	*	`listPlaylists(page, size)`
-		*	Returns an array with at most size `size` and containing the playlists with indices page*size, page*size+1, page*size+2, ... page*(size+1)-1
+		*	Returns an array with at most size `size` and containing the playlists with indices page*size, page*size+1, page*size+2, ... (page+1)*size-1
 			*	These are the indices after sorting the playlist by name, then by id
 		*	If there are less that `size` playlists, return all of them
 		*	Throw an error if:
@@ -82,8 +82,8 @@ that has the following:
 		*	Removes a playable from this playlist, and the playable must have an `id` equal to the `id` of the provided playable
 		*	Enables chaining
 		*	Throws an error, if a playable with the provided id is not contained in the playlist
-	*	`listPlaylables(page, size)`
-		*	Returns an array with at most size `size` and containing the playables with indices `page*size, page*size+1, page*size+2, ... page*(size+1)-1`
+	*	`listPlayables(page, size)`
+		*	Returns an array with at most size `size` and containing the playables with indices `page*size, page*size+1, page*size+2, ... (page+1)*size-1`
 			*	These are the indices after sorting the playables by `title`, then by `id`
 		*	If there are less that `size` playables, return all of them
 		*	Throw an error if:
