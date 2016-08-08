@@ -1,0 +1,1 @@
+{"version":3,"sources":["otherApp.js"],"names":[],"mappings":";;uBAAwB,UAAU;;AAElC,OAAO,CAAC,GAAG,CAAC,OAAO,GAAG,aAFb,GAAG,WAAE,EAAE,WAAF,EAAE,CAEiB,CAAC,CAAA","file":"otherApp-compiled.js","sourcesContent":["import { sum, pi } from \"lib/math\"\r\n\r\nconsole.log(\"2? = \" + sum(pi, pi))"]}

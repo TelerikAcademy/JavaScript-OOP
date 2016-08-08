@@ -1,0 +1,1 @@
+{"version":3,"sources":["00. demo.js"],"names":[],"mappings":";;AAEA,IAAI,GAAG,GAAG,CAAC,KAAK,EAAC,CAAC,EAAC,CAAC,EAAC,CAAC,EAAC,CAAC,CAAC,CAAC;;;;;;;AAE1B,yBAAc,GAAG,8HAAE;YAAV,CAAC;;AACN,eAAO,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC;KAClB","file":"00. demo-compiled.js","sourcesContent":["\r\n\r\nvar arr = ['asd',2,3,4,5];\r\n\r\nfor (let i of arr) {\r\n    console.log(i);\r\n}"]}
