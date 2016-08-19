@@ -26,7 +26,7 @@
 
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-
+<!-- # Table of Contents -->
 - Recursion
   - Factorial example
   - Traversing the DOM
@@ -36,9 +36,8 @@
 
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic02.png" style="top:15.22%; left:67.55%; width:38.79%; z-index:-1" /> -->
 
-
-
 <!-- section start -->
+
 <!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
 # Functions in JavaScript
 
@@ -48,31 +47,34 @@
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Functions in JavaScript -->
-- Functions are small named snippets of code 
+- Functions are small named snippets of code
   - Can be invoked using their identifier (name)
 - Functions can take parameters
   - Parameters can be of **any type**
-- Each function gets two special objects
-  - **arguments** contains all passed arguments
-  - **this** contains information about the context
-    - Different depending of the way the function is used
+- Each function has two **implicit parameters**
+  - `arguments`
+    - Array-like object, has `[index]` and `length`
+    - Contains all passed arguments
+    - Contains information about the function: name, caller, etc...
+  - `this` contains information about the context
+    - Different depending on the way the function is used
 - Function can return a result of **any type**
-  - **undefined** is returned if no return statement
-
+  - `undefined` is returned if `return` statement is missing
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Functions in JavaScript -->
 - Different function usages:
 
-```js
-function max (arr) {
-  var maxValue = arr[0];
-  for 	(var i = 1; i < arr.length; i++) {
-    maxValue = Math.max(maxValue, arr[i]);
-  }  
-  return maxValue;
-}
-```
+  - _Example:_ Find max value in an array
+
+    ```js
+    function max (arr) {
+      var maxValue = arr[0];
+      arr.forEach((val) => maxValue = Math.max(maxValue, val));
+      return maxValue;
+    }
+    ```
+
 ```js
 function printMsg(msg){
   console.log(msg);
@@ -84,9 +86,8 @@ function printMsg(msg){
 ## [Demo]() -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic05.png" style="top:32.44%; left:31.50%; width:46.43%; z-index:-1" /> -->
 
-
-
 <!-- section start -->
+
 <!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
 # Function Object
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic06.png" style="top:42.75%; left:30.12%; width:38.44%; z-index:-1" /> -->
@@ -94,15 +95,17 @@ function printMsg(msg){
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em;' } -->
 <!-- # Function Object -->
+
+- Functions in JavaScript are **First-class objects**
+  - They can be assigned to variables and properties, passed as arguments and returned by other functions
+  - They have properties of their own
+    - `length`, `caller`, `callee`, `name`, `apply`, `call`, `bind` and more
+
 - Functions are one of the **most powerful features** in JavaScript
   - And one of the **most important**
-- **First-class functions**in JavaScript
-  - They can be assigned to variables or properties, passed as arguments and returned by other  functions
-  - They have properties of their own
-    - **length**, **caller**, **name**, **apply**, **call**
 
 ```javascript
-function max(arr){ … }
+function max(arr){ /* ... */ }
 console.log(max.length); //returns 1
 console.log(max.name); //returns "max"
 console.log((function(){}).name));
@@ -123,6 +126,7 @@ function orderBy(x, y) { return x - y; }
 arr.sort(orderBy);
 //better to be done using anonymous function
 //arr.sort(function(x, y){return x - y;});
+//arr.sort((x, y) => x - y);
 ```
 
 <!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
@@ -131,8 +135,8 @@ arr.sort(orderBy);
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic07.png" style="top:56.88%; left:15.42%; width:70.04%; z-index:-1" /> -->
 
 
-
 <!-- section start -->
+
 <!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Defining Functions -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic08.png" style="top:43.76%; left:28.73%; width:45.30%; z-index:-1" /> -->
@@ -154,21 +158,22 @@ var printMsg = new Function("msg", 'console.log("msg");');
 ```
 - Since functions are quite special in JavaScript, they are loaded **as soon as possible**
 
-
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Function Declaration
 - **Function declarations** use the `function` operator to create a function object
-- Functions created with declaration are available anywhere in their scope
+- Functions created with a declaration are available anywhere in their scope
   - No matter where they are declared
-  - This allows using a function before it is defined
+  - This allows using a function on a line above the declaration itself
 
-```js
-printMsg("Hello");
+  - _Example:_
 
-function printMsg(msg){
-    console.log("Message: " + msg);
-}
-```
+    ```js
+    printMsg("Hello");
+
+    function printMsg(msg){
+        console.log("Message: " + msg);
+    }
+    ```
 
 <!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Function Declarations
@@ -178,27 +183,26 @@ function printMsg(msg){
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Function Expression
-- **Function expressions** are created using the function literal 
-  - They are available where they are **defined**
-    - And cannot be used beforehand
+- **Function expressions** are created using the **function literal**
+  - They are available in the code below the line they are **defined**
+    - And cannot be used from the code above
   - Can be invoked immediately
 - The name of function expressions is optional
-  - If the name is missing the function is **anonymous**
+  - If the name is missing the function is called **anonymous**
 
-```js
-var printMsg = function (msg){
-    console.log("Message: " + msg);
-}
+- _Example:_
 
-printMsg("Hello");
-```
+    ```js
+    var printMsg = function (msg){
+        console.log("Message: " + msg);
+    }
+
+    printMsg("Hello");
+    ```
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
 <!-- # Function Expression -->
-- Function expressions do not need an identifier
-  - It is optional
-  - Still it is better to define it for easier debugging
-    - Otherwise the debuggers show **anonymous**
+
 - Types of function expressions
 
 ```js
@@ -206,13 +210,19 @@ var printMsg = function (msg){
     console.log("Message: " + msg);
 }
 ```
+
 ```js
 var printMsg = function printMsg(msg) {
  console.log("Message: " + msg);
 }
 ```
+
 ```js
-(function(){…});
+(function(){/* ... */});
+```
+
+```js
+var printMsg = (msg) => console.log(`Message: ${msg}`);
 ```
 
 
@@ -222,8 +232,8 @@ var printMsg = function printMsg(msg) {
 
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.85em' } -->
-# Function Constructor
-- Functions created with the **Function constructor**are similar to expressions
+# Function Constructors
+- Functions created with the **Function constructor** are similar to expressions
   - A constructor initializes a function object
   - Available when reached
 - The function constructor form is:
@@ -238,8 +248,6 @@ new Function([optional arguments], body);
 - Not commonly used
   - Suitable for dynamically generated code
 
-
-
 <!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Function Constructor
 ## [Demo]() -->
@@ -252,6 +260,7 @@ new Function([optional arguments], body);
 
 
 <!-- section start -->
+
 <!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Function Properties
 ## Object, Values, Methods -->
@@ -262,56 +271,60 @@ new Function([optional arguments], body);
 - Each function is an object
   - Created either with **declaration**, **expression** or **constructor**
 - Functions have properties:
-  - **function.length**
+  - `length`
     - The **count of parameters** the function expects
     - The arguments object is not counted
-  - **function.name**
+  - `name`
     - **Identifier** of the function
-    - Returns an empty string if anonymous 
-
+    - Returns an empty string if anonymous
 
 <!-- section start -->
+
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Function Methods
 - Functions have methods as well
-  - function**.toString()**
+  - `toString()`
     - Returns the code of the functions as a string
-  - function**.call(obj, args)**
-    - Invokes the function with **this set to obj** and the given **args**
-  - function**.apply(obj, [arg1, arg2, …])**
-    - Invokes the function with **this set to obj** and the **arguments** are given as an array **[arg1, arg2, …]**
-- Basically call and apply do the same
-  - One gets **args**, the other gets **array of args**
-
+  - `call(context, arg0, arg1, arg2, ...)`
+    - Invokes the function with `this` set to `context` and the given args: `arg0`, `arg1`, etc...
+  - `apply(context, [arg0, arg1, …])`
+    - Invokes the function with `this` set to `context` and the arguments are given as an array `[arg1, arg2, …]`
+- Basically `call` and `apply` do the same
+  - `call` gets the arguments separated by comma
+  - `apply` gets the arguments as an array of objects
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
 # Call and Apply
-- **Math.max()**, **Math.min()**
+- `Math.max()`, `Math.min()`
 
-```js
-//regular use:
-max = Math.max(n1, n2, n3);
-//with array:
-var numbers = […];
-max = Math.max.apply (Math, numbers);
-min = Math.min.apply (Math, numbers);
-```
-  - **Array#slice**
+  ```js
+  //regular use:
+  max = Math.max(n1, n2, n3);
 
-```js
-function sum(){
-  var args = [].slice.call(arguments, 0);
-  //here args is an array
-  return args.reduce(function(s, n) {
-    return s + n;
-  }, 0);
-}
-```
+  //with array:
+  var numbers = [2, 1, 3, 45, 1, 2, 3, 111];
+  max = Math.max.apply(null, numbers);
+  min = Math.min.apply(null, numbers);
+
+  // easier using the spread operator:
+  max = Math.max(...numbers);
+  min = Math.min(...numbers);
+  ```
+
+- `Array#slice`
+  - Commonly used to convert array-like objects to arrays
+
+  ```js
+  function sum () {
+    var args = [].slice.call(arguments);
+    //here args is an array
+    return args.reduce((s, n) => s + n, 0);
+  }
+  ```
 
 <!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Function Methods
 ## [Demo]() -->
-
 
 <!-- section start -->
 <!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
@@ -319,11 +332,10 @@ function sum(){
 ## Calling functions from themselves -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic15.png" style="top:53.66%; left:32.63%; width:35.83%; z-index:-1" /> -->
 
-
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Recursion
-- Functions can refer to themselves as call to themselves
-  - This is called **recursion**
+- When a function calls themselves, this is called **recursion**
+
 - _Example_:
 
 ```js
@@ -350,9 +362,10 @@ function factorial(n) {
 - Every recursion can be replaced by enough loops, and form the so called iterative solution
   - Yet, in some cases using recursion is much simpler than using loops
 
-
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# Recursion: Factorial
+<!-- # Recursion: Factorial -->
+
+- Calculating `n!`
 
 ```js
 function factorial(n) {
@@ -360,7 +373,7 @@ function factorial(n) {
     return 1;
   }
 
-  return factorial(n-1) * n;	
+  return factorial(n-1) * n;
 }
 
 console.log(factorial(5));  //120
@@ -368,7 +381,7 @@ console.log(factorial(12)); //479001600
 ```
 
 - Using recursion to calculate factorial numbers
-  - Using the formula **F(N) = F(N-1) * N**
+  - Using the formula `F(N) = F(N-1) * N`
 
 
 <!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
@@ -378,28 +391,29 @@ console.log(factorial(12)); //479001600
 
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
-# Traversing the DOM
-- Passing a root element
+<!-- # Traversing the DOM -->
+
+- Traverse the DOM
+  - Passing a root element
   - Each element print its **tag name** and invokes the same function for **each of its children**
 
 ```js
 function traverse(element) {
-  function traverseElement(elem, spacing) {
-    spacing = spacing || ' ';
-    console.log(spacing + elem.nodeName);
-    for (var i=0, len=elem.childNodes.length; i < len; i+=1) {
-      var child = elem.childNodes[i];
-      if (child.nodeType === 1) {
-        traverseElement(child, spacing + '--');
-      }
+  function traverseElement(node, spacing) {
+    if (node.nodeType !== 1) {
+      return;
     }
-    console.log(spacing + '/' + elem.nodeName);
+
+    spacing = spacing || " ";
+
+    console.log(spacing + node.nodeName);
+    [...node.childNodes].forEach(child => traverseElement(child, spacing + "--"));
+
+    console.log(spacing + "/" + node.nodeName);
   }
-  traverseElement(element, '');
+  traverseElement(element, "");
 }
 ```
-
-
 
 <!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # DOM Traversal
@@ -471,8 +485,6 @@ var fact = function (n) {
 };
 ```
 
-
-
   - Assign a number value to the original function
 
 <div class="fragment balloon" style="top:30%; left:50%; width:50%; font-size:0.9em">
@@ -515,30 +527,32 @@ var factorial = function factorial(n) {
   return n * factorial (n - 1);
   //or use arguments.callee
 };
-var factorial2 = factorial; 
+var factorial2 = factorial;
 factorial = 5;
 console.log(factorial2(5)); //logs 120 - correct
 ```
 
 
 <!-- section start -->
+
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Nested Functions
 - Functions can be declared everywhere in the JavaScript code
   - Even inside another function:
-```js
-  function x() {
-      function y() { /* solves international problems  */ }
-  }
-```
+
+    ```js
+      function x() {
+          function y() { /* Solves World Problems  */ }
+      }
+    ```
+
   - Inner functions are available only inside their parent scope
-    - i.e. **y()** can be called only from inside **x()**
-  - _Remark_: every time **x()** is invoked, a new **y()** is created!
-
-
+    - i.e. `y()` can be called only from inside of `x()`
+  - _Note_: every time `x()` is invoked, a new `y()` is created!
 
 
 <!-- section start -->
+
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Immediately Invoked<br/>Function Expressions
 - In JavaScript, functions expressions can be **invoked immediately** after they are defined
@@ -552,18 +566,18 @@ console.log(factorial2(5)); //logs 120 - correct
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Valid IIFE
-- Valid **IIFE**s
+- Valid **IIFEs**
 
-```javascript
-var iife = function(){ console.log("invoked!"); }();
-(function(){ console.log("invoked!"); }());
-(function(){ console.log("invoked!"); })();
-!function(){ console.log("invoked!"); }();
-true && function(){console.log("invoked!"); }();
-1 + function(){console.log("invoked!"); }();
-```
+    ```js
+    var iife = function(){ console.log("invoked!"); }();
+    (function(){ console.log("invoked!"); }());
+    (function(){ console.log("invoked!"); })();
+    !function(){ console.log("invoked!"); }();
+    true && function(){console.log("invoked!"); }();
+    1 + function(){console.log("invoked!"); }();
+    ```
 
-  - In all cases the browser must be explicitly told that the thing before **()** is an expression
+  - In all cases the browser must be explicitly told that the object before the `()` is an expression
 - IIFEs are primary used to create function scope
   - And prevent naming collisions
 

@@ -1,20 +1,17 @@
-function traverse(node) {
-	traverseNode(node, '');
+function traverse(element) {
+  function traverseElement(node, spacing) {
+    if (node.nodeType !== 1) {
+      return;
+    }
+    spacing = spacing || " ";
 
-	function traverseNode(node, spacing) {
-		var i,
-			len,
-			child;
-		spacing = spacing || '  ';
-		console.log(spacing + node.nodeName);
-		for (i = 0, len = node.childNodes.length; i < len; i += 1) {
-			child = node.childNodes[i];
-			if (child.nodeType === 1) {
-				traverseNode(child, spacing + '  ');
-			}
-		}
-		console.log(spacing + '/' + node.nodeName);
-	}
+    console.log(spacing + node.nodeName);
+    [...node.childNodes].forEach(child => traverseElement(child, spacing + "--"));
+
+    console.log(spacing + "/" + node.nodeName);
+  }
+  
+  traverseElement(element, "");
 }
 
 traverse(document.documentElement);
