@@ -22,7 +22,6 @@
 
 
 
-
 <!-- section start -->
 <!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
 # The Module Pattern
