@@ -12,33 +12,33 @@
 
 <!-- attr: { id:'', showInPresentation:true, hasScriptWrapper:true } -->
 # Table of Contents
-- Functions in JavaScript
-- Function object
-- Defining Functions
+- [Functions in JavaScript](#js-functions)
+- [Function object](#function-object)
+- [Defining Functions](#defining-functions)
   - Function declarations
   - Function expressions
   - Function constructor
   - Expression vs. declaration
-- Function properties
-- Function methods
+- [Function properties](#function-properties)
+- [Function methods](#function-methods)
 
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic01.png" style="top:32.88%; left:65.96%; width:38.79%; z-index:-1" /> -->
 
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Table of Contents -->
-- Recursion
+- [Recursion](#recursion)
   - Factorial example
   - Traversing the DOM
   - Recursion with expressions
-- Nested functions
-- Immediately-invoked function expressions
+- [Nested functions](#nested-functions)
+- [Immediately-invoked function expressions](#iifes)
 
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic02.png" style="top:15.22%; left:67.55%; width:38.79%; z-index:-1" /> -->
 
 <!-- section start -->
 
-<!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
+<!-- attr: { id:'js-functions', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
 # Functions in JavaScript
 
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic03.png" style="top:42.60%; left:60.72%; width:35.21%; z-index:-1" /> -->
@@ -86,9 +86,12 @@ function printMsg(msg){
 ## [Demo]() -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic05.png" style="top:32.44%; left:31.50%; width:46.43%; z-index:-1" /> -->
 
+
+
+
 <!-- section start -->
 
-<!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
+<!-- attr: { id:'function-object', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
 # Function Object
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic06.png" style="top:42.75%; left:30.12%; width:38.44%; z-index:-1" /> -->
 
@@ -137,7 +140,7 @@ arr.sort(orderBy);
 
 <!-- section start -->
 
-<!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
+<!-- attr: { id:'defining-functions', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Defining Functions -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic08.png" style="top:43.76%; left:28.73%; width:45.30%; z-index:-1" /> -->
 
@@ -261,7 +264,7 @@ new Function([optional arguments], body);
 
 <!-- section start -->
 
-<!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
+<!-- attr: { id:'function-properties', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Function Properties
 ## Object, Values, Methods -->
 
@@ -279,6 +282,9 @@ new Function([optional arguments], body);
     - Returns an empty string if anonymous
 
 <!-- section start -->
+
+<!-- attr: { id:'function-methods', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
+<!-- # Function Methods -->
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Function Methods
@@ -327,7 +333,7 @@ new Function([optional arguments], body);
 ## [Demo]() -->
 
 <!-- section start -->
-<!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
+<!-- attr: { id:'recursion', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Recursion
 ## Calling functions from themselves -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic15.png" style="top:53.66%; left:32.63%; width:35.83%; z-index:-1" /> -->
@@ -535,6 +541,9 @@ console.log(factorial2(5)); //logs 120 - correct
 
 <!-- section start -->
 
+<!-- attr: { id:'nested-functions', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
+<!-- # Nested Functions -->
+
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Nested Functions
 - Functions can be declared everywhere in the JavaScript code
@@ -552,6 +561,9 @@ console.log(factorial2(5)); //logs 120 - correct
 
 
 <!-- section start -->
+
+<!-- attr: { id:'iifes', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
+<!-- # Immediately Invoked<br/>Function Expressions -->
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Immediately Invoked<br/>Function Expressions
