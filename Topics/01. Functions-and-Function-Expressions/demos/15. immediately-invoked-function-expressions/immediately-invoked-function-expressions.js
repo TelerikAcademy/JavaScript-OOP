@@ -1,3 +1,5 @@
-(function () {
-	console.log('Invoked')
+/* globals console */
+
+(function() {
+    console.log("Invoked");
 }());

@@ -1,15 +1,13 @@
-var maxParams,
-	maxBody,
-	max;
+/* globals console */
 
-maxParams = 'items';
-maxBody =
-	'var maxItem = items[0];' +
-	'for (var i = 1; i < items.length; i += 1) {' +
-	'	if (maxItem < items[i]) {' +
-	'		maxItem = items[i];' +
-	'	}' +
-	'}' +
-	'return maxItem;';
-max = new Function(maxParams, maxBody);
-console.log(max([1, 2, 3, 4]));
+let maxParams = "items";
+let maxBody = `
+let maxItem = items[0];
+for (let item of items) {
+	maxItem = Math.max(item, maxItem);
+}
+return maxItem;
+`;
+
+let maxFunc = new Function(maxParams, maxBody);
+console.log(maxFunc([1, 2, 3, 4]));
