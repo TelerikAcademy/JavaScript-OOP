@@ -6,7 +6,7 @@
 // }(jQuery));
 
 // (function ($) {
-var $root = $('root');
+var $root = $("root");
 
 console.log($root.innerHTML);
 // }(Prototype));
