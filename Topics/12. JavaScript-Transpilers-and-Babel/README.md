@@ -1,7 +1,7 @@
 <!-- section start -->
 <!-- attr: { id:'', class:'slide-title', showInPresentation:true, hasScriptWrapper:true } -->
 # JavaScript Transpilers and Babel
-## generate next generation JavaScript today
+## Generate next generation JavaScript today
 <article class="signature">
 	<p class="signature-course">JavaScript OOP</p>
 	<p class="signature-initiative">Telerik Software Academy</p>
@@ -45,8 +45,8 @@
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Babel -->
-- `babel-core`
-- `babel-cli`
+- `babel-core` - for advanced scenarios
+- `babel-cli` - in order to run babel from the command line
 - Separate packages for each EcmaScript2015 feature in Bable6 
   - Turn on individual features **babel-plugin-* **
     - _Example_: `babel-plugin-transform-es2015-arrow-functions`
@@ -59,14 +59,14 @@
 - Babel CLI - Command Line Interface
   - Can be installed **globally**
 
-```js
+```cmd
 $ npm install -g babel-cli
 $ babel --version
 ```
   - Or **locally** (best practice)
     - Easier to work on projects with others
 
-```js
+```cmd
 $ npm init // creates package.js
 $ npm install babel-cli --save-dev
 // saves in package.js
@@ -78,35 +78,19 @@ $ node_modules/.bin/babel --version
 - Transpiling
   - Use command `$ babel [source] --presets [preset name]`
   - _Example_:
-```js
+```cmd
 $ babel scripts --presets es2015
 ```
   - Can also add `-d` or `--out-dir` parameter for output directory / destination
-```js
+```cmd
 $ babel scripts --presets es2015 -d build
 ```
 
-<!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
-<!-- # Transpiling ES6 Code
-## [Demo]() -->
-
-
-
-<!-- section start -->
-
-<!-- attr: { id:'babel', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
-<!-- # Babel -->
-## Advanced Configurations
-
-<!-- - Use `-o` or `--out-file` to bundle into one file -->
-
-
-
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Configuration
-- `-s` add source map
-- `-w` watch for updates in the source file/s and transpile it if any
-- Can create `.babelrc` file
+- Add `-s` to command add source map
+- Add `-w` to command watch for updates in the source file/s and transpile it if any
+- Can create `.babelrc` file in the root dir
   - Keep all configurations in one place
   - _Example_:
 ```js
@@ -117,15 +101,50 @@ $ babel scripts --presets es2015 -d build
 }
 ```
 
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# Babel Node
-- Using CommonJS plugin for babel
-
-
 <!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
-<!-- # Module loading
+<!-- # Transpiling ES6 Code
 ## [Demo]() -->
 
+
+
+<!-- section start -->
+
+<!-- attr: { id:'browser-support', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
+<!-- # Babel
+## Browser Support -->
+
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
+# Browser Support
+- For older browsers like IE9, IE8
+- Install Babel Polyfill
+
+```cmd
+$ npm install babel-polyfill --save
+```
+- Add `<script src="../node-modules/babel-polyfill/dist/polyfill.js">` to html file
+- Transpile the ES2015 code using Babel
+
+
+
+<!-- section start -->
+
+<!-- attr: { id:'summary', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
+<!-- # Summary -->
+
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
+# Summary
+- Install `babel-cli` locally using:
+```cmd
+$ npm init // creates package.js
+$ npm install babel-cli --save-dev
+```
+- Create a `.babelrc` file for configurations
+- Run ```babel [source] -d [destination]```
+- For Browser support include polyfill
+
+```cmd
+$ npm install babel-polyfill --save
+```
 
 <!-- Questions -->
 <!-- section start -->
