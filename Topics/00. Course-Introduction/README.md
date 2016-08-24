@@ -144,7 +144,7 @@
 # Required Software
 - Software needed for this course:
   - Microsoft Visual Studio Code
-    - Microsoft **Visual Studio****2013** or Visual Studio Community 2013 (free version of VS 2013) are also good enought
+    - Microsoft **Visual Studio 2015** or Visual Studio Community 2015 (free version of VS 2015) are also good enought
   - Sublime Text 2/3
   - JetBrains WebStorm
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic35.png" style="top:63.47%; left:24.50%; width:59.61%; z-index:-1" /> -->
