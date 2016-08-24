@@ -2,16 +2,17 @@
 <!-- attr: { id:'', class:'slide-title', showInPresentation:true, hasScriptWrapper:true } -->
 # Scopes and Closures
 ## Things start to get serious
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic00.png" style="top:0.91%; left:44.91%; width:58.18%; z-index:-1" /> -->
+
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic01.png" style="top:48.48%; left:65.53%; width:38.79%; z-index:-1" /> -->
+
 <article class="signature">
 	<p class="signature-course">JavaScript OOP</p>
 	<p class="signature-initiative">Telerik Software Academy</p>
 	<a href="http://academy.telerik.com " class="signature-link">http://academy.telerik.com </a>
 </article>
 
-
-<!-- attr: { id:'', showInPresentation:true, hasScriptWrapper:true } -->
+<!-- section start -->
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Table of Contents
 - [Scopes](#scope)
   - Block and function scope
@@ -22,28 +23,27 @@
   - What is a Closure?
   - How to deal with closures?
   - Simple modules
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic02.png" style="top:44.08%; left:65.96%; width:38.79%; z-index:-1" /> -->
-
 
 
 <!-- section start -->
 <!-- attr: { id:'scope', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
 # Scope
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic03.png" style="top:42.55%; left:29.42%; width:43.47%; z-index:-1" /> -->
+
+<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic03.png" style="top:45%; left:30.1%; width:40%; border-radius: 15px" /> -->
 
 
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.85em' } -->
 <!-- # Scope -->
 - Scope is a place where variables are defined and can be accessed
 - JavaScript has only two types of scopes
-  - **Global** scope and **function** scope
-    - Global scope is the same for the whole web page
-    - Function scope is different for every function
+  - **Global scope** and **function scope**
+    - **Global scope** is the same for the whole web page
+    - **Function scope** is different per function
   - Everything outside of a function scope is inside of the global scope
 
 ```js
 if(true) {
-    var sum = 1+2;
+    var sum = 1 + 2;
 }
 console.log(sum);
 ```
@@ -51,14 +51,14 @@ console.log(sum);
 <div class="fragment balloon" style="top:64.83%; left:46.52%; width:48.28%">The scope of the if is the global scope.<br/>`sum` is accessible from everywhere</div>
 
 
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.8em' } -->
 # Global Scope
 - The global scope is the scope of the web page
   - Or the Node.js app
 - Objects belong to the global scope if:
-  - They are define **outside of a function scope**
+  - They are defined **outside of a function scope**
   - They are defined **without var**
-    - Fixable with **'use strict'**
+    - Fixable with `'use strict'`
 
 ```js
 function arrJoin(arr, separator) {
@@ -89,29 +89,42 @@ function arrJoin(arr, separator) {
 <!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Global Scope
 ## [Demo]() -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic04.png" style="top:17.94%; left:15.25%; width:77.05%; z-index:-1" /> -->
 
 
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.85em' } -->
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.8em' } -->
 # Function Scope
-- JavaScript does not have a block scope like other programming languages (C#, Java, C++)
+- JavaScript **does not have a block scope** like other programming languages (C#, Java, C++)
   - **{** and **}** does not create a scope!
 - Yet, JavaScript has a function scope
-  - **Function expressions** create scope
-  - **Function declarations** create scope
+  - **Function expressions and declarations** create scope
+
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.8em' } -->
+<!-- # Function Scope - _Example_ -->
 
 ```js
-if(true) { var result = 5; }
-console.log(result);//logs 5
+if(true) { 
+  var result = 5;
+}
+console.log(result); //logs 5
 ```
+
 ```js
-if(true) { (function(){ var result = 5; })(); }
-console.log(result);//ReferenceError
-```
-```js
-function logResult(){ var result = 5; }
-if(true) { logResult(); }
+if(true) {
+  (function(){ 
+    var result = 5;
+  })();
+}
 console.log(result); //ReferenceError
+```
+
+```js
+function logResult (){ 
+  var result = 5;
+}
+if(true) { 
+  logResult();
+}
+console.log(result);  //ReferenceError
 ```
 
 
@@ -119,15 +132,14 @@ console.log(result); //ReferenceError
 <!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Function Scope
 ## [Demo]() -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic05.png" style="top:36.22%; left:20.82%; width:50.12%; z-index:-1" /> -->
 
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.85em' } -->
 # Resolving References<br/>through the Scope Chain
 - JavaScript resolves the object references due to the simple rule "**Closer is better**":
-  - if a function **outer()** declares object **x**, and its nested function **inner()** declares object **x**:
-    - outer() holds a reference to the outer x
-    - inner() holds a reference to the inner x
+  - if a function `outer()` declares object **x**, and its nested function `inner()` declares object **x**:
+    - `outer()` holds a reference to the **outer x**
+    - `inner()` holds a reference to the **inner x**
 
 ```js
 function outer() { 
@@ -142,28 +154,30 @@ function outer() {
 ```
 
 
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.8em' } -->
 # ECMAScript 6<br/>Way of Working with Scopes
 - ECMAScript 6 introduces a new way to handle scopes:
-  - The key word '**let**'
-- **let** is much like **var** - цreates a variable
-- But, **let creates a block scope**
+  - The key word '`let`'
+- `let` is much like `var` - creates a variable
+- But, **`let` creates a block scope**
 
 ```js
 if(false) {
   var x = 5;
   let y = 6;
+  const z = 7;
 }
 
-console.log(x); //prints undefined
-console.log(y); //throws error
+console.log(x); // prints undefined
+console.log(y); // throws error - y is block scoped because of let
+console.log(z); // throws error - z is block scoped because of const
 ```
 
 
 <!-- section start -->
 <!-- attr: { id:'closures', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
 # Closures
-
+<!-- <img class="slide-image" showInPresentation="true" src="imgs\closures.png" style="top:45%; left:32.5%; width:35%; border-radius: 15px" /> -->
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
 <!-- # Closures -->
@@ -197,10 +211,10 @@ console.log(f2("Petrov"));  //outputs Peter Petrov
 <div class="fragment balloon" style="top:72%; left:63.83%; width:21%">In the context of f2, **x has value "Peter"**</div>
 
 
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.8em' } -->
 # Closures Usage
-- Closures can be used for data hiding
-  - Make objects invisible to the outside 
+- Closures can be used for **data hiding**(**encapsulation**)
+  - Make objects invisible to the outside world
     - Make them private
 
 ```js
@@ -218,14 +232,14 @@ var school = (function() {
         getStudents: getStudents
     };
 })();
+// students and teachers are not accessible here
 ```
 
 <div class="fragment balloon" style="top:60.01%; left:60.01%; width:27.37%">This is actually called a **Module**</div>
 
 
-<!-- Questions -->
 <!-- section start -->
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true, class:"slide-questions", id:"questions" } -->
+<!-- attr: { class:'slide-section', showInPresentation:true, id:'questions' } -->
 <!-- # Scopes and Closures
 ## Questions? -->
 
@@ -239,6 +253,4 @@ var school = (function() {
   - Telerik Academy @ Facebook
     - [facebook.com/TelerikAcademy](facebook.com/TelerikAcademy)
   - Telerik Software Academy Forums
-    - [forums.academy.telerik.com](http://telerikacademy.com/Forum/Home)
-
-<!-- <img class="slide-image" showInPresentation="true"  src="imgs/pic00.png" style="top:58.18%; left:90.52%; width:16.97%; z-index:-1" /> -->
+    - [forums.academy.telerik.com](http://telerikacademy.com/Forum/Home
