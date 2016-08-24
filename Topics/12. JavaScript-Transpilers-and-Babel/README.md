@@ -45,8 +45,8 @@
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Babel -->
-- `babel-core`
-- `babel-cli`
+- `babel-core` - for advanced scenarios
+- `babel-cli` - in order to run babel from the command line
 - Separate packages for each EcmaScript2015 feature in Bable6 
   - Turn on individual features **babel-plugin-* **
     - _Example_: `babel-plugin-transform-es2015-arrow-functions`
