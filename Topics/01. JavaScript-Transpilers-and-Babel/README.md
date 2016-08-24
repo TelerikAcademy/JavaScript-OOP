@@ -73,9 +73,13 @@ $ npm install babel-cli --save-dev
 $ node_modules/.bin/babel --version
 ```
 
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.85em' } -->
 # Transpiling ES6 Code
 - Transpiling
+  - Install **preset** or **plugin** using `npm`
+```cmd
+$ npm install babel-preset-es2015 --save-dev
+```
   - Use command `$ babel [source] --presets [preset name]`
   - _Example_:
 ```cmd
