@@ -1,0 +1,33 @@
+{
+  "name": "ES2015Demos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run clean && npm run build:js && npm run build:css && npm run build:html",
+    "build:html": "cp src/index.html dist/index.html",
+    "build:css": "cp src/site.css dist/site.css",
+    "clean": "rm -r dist/*",
+    "build:js": "babel src --out-dir dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/craigmckeachie/ES2015Demos.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/craigmckeachie/ES2015Demos/issues"
+  },
+  "homepage": "https://github.com/craigmckeachie/ES2015Demos",
+  "dependencies": {
+    "babel-polyfill": "^6.3.14"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.2.0",
+    "babel-plugin-transform-es3-member-expression-literals": "^6.3.13",
+    "babel-plugin-transform-es3-property-literals": "^6.3.13",
+    "babel-preset-es2015": "^6.1.18"
+  }
+}
