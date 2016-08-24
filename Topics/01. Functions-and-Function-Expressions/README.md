@@ -45,7 +45,7 @@
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic04.png" style="top:42.60%; left:9.51%; width:37.91%; z-index:-1" /> -->
 
 
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style :"font-size:0.9em" } -->
 <!-- # Functions in JavaScript -->
 - Functions are small named snippets of code
   - Can be invoked using their identifier (name)
@@ -75,16 +75,15 @@
     }
     ```
 
-```js
-function printMsg(msg){
-  console.log(msg);
-}
-```
+    ```js
+    function printMsg(msg){
+      console.log(msg);
+    }
+    ```
 
 <!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Functions in JavaScript
 ## [Demo]() -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic05.png" style="top:32.44%; left:31.50%; width:46.43%; z-index:-1" /> -->
 
 
 
@@ -102,10 +101,9 @@ function printMsg(msg){
 - Functions in JavaScript are **First-class objects**
   - They can be assigned to variables and properties, passed as arguments and returned by other functions
   - They have properties of their own
-    - `length`, `caller`, `callee`, `name`, `apply`, `call`, `bind` and more
+    - `length`, `name`, `apply`, `call`, `bind` and more
 
 - Functions are one of the **most powerful features** in JavaScript
-  - And one of the **most important**
 
 ```javascript
 function max(arr){ /* ... */ }
@@ -161,12 +159,12 @@ var printMsg = new Function("msg", 'console.log("msg");');
 ```
 - Since functions are quite special in JavaScript, they are loaded **as soon as possible**
 
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style: "font-size:0.9em" } -->
 # Function Declaration
 - **Function declarations** use the `function` operator to create a function object
-- Functions created with a declaration are available anywhere in their scope
-  - No matter where they are declared
-  - This allows using a function on a line above the declaration itself
+  - Functions created with a declaration are available anywhere in their scope
+    - No matter where they are declared
+    - This allows using a function above the declaration itself
 
   - _Example:_
 
@@ -184,16 +182,15 @@ var printMsg = new Function("msg", 'console.log("msg");');
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic09.png" style="top:55.54%; left:35.30%; width:30.34%; z-index:-1" /> -->
 
 
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style: "font-size:0.9em" } -->
 # Function Expression
 - **Function expressions** are created using the **function literal**
-  - They are available in the code below the line they are **defined**
-    - And cannot be used from the code above
+  - They are available in the code below they are **defined**
   - Can be invoked immediately
-- The name of function expressions is optional
-  - If the name is missing the function is called **anonymous**
+  - The name of function expressions is optional
+    - If the name is missing the function is called **anonymous**
 
-- _Example:_
+  - _Example:_
 
     ```js
     var printMsg = function (msg){
@@ -254,12 +251,6 @@ new Function([optional arguments], body);
 <!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Function Constructor
 ## [Demo]() -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic11.png" style="top:51.22%; left:75.55%; width:27.55%; z-index:-1" /> -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic12.png" style="top:51.22%; left:12.12%; width:27.44%; z-index:-1" /> -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic13.png" style="top:7.91%; left:61.47%; width:31.74%; z-index:-1" /> -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic14.png" style="top:7.91%; left:21.24%; width:29.09%; z-index:-1" /> -->
-
-
 
 
 <!-- section start -->
@@ -286,15 +277,15 @@ new Function([optional arguments], body);
 <!-- attr: { id:'function-methods', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Function Methods -->
 
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style: "font-size: 0.9em" } -->
 # Function Methods
 - Functions have methods as well
   - `toString()`
     - Returns the code of the functions as a string
-  - `call(context, arg0, arg1, arg2, ...)`
+  - `call(context, arg0, arg1, ...)`
     - Invokes the function with `this` set to `context` and the given args: `arg0`, `arg1`, etc...
   - `apply(context, [arg0, arg1, …])`
-    - Invokes the function with `this` set to `context` and the arguments are given as an array `[arg1, arg2, …]`
+    - Invokes the function with `this` set to `context` and the arguments are given as an array `[arg0, …]`
 - Basically `call` and `apply` do the same
   - `call` gets the arguments separated by comma
   - `apply` gets the arguments as an array of objects
@@ -311,10 +302,6 @@ new Function([optional arguments], body);
   var numbers = [2, 1, 3, 45, 1, 2, 3, 111];
   max = Math.max.apply(null, numbers);
   min = Math.min.apply(null, numbers);
-
-  // easier using the spread operator:
-  max = Math.max(...numbers);
-  min = Math.min(...numbers);
   ```
 
 - `Array#slice`
@@ -393,7 +380,6 @@ console.log(factorial(12)); //479001600
 <!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Factorial
 ## [Demo]() -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic16.png" style="top:45%; left:60%; width:40%; z-index:-1" /> -->
 
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
@@ -544,7 +530,7 @@ console.log(factorial2(5)); //logs 120 - correct
 <!-- attr: { id:'nested-functions', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Nested Functions -->
 
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style: "font-size: 0.9em" } -->
 # Nested Functions
 - Functions can be declared everywhere in the JavaScript code
   - Even inside another function:
