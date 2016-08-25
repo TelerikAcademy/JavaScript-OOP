@@ -8,7 +8,7 @@
 
 ### Methods
 - provide a method `append(el1, el2, el3...)` that adds the provided elements to the end of the list
-    - should support chaining
+    - should enable chaining
 
 ```js
 const list = new LinkedList();
@@ -17,7 +17,7 @@ list.append(1, 2, 3).append(4);
 ```
 
 - provide a method `prepend(el1, el2, el3...)` that adds the provided elements to the beggining of the list
-    - should support chaining
+    - should enable chaining
 
 ```js
 const list = new LinkedList();
@@ -91,7 +91,7 @@ console.log(arr); // [1, 2, 3, 4, 5, 6]
 console.log(arr instanceof Array); // true
 ```
 
-- provide method `toString()`, which should return a string representation of the linked list - the values of the elements, separated by '**->**'
+- provide method `toString()`, which should return a string representation of the linked list - the values of the elements, separated by **' -> '**
 
 ```js
 const list = new LinkedList();
