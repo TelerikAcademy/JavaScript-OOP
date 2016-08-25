@@ -45,7 +45,7 @@
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic04.png" style="top:42.60%; left:9.51%; width:37.91%; z-index:-1" /> -->
 
 
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style :"font-size:0.9em" } -->
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style :"font-size:0.85em" } -->
 <!-- # Functions in JavaScript -->
 - Functions are small named snippets of code
   - Can be invoked using their identifier (name)
@@ -67,19 +67,19 @@
 
   - _Example:_ Find max value in an array
 
-    ```js
-    function max (arr) {
-      var maxValue = arr[0];
-      arr.forEach((val) => maxValue = Math.max(maxValue, val));
-      return maxValue;
-    }
-    ```
+```js
+function max (arr) {
+  var maxValue = arr[0];
+  arr.forEach((val) => maxValue = Math.max(maxValue, val));
+  return maxValue;
+}
+```
 
-    ```js
-    function printMsg(msg){
-      console.log(msg);
-    }
-    ```
+```js
+function printMsg(msg){
+  console.log(msg);
+}
+```
 
 <!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Functions in JavaScript

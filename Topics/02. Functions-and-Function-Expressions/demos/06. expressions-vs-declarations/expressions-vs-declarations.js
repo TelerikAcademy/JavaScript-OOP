@@ -1,6 +1,6 @@
 if (true) {
 	//remove the comment to fix the bug
-	//var print = 
+	// var print = 
 	function print(msg) {
 		console.log('--from if');
 		console.log(msg);
