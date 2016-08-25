@@ -1,0 +1,1 @@
+{"version":3,"sources":["math.js"],"names":[],"mappings":";;;;;QAAgB,GAAG,GAAH,GAAG;;AAAZ,SAAS,GAAG,CAAE,CAAC,EAAE,CAAC,EAAE;AAAE,SAAO,CAAC,GAAG,CAAC,CAAA;CAAE;;AACpC,IAAI,EAAE,GAAG,QAAQ,CAAA;QAAb,EAAE,GAAF,EAAE","file":"math-compiled.js","sourcesContent":["export function sum (x, y) { return x + y }\r\nexport var pi = 3.141593"]}
