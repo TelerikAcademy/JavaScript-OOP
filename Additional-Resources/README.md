@@ -3,6 +3,7 @@
 - Babel
   - [Video course](https://app.pluralsight.com/library/courses/babel-get-started/table-of-contents)
 - ES 2015 overview
+  - [Article](https://github.com/lukehoban/es6features#readme)
   - [Article](https://babeljs.io/docs/learn-es2015/)
   - [Video Course](https://app.pluralsight.com/library/courses/nodejs-es6-web-apps/table-of-contents)
 - OOP in JavaScript with ES2015
