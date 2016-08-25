@@ -10,6 +10,104 @@
 
 <!-- section start -->
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
+# Table of Contents
+
+<!-- section start -->
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, class:'slide-section' } -->
+# Classes
+## The essentials
+
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
+<!-- # Classes -->
+- ES6 introduces the `class` keyword
+  - Used to create classes
+
+```javascript
+class ClassName {
+	/*
+	   properties, methods, ...
+	*/
+}
+```
+
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
+<!-- # Classes -->
+- Classes can have constructors
+  - Non-parameterized
+
+```javascript
+class Person {
+	constructor() {
+		this._name = '';
+	}
+}
+```
+  - Parameterized
+
+```javascript
+class Rectangle {
+	constructor(width, height) {
+		this._width = width;
+		this._height = height;
+	}
+}
+```
+
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
+<!-- # Classes -->
+- Constructors can set initial values for private fields
+  - There is no real private in JavaScript
+  - Prefix private field names with underscore (`_`)
+
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
+<!-- # Classes -->
+- Methods are defined similarly to constructors
+
+```javascript
+class Person {
+	constructor(name) {
+		this._name = name;
+	}
+
+	introduce() {
+		console.log(`Hi, I am ${this._name}.`);
+	}
+}
+```
+
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
+<!-- # Classes -->
+```javascript
+class Rectangle {
+	constructor(width, height) {
+		this._width = width;
+		this._height = height;
+	}
+	area() {
+		return this._width * this._height;
+	}
+	perimeter() {
+		return (this._width + this._height) * 2;
+	}
+}
+
+let trainer = new Person('John');
+console.log(trainer.introduce());
+
+let rect = new Rectangle(100, 42);
+console.log(rect.area());
+console.log(rect.perimeter());
+```
+
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
+- Properties with getters and setters can also be defined
+
+```javascript
+class Person
+```
+
+<!-- section start -->
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Classes and Inheritance in ES6
 - ES6 introduces classes and a way to create classical OOP
 
