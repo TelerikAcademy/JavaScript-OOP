@@ -12,7 +12,7 @@
 # Table of Contents
 - [JavaScript Transpilers](#js-transpilers)
 - [Babel](#babel)
-  - Instalation and Setup
+  - Installation and Setup
   - Using Babel
 
 
