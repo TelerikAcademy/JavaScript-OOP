@@ -24,12 +24,12 @@
 
 <!-- section start -->
 <!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
-# The Module Pattern
+<!-- # The Module Pattern -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic05.png" style="top:45.26%; left:32.91%; width:32.55%; z-index:-1" /> -->
 
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# Pros and Cons
+# The Module Pattern:<br/>Pros and Cons
 - Pros:
   - “Modularize” code into re-useable objects
   - Variables/functions not in global namespace
@@ -64,33 +64,34 @@ var controls = (function () {
   function formatResult(name, value) {
     return name + ' says the result is ' + value;
   }
-  var calculator = {
-    init: function (name) { /* init code */ },
-    add: function (x) { /* code to add */ },
-    subtract: function (x) { /* code to subtract */ },
-    showResult: function () { /* code to show result */ }
+  class Calculator {
+    constructor(name) {
+        this.name = name;
+        this.result = 0;
+    };
+    add(x) { this.result += +x; };
+    subtract(x) { this.result -= +x; };
+    showResult() {
+      console.log(formatResult(this.name, this.result));
+    };
   };
   return {
-    getCalculator: function (name) {
-      return Object.create(calculator)
-        .init(name);
-    }
+    getCalculator: (name) => new Calculator(name)
   };
 } ());
-```
-```js
+
 controls.getCalculator('First')
   .add(7).showResult().subtract(2).showResult();
 ```
 
 <div class="fragment balloon" style="top:12%; left:58%; width:30%">The visible members create closures with them</div>
-<div class="fragment balloon" style="top:62%; left:45%; width:20%">Visiable method</div>
+<div class="fragment balloon" style="top:66%; left:17%; width:20%">Visiable method</div>
 
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Module Pattern: Summary
 - Module pattern provides **encapsulation** of variables and functions 
-- Provides a way to add **visibility** (public versus private) to members 
+- Provides a way to **add visibility** (public versus private) to members 
 - Each object instance creates new copies of functions in memory
 
 
@@ -103,8 +104,8 @@ controls.getCalculator('First')
 
 <!-- section start -->
 <!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
-# The Revealing Module Pattern
-## Reveal the most interesting members
+<!-- # The Revealing Module Pattern
+## Reveal the most interesting members -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic07.png" style="top:8.04%; left:76.39%; width:22.92%; z-index:-1" /> -->
 
 
@@ -132,7 +133,7 @@ var module = (function() {
 	//hidden functions 
 
 	return {
-             //visible members
+     //visible members
 		someFunc: referenceToFunction
 		anotherFunc: referenceToOtherFunction	
 	};
@@ -149,31 +150,32 @@ var controls = (function () {
   function formatResult(name, value) {
     return name + ' says the result is ' + value;
   }
-  var calculator = {
-    init: function (name) { /* init code */ },
-    add: function (x) { /* code to add */ },
-    subtract: function (x) { /* code to subtract */ },
-    showResult: function () { /* code to show result */ }
+  class Calculator {
+    constructor (name) { /* init code */ },
+    add (x) { /* code to add */ },
+    subtract (x) { /* code to subtract */ },
+    showResult () { /* code to show result */ }
   };
-  function getCalculator(name){
-    return Object.create(calculator).init(name);
-  }
-  return { getCalculator: getCalculator };
+
+  var getCalculator = (name) => new Calculator(name);
+  
+  return { getCalculator };
 } ());
+
 controls.getCalculator('First')
-  .add(7) .showResult() .subtract(2) .showResult();
+  .add(7).showResult().subtract(2).showResult();
 ```
 
-<div class="fragment balloon" style="top:52.69%; left:40.94%; width:28.70%">Create the function hidden</div>
+<div class="fragment balloon" style="top:51%; left:18%; width:28.70%">Create the function hidden</div>
 
-<div class="fragment balloon" style="top:36.78%; left:54.29%; width:32.89%">Expose (reveal) only references to hidden member</div>
+<div class="fragment balloon" style="top:65%; left:42%; width:32.89%">Expose (reveal) only references to hidden member</div>
 
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Revealing Module Pattern: Summary
-- Module pattern provides encapsulation of variables and functions 
-- Provides a way to add visibility (public versus private) to members 
-- Extending objects can be difficult since no prototyping is used
+- Module pattern provides **encapsulation** of variables and functions 
+- Provides a way to **add visibility** (public versus private) to members 
+- Extending objects can be difficult
 
 
 <!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
@@ -184,71 +186,21 @@ controls.getCalculator('First')
 
 
 <!-- section start -->
-<!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
-<!-- # Singleton Pattern
-## One object to rule them all! -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic09.png" style="top:56%; left:25%; width:50%; z-index:-1" /> -->
-
-
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
-# Singleton Pattern:<br/> Structure
-- Singleton pattern introduces a single instance each time an instance is requested
-  - Harder in other languages, in JavaScript every IIFEs forms a singleton
-- Structure:
-
-```js
-var module = function() {
-  var instance = { /* code for instance */};
-  instance = Object.preventExtensions(instance);
-  return {
-    get: function(){
-      return instance;
-    }
-  };
-}();
-```
-
-
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# Singleton Pattern:<br/>_Example_
-
-```javascript
-var calculator = (function () {
-  var calculator = {
-    result: 0,
-    add: function (x) { /* code for add */ },
-    subtract: function (x) { /* code for subtract */ },   
-    showResult: function () { /* show result */ }
-  };
-  calculator = Object.preventExtensions(calculator);   
-  return { get: function () { return calculator; } };
-} ());
-
-calculator.get() .add(7) .subtract(17) .showResult();
-//result is -10
-calculator.get() .add(111) .showResult();
-//result is 101 (continues from the previous)
-```
-
-
-<!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
-<!-- # Singleton Pattern
-## [Demo]() -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic10.png" style="top:43%; left:70%; width:30%; z-index:-1" /> -->
-
-
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
+<!-- attr: { class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
 # Augmenting Modules
-- Augmenting modules means "Split modules in many files/IIFEs:
+
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
+<!-- # Augmenting Modules -->
+- Augmenting modules means to Split modules in many files/IIFEs:
   - Can be used like a module/revealing module pattern, but with a small fix:
-    - module-1.js
+    - `module-1.js`
 ```javascript
 var module = module || {}; // if module exists
 (function(scope){
   scope.obj1 = { /* core for obj1 */ };
 }(module));
 ```
-    - module-2.js
+    - `module-2.js`
 ```javascript
 var module = module || {}; // if module exists
 (function(scope){
@@ -264,6 +216,83 @@ var module = module || {}; // if module exists
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic11.png" style="top:45%; left:0%; width:40%; z-index:-1" /> -->
 
 
+<!-- section start -->
+<!-- attr: { class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
+<!-- # Importing and Exporting Modules
+## The EcmaScript2015 way -->
+
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
+# Importing Modules
+- Import an entire module's contents
+
+```js
+import * as myModule from "my-module";
+```
+- Import a single member of a module. This inserts myMember into the current scope.
+
+```js
+import {myMember} from "my-module";
+```
+Import multiple members of a module. This inserts both foo and bar into the current scope.
+
+```js
+import {foo, bar} from "my-module";
+```
+
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.8em' } -->
+<!-- # Importing Modules -->
+- Import a member with a more convenient alias. This inserts shortName into the current scope.
+
+```js
+import {reallyLongModuleMemberName as shortName} from "my-module";
+```
+- Import multiple members of a module with convenient aliases.
+
+```js
+import {reallyReallyLongModuleMemberName as shortName,
+anotherLongModuleName as short} from "my-module";
+```
+- Import an entire module for side effects only, without importing any bindings.
+
+```js
+import "my-module";
+```
+
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
+# Exporting Modules
+- Named exports
+
+```js
+export { myFunction }; // exports a function declared earlier
+export const foo = Math.sqrt(2); // exports a constant
+```
+- Default exports (only one per script)
+
+```js
+export default function() {} // or 'export default class {}'
+// there is no semi-colon here
+```
+
+- More info on [import](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import)
+- More info on [export](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/export)
+
+
+# Examples
+- In the module, we could use the following code
+```js
+// module "my-module.js"
+export function cube(x) {
+    return x * x * x;
+}
+const foo = Math.PI + Math.SQRT2;
+export { cube, foo };
+```
+- in another script, we could have
+```js
+import { cube as cb, foo } from 'my-module';
+console.log(cb(3)); // 27
+console.log(foo);    // 4.555806215962888
+```
 
 <!-- Questions -->
 <!-- section start -->
