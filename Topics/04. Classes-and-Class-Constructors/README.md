@@ -2,108 +2,175 @@
 <!-- attr: { class:'slide-title', hasScriptWrapper:true } -->
 # ES6 Classes and Class Constructors 
 
-<div class="signature">
+<article class="signature">
 	<p class="signature-course">JavaScript OOP</p>
 	<p class="signature-initiative">Telerik Software Academy</p>
 	<a href="http://academy.telerik.com" class="signature-link">http://academy.telerik.com</a>
-</div>
+</article>
+
+<!-- <img src="imgs/es6.png" showInPresentation="true" class="slide-image" style="top: 55%; right: 10%; width: 15%" /> -->
 
 <!-- section start -->
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Table of Contents
+- What are ES6 classes?
+- Creating and using ES6 classes
+  - Constructors
+  - Methods and properties
 
 <!-- section start -->
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, class:'slide-section' } -->
 # Classes
-## The essentials
+## What is a class?
+
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style: 'font-size: 0.85em;' } -->
+<!-- # Classes -->
+- Classes in general are used as **blueprints or templates for creation of objects**. Classes gives us a way to:
+  - Create objects that have similar properties and behaviour
+  - Reuse code and functionality between different object via **inheritance**
+  - Hide implementation details and expose only what is needed - **encapsulation** and **abstraction**
+  - Treat objects that have similar behaviour, but different concrete types, the same - **polymorphism**
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-<!-- # Classes -->
+# ES6 Classes
 - ES6 introduces the `class` keyword
-  - Used to create classes
+  - Classes in JavaScript are actually functions
 
-```javascript
-class ClassName {
-	/*
-	   properties, methods, ...
-	*/
+```js
+class Superhero {
+  
 }
+
+console.log(typeof Superhero); // logs 'function'
+```
+
+
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style: 'font-size: 0.85em;' } -->
+# ES6 Classes
+- Lets create a class that has some data and use the class to create an object of that type:
+  - an object of a class is created by calling the `class name` as a function with the `new` operator.
+
+```js
+class Horse {
+    constructor(name, furColor, age) {
+        this._name = name;
+        this._furColor = furColor;
+        this._age = age;
+    }
+}
+
+const horse = new Horse('Trendafil', 'brown', 2);
+console.log(horse); 
+// { _name: 'Trendafil', _furColor: 'brown', age: 2 }
+```
+
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
+# The `new` keyword
+- What happens when a function is called with the `new` keyword?
+
+```js
+function F() {
+    console.log(this);
+    this.prop = 'hello';
+};
+
+const f = new F();
+console.log(f); // { prop: 'hello' }
+```
+
+# The `new` keyword
+- The `new` keyword sets the **context** of the function to a new object
+- The result of the function execution will be the new object
+
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style: 'font-size: 0.85em;' } -->
+# The `class constructor`
+- The `class constructor` is a kind-of-function that is called with `new` and is executed when an object of a class is created
+- In the following example the `class constructor` will be called with its context set to a new object `{}`
+
+```js
+class Horse {
+    constructor(name, furColor, age) {
+        this._name = name;
+        this._furColor = furColor;
+        this._age = age;
+    }
+}
+
+const horse = new Horse('Trendafil', 'brown', 2);
+```
+
+# The `class constructor`
+- `Class constructors` are obligatory and can be omitted. The following two snippets are equivalent:
+
+```js
+class Superhero { }
+
+const gosho = new Superhero();
+```
+
+```js
+class Superhero {
+    constructor() { }
+}
+
+const gosho = new Superhero();
+```
+
+
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
+# Methods
+- Classes can define methods with the same syntax as a constructor:
+
+```js
+class Cat {
+    constructor(name) {
+        this._name = name;
+    }
+
+    meow() {
+        console.log(this.name + ': meow!');
+    }
+}
+
+const mariya = new Cat('Mariya');
+mariya.meow();
 ```
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
-<!-- # Classes -->
-- Classes can have constructors
-  - Non-parameterized
+# Getters and setters
+- Classes also provide **getter** and **setter** syntax
+  - Getters and setters are used like data fields, but are actually methods
+  - Can be used to encapsulate data and control access to it
+  - Getters to get values of private properties
+  - Setter to change values of private properties
 
-```javascript
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.8em' } -->
+# Getters and setters
+
+```js
 class Person {
-	constructor() {
-		this._name = '';
-	}
-}
-```
-  - Parameterized
+    constructor(firstname, lastname) {
+        this._firstname = firstname;
+        this._lastname = lastname;
+    }
 
-```javascript
-class Rectangle {
-	constructor(width, height) {
-		this._width = width;
-		this._height = height;
-	}
-}
-```
+    get fullname() {
+      return this._firstname + ' ' + this._lastname;
+    }
 
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-<!-- # Classes -->
-- Constructors can set initial values for private fields
-  - There is no real private in JavaScript
-  - Prefix private field names with underscore (`_`)
+    set firstname(value) {
+        this._firstname = value;
+    }
 
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-<!-- # Classes -->
-- Methods are defined similarly to constructors
-
-```javascript
-class Person {
-	constructor(name) {
-		this._name = name;
-	}
-
-	introduce() {
-		console.log(`Hi, I am ${this._name}.`);
-	}
-}
-```
-
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
-<!-- # Classes -->
-```javascript
-class Rectangle {
-	constructor(width, height) {
-		this._width = width;
-		this._height = height;
-	}
-	area() {
-		return this._width * this._height;
-	}
-	perimeter() {
-		return (this._width + this._height) * 2;
-	}
+    set lastname(value) {
+      this._lastname = value;
+    }
 }
 
-let trainer = new Person('John');
-console.log(trainer.introduce());
-
-let rect = new Rectangle(100, 42);
-console.log(rect.area());
-console.log(rect.perimeter());
-```
-
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-- Properties with getters and setters can also be defined
-
-```javascript
-class Person
+const peter = new Person('peter', 'anderson');
+console.log(peter.fullname);
+peter.lastname = 'petrov';
+console.log(peter.fullname);
 ```
 
 <!-- section start -->
