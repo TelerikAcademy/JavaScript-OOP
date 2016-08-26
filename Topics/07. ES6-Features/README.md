@@ -8,24 +8,43 @@
 # Table of Contents
 - JavaScript History
   - The ECMAScript standard
-- Using JavaScript.Next
-  - Running JavaScript.Next in the browsers
-    - Chrome Harmony, Firefox Nightly
-    - Compiling to JS5 – Traceur, Babel
-- ECMAScript 6 features
-  - Variables: var, let, const
-  - OOP: classes, inheritance, super, get/set
-  - Functions: generators, iterators, arrow functions, comprehensions, for-of
-
-
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-
-- ECMAScript 6 features:
-  - Data Structures: set/weakset, map/weakmap
-  - Async operations: built-in promises
-  - Modules: imports, exports, compitability
-  - Objects: computed properties, shorthand properties, Object.is(), Object.assign(), proxies
-  - Others: templates, Math and Number extensions
+- Variables
+  - var, let, const
+- Data Structures
+  - `Set` and `WeakSet`
+  - `Map` and `WeakMap`
+- Async operations
+  - Promises
+  - Callbacks with arrow functions
+- Modules
+  - imports, exports, compitability
+- Strings
+  - templated strings
+  - `repeat()`, `startsWith()`, `endsWith()`, `includes()`
+- Numbers
+  - Binary, Octal and hexadecimal literals
+  - Math methods
+- Functions
+  - Arraw functions
+    - Preserving `this`
+  - Generators
+- Arrays
+  - `Array.of()`
+  - `Array.from()`
+  - spread operator
+- Data Types
+  - Symbols
+- Objects
+  - `Object.asign()`
+  - Iterators
+  - Properties
+- Destructuring
+  - Arrays
+  - Objects
+  - rest operator
+- Parameters
+  - Default
+  - rest operator
 
 
 
