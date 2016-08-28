@@ -8,6 +8,74 @@
 	<a href="http://academy.telerik.com " class="signature-link">http://academy.telerik.com </a>
 </div>
 
+<!-- 
+# Classes and Inheritance in ES6
+- ES6 introduces classes and a way to create classical OOP
+
+```javascript
+class Person extends Mammal {
+  constructor(fname, lname, age) {
+    super(age);
+    this._fname = fname;
+    this._lname = lname;
+  }
+  get fullname() {
+    //getter property of fullname
+  }
+  set fullname(newfullname) {
+    //setter property of fullname
+  }
+  // more class members…
+}
+```
+
+
+# Classes and Inheritance in ES6
+- ES6 introduces classes and a way to create classical OOP
+
+```javascript
+class Person extends Mammal {
+  constructor(fname, lname, age) {
+    super(age);
+    this._fname = fname;
+    this._lname = lname;
+  }
+  get fullname() {
+    //getter property of fullname
+  }
+  set fullname(newfullname) {
+    //setter property of fullname
+  }
+  // more class members…
+}
+```
+
+<div class="fragment balloon" style="top:35.42%; left:54.30%; width:41.45%">Constructor of the class</div>
+
+
+# Classes and Inheritance in ES6
+- ES6 introduces classes and a way to create classical OOP
+
+```javascript
+class Person extends Mammal {
+  constructor(fname, lname, age) {
+    super(age);
+    this._fname = fname;
+    this._lname = lname;
+  }
+  get fullname() {
+    //getter property of fullname
+  }
+  set fullname(newfullname) {
+    //setter property of fullname
+  }
+  // more class members…
+}
+```
+
+<div class="fragment balloon" style="top:56.84%; left:55.19%; width:41.45%">Getters and setters</div>
+<div class="fragment balloon" style="top:35.42%; left:54.30%; width:41.45%">Constructor of the class</div> -->
+
 <!-- Questions -->
 <!-- section start -->
 <!-- attr: { hasScriptWrapper:true, class:"slide-questions", id:"questions" } -->
