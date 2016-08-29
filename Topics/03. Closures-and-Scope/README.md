@@ -105,7 +105,7 @@ function arrJoin(arr, separator) {
 if(true) { 
   var result = 5;
 }
-console.log(result); //logs 5
+console.log(result); // logs 5
 ```
 
 ```js
@@ -114,7 +114,7 @@ if(true) {
     var result = 5;
   })();
 }
-console.log(result); //ReferenceError
+console.log(result); // ReferenceError
 ```
 
 ```js
@@ -124,7 +124,7 @@ function logResult (){
 if(true) { 
   logResult();
 }
-console.log(result);  //ReferenceError
+console.log(result);  // ReferenceError
 ```
 
 
@@ -198,7 +198,7 @@ function outer(x) {
 
 ```js
 var f1 = outer(5);
-console.log(f1(7)); //outputs 5 7
+console.log(f1(7)); // outputs 5 7
 ```
 
 <div class="fragment balloon" style="top:57.01%; left:54.22%; width:21%">In the context of f1, **x has value 5**</div>
@@ -206,14 +206,14 @@ console.log(f1(7)); //outputs 5 7
 
 ```js
 var f2 = outer("Peter");
-console.log(f2("Petrov"));  //outputs Peter Petrov
+console.log(f2("Petrov"));  // outputs Peter Petrov
 ```
 <div class="fragment balloon" style="top:72%; left:63.83%; width:21%">In the context of f2, **x has value "Peter"**</div>
 
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.8em' } -->
 # Closures Usage
-- Closures can be used for **data hiding**(**encapsulation**)
+- Closures can be used for **data hiding** (**encapsulation**)
   - Make objects invisible to the outside world
     - Make them private
 
