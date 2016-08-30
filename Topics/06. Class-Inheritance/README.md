@@ -9,14 +9,15 @@
 </article>
 
 <!-- section start -->
-<!-- attr: {} -->
+<!-- attr: { id:'table-of-contents' } -->
 # Table of Contents
-- What is inheritance
-- Inheritance in ES6
+- [What is inheritance](#inheritance)
+- [Inheritance in ES6](#es6)
+  - Super class calls
 
 <!-- section start -->
-<!-- attr: { class:'slide-section' } -->
-# Inheritance
+<!-- attr: { class:'slide-section', id:'inheritance' } -->
+# <a id="inheritance"></a>Inheritance
 
 <!-- attr: { hasScriptWrapper:true, showInPresentation:true } -->
 <!-- # Inheritance -->
@@ -48,13 +49,49 @@
 - The class that gains new functionality is called derived (child) class
 
 <!-- section start -->
-<!-- attr: { class:'slide-section' } -->
-# Classes and Inheritance in ES6
+<!-- attr: { class:'slide-section', id:'es6' } -->
+# <a id="es6"></a>Classes and Inheritance in ES6
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
 <!-- # Classes and Inheritance in ES6 -->
 - ES6 introduces classes and a way to create classical OOP
+  - Using the `class` keyword
 
+```javascript
+class Mammal {
+	constructor(age) {
+		this._age = age;
+	}
+}
+```
+
+<!-- attr: { hasScriptWrapper:true, showInPresentation:true, style:'font-size:0.9em' } -->
+<!-- # Classes and Inheritance in ES6 -->
+- Sub classing is done using the `extend` keyword
+
+```javascript
+class Mammal {
+	speak(str) {
+		// mammals usually don't speak
+	}
+}
+
+class Person extends Mammal {
+	speak(str) {
+		console.log(str);
+	}
+}
+```
+
+<!-- attr: { hasScriptWrapper:true, showInPresentation:true } -->
+<!-- # Classes and Inheritance in ES6 -->
+- `super` is used to refer to the parent class
+  - `super()` calls the parent constructor
+    - needed in order for `this` to refer to the correct object
+  - `super.method()` calls `.method()` from the parent class
+
+<!-- attr: { hasScriptWrapper:true, showInPresentation:true } -->
+<!-- # Classes and Inheritance in ES6 -->
 ```javascript
 class Person extends Mammal {
   constructor(fname, lname, age) {
@@ -72,18 +109,12 @@ class Person extends Mammal {
 }
 ```
 
-<div class="fragment balloon" style="top:56.84%; left:55.30%; width:41.45%">Getters and setters</div>
-<div class="fragment balloon" style="top:35.42%; left:55.30%; width:41.45%">Constructor of the class</div>
-
-<!-- attr: {} -->
-<!-- # Classes and Inheritance in ES6 -->
-- Subclassing is done using the `extend` keyword
-- `super` calls the base constructor
-  - Needed in order for `this` to refer to the correct object
+<div class="fragment balloon" style="top:30.42%;left:55.30%;width:41.45%">Constructor of the class</div>
+<div class="fragment balloon" style="top:65.84%;left:55.30%;width:41.45%">Getters and setters</div>
 
 <!-- Questions -->
 <!-- section start -->
-<!-- attr: { hasScriptWrapper:true, class:"slide-questions", id:"questions" } -->
+<!-- attr: { hasScriptWrapper:true, class:"slide-questions", id:"questions", showInPresentation:true } -->
 <!-- # Class Inheritance
 ## Questions? -->
 
@@ -97,5 +128,3 @@ class Person extends Mammal {
     - [facebook.com/TelerikAcademy](https://facebook.com/TelerikAcademy)
   - Telerik Software Academy Forums
     - [forums.academy.telerik.com](https://telerikacademy.com/Forum/Home)
-
-<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic00.png" style="top:58.18%; left:90.52%; width:16.97%; z-index:-1" /> -->
