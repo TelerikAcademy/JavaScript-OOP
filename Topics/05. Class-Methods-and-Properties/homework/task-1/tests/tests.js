@@ -21,10 +21,10 @@ describe('Linked list: ', () => {
     it('append should implement chaining and toString should work correctly', () => {
         const values = [1, 2, 3, 4, 5, 6],
             list = new LinkedList()
-                .append(1, 2)
-                .append(3, 4)
-                .append(5)
-                .append(6);
+                            .append(1, 2)
+                            .append(3, 4)
+                            .append(5)
+                            .append(6);
 
 
         expect(list.first).to.equal(values[0]);
@@ -37,10 +37,10 @@ describe('Linked list: ', () => {
 
         const values = [0, 1, 2, 3, 4, 5],
             list = new LinkedList()
-                .append(3, 4)
-                .prepend(1, 2)
-                .prepend(0)
-                .append(5);
+                            .append(3, 4)
+                            .prepend(1, 2)
+                            .prepend(0)
+                            .append(5);
 
 
         expect(list.first).to.equal(values[0]);
@@ -83,8 +83,8 @@ describe('Linked list: ', () => {
 
         const values = [5, 6, 3, 'gosho', true, null, 'ivan', { message: 'Hello' }],
             list = new LinkedList()
-                .append(...values.slice(4))
-                .prepend(...values.slice(0, 4));
+                            .append(...values.slice(4))
+                            .prepend(...values.slice(0, 4));
 
         for (const val of list) {
             expect(val).to.equal(values.shift());
