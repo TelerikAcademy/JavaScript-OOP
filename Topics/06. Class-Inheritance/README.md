@@ -28,7 +28,6 @@ class Person extends Mammal {
 }
 ```
 
-
 # Classes and Inheritance in ES6
 - ES6 introduces classes and a way to create classical OOP
 
@@ -50,7 +49,6 @@ class Person extends Mammal {
 ```
 
 <div class="fragment balloon" style="top:35.42%; left:54.30%; width:41.45%">Constructor of the class</div>
-
 
 # Classes and Inheritance in ES6
 - ES6 introduces classes and a way to create classical OOP
@@ -80,7 +78,6 @@ class Person extends Mammal {
 <!-- attr: { hasScriptWrapper:true, class:"slide-questions", id:"questions" } -->
 <!-- # Class Inheritance
 ## Questions? -->
-
 
 <!-- attr: { showInPresentation: true, hasScriptWrapper: true, style:'font-size: 0.9em' } -->
 # Free Trainings<br/>@ Telerik Academy
