@@ -1,12 +1,12 @@
 <!-- section start -->
-<!-- attr: { id:'', class:'slide-title', showInPresentation:true, hasScriptWrapper:true } -->
+<!-- attr: { class:'slide-title', showInPresentation:true, hasScriptWrapper:true } -->
 # Class Inheritance
-## 
+
 <article class="signature">
 	<p class="signature-course">JavaScript OOP</p>
 	<p class="signature-initiative">Telerik Software Academy</p>
-	<a href="http://academy.telerik.com " class="signature-link">http://academy.telerik.com </a>
-</div>
+	<a href="http://academy.telerik.com" class="signature-link">http://academy.telerik.com</a>
+</article>
 
 <!-- 
 # Classes and Inheritance in ES6
