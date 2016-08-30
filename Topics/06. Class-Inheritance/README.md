@@ -8,7 +8,6 @@
 	<a href="http://academy.telerik.com" class="signature-link">http://academy.telerik.com</a>
 </article>
 
-<!-- 
 # Classes and Inheritance in ES6
 - ES6 introduces classes and a way to create classical OOP
 
