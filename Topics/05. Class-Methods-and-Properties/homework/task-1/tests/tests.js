@@ -37,10 +37,10 @@ describe('Linked list: ', () => {
 
         const values = [0, 1, 2, 3, 4, 5],
             list = new LinkedList()
-                .append(3, 4)
-                .prepend(1, 2)
-                .prepend(0)
-                .append(5);
+                            .append(3, 4)
+                            .prepend(1, 2)
+                            .prepend(0)
+                            .append(5);
 
 
         expect(list.first).to.equal(values[0]);
@@ -67,6 +67,7 @@ describe('Linked list: ', () => {
         expect(list.last).to.equal(2);
         expect(list.length).to.equal(5);
         expect(list.toString()).to.equal([3, 4, 1, 'kremikovci', 2].join(' -> '));
+
     });
 
     it('should have correct for-of', () => {
@@ -92,7 +93,8 @@ describe('Linked list: ', () => {
     });
 
     it('should have correct removeAt', () => {
-        const values = ['test', true, null, 1, 2, 'testtest', { value: 'val', message: 'hello' }, 'gg'],
+        const theObj = { value: 'val', message: 'hello' }; 
+        const values = ['test', true, null, 1, 2, 'testtest', theObj, 'gg'],
             list = new LinkedList().append(...values),
             removed1 = list.removeAt(1),
             removed2 = list.removeAt(1),
@@ -100,7 +102,7 @@ describe('Linked list: ', () => {
             removed4 = list.removeAt(list.length - 1);
 
         expect(list.first).to.equal(1);
-        expect(list.last).to.equal('gg');
+        expect(list.last).to.equal(theObj);
         expect(list.length).to.equal(values.length - 4);
         expect([removed1, removed2, removed3, removed4].join()).to.equal([true, null, 'test', 'gg'].join());
     });
