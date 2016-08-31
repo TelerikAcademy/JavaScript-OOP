@@ -35,7 +35,7 @@
 
 - The "old-way" to create a mixin is as follows:
 
-  1.  Create a plain object with the needed functionality:
+  -  Create a plain object with the needed functionality:
 
     ```javascript
     var hasPrintNameMixin = {
@@ -45,7 +45,7 @@
     }
     ```
 
-  2.  Create your class:
+  -  Create your class:
 
       ```javascript
       class Person {
@@ -54,13 +54,17 @@
         }
       }
       ```
-  3.  Copy all properties of the **mixin** to the prototype of the class:
+
+<!-- attr: {hasScriptWrapper: true} --> 
+# Creating Mixins (cont.)
+
+  -  Copy all properties of the **mixin** to the prototype of the class:
 
     ```javascript
     Object.keys(hasPrintNameMixin)
       .forEach(key => Person.prototype[key] = hasPrintNameMixin[key]);
     ```
-  4.  All instances of the Person class have `printName()` method
+  -  All instances of the Person class have `printName()` method
 
     ```javascript
     let p = new Person("John");
@@ -76,47 +80,52 @@
 - ES2015 has the `class` operator that can be used to dynamically create classes
   - Having that, mixins in ES2015 can be created more expressional
 
-- Steps for creating Mixins with ES2015:
 
-  1.  Create a function that takes a base class as first parameter and returns a derived class as a result
+# Creating mixins with ES2015
 
-    ```javascript
-    var ValidatorMixin = Base => class extends Base {
-      _validateString(str) {
-        return str && (typeof str === "string") && str.length > 0;
-      }
-      _validateNumber(n) {
-        return n && (typeof n === "number");
-      }
-    };
-    ```
+- Create a function that takes a base class as first parameter and returns a derived class as a result
 
-  2.  Create your class using the Mixin
-    - This is the weird part
+```javascript
+var ValidatorMixin = Base => class extends Base {
+  _validateString(str) {
+    return str && (typeof str === "string") && str.length > 0;
+  }
+  _validateNumber(n) {
+    return n && (typeof n === "number");
+  }
+};
+```
 
-    ```javascript
-    class Person extends ValidationMixin(Object) {
-        set name(name) {
-            if (!this._validateString(name)) {
-                throw new Error("Invalid name");
-            }
-            this._name = name;
+# Creating mixins with ES2015 (cont.)
+
+- Create your class using the Mixin
+  - This is the weird part
+
+```javascript
+class Person extends ValidationMixin(Object) {
+    set name(name) {
+        if (!this._validateString(name)) {
+            throw new Error("Invalid name");
         }
-
-        set age(age) {
-            if (!this._validateNumber(age)) {
-                throw new Error("Invalid age");
-            }
-            this._age = age;
-        }
+        this._name = name;
     }
-    ```
+    set age(age) {
+        if (!this._validateNumber(age)) {
+            throw new Error("Invalid age");
+        }
+        this._age = age;
+    }
+}
+```
 
-  3.  Now, each person instance will have `_validateString()` and `_validateNumber()`
-    - The following will throw error:
-    ```javascript
-    let p = new Person("", 1);
-    ```
+# Creating mixins with ES2015 (cont.)
+
+-  Now, each person instance will have `_validateString()` and `_validateNumber()`
+  - The following will throw error:
+
+```javascript
+let p = new Person("", 1);
+```
 
 #   Mixins with ES2015
 ##  [Demo](/demos/2. ES2015-mixins.js)
@@ -124,7 +133,29 @@
 
 # Using `super`
 
-# Examples
+- Since Mixins actually add a new parent in the inheritance, all `super` calls work as well:
+
+```javascript
+let HasNameInToStringMixin = Base => class inherits Base {
+  toString: (){
+    return `Name: ${this.name}`;
+  }
+};
+
+class Person extends HasNameInToStringMixin(Mammal)  {
+  connstructor(name, age){
+    super(age);
+    this.name = name;
+  }
+
+  toString(){
+    return super.toString() + `, Age: ${this.age}`
+  }
+}
+```
+
+# Using `super`
+##  Demo
 
 <!-- Questions -->
 <!-- section start -->
