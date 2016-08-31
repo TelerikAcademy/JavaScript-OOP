@@ -2,14 +2,15 @@
 <!-- attr: { id:'', class:'slide-title', showInPresentation:true, hasScriptWrapper:true } -->
 # Mixins in JavaScript
 ## "Multiple" inheritance in JavaScript
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic00.png" style="top:48.48%; left:65.53%; width:38.79%; z-index:-1" /> -->
+<!-- <img class="slide-image" showInPresentation="false" src="imgs/pic00.png" style="top:48.48%; left:65.53%; width:38.79%; z-index:-1" /> -->
 <article class="signature">
 	<p class="signature-course">JavaScript OOP</p>
 	<p class="signature-initiative">Telerik Software Academy</p>
-	<a href="http://academy.telerik.com " class="signature-link">http://academy.telerik.com </a>
-</div>
+	<a href="http://academy.telerik.com" class="signature-link">http://academy.telerik.com</a>
+</article>
 
 
+<!-- section start -->
 <!-- attr: { id:'', showInPresentation:true, hasScriptWrapper:true } -->
 # Table of Contents
 
@@ -17,9 +18,10 @@
 - Creating Mixins
 - Examples with Mixins
 
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic02.png" style="top:15.22%; left:67.55%; width:38.79%; z-index:-1" /> -->
+<!-- <img class="slide-image" showInPresentation="false" src="imgs/pic02.png" style="top:15.22%; left:67.55%; width:38.79%; z-index:-1" /> -->
 
 <!-- section start -->
+<!-- attr: { class:'slide-section' } -->
 
 # What is a Mixin?
 ##  Multiple inheritance in JavaScript
@@ -71,6 +73,7 @@
     p.printName();
     ```
 
+<!-- attr: {class:'slide-section demo'} -->
 #   Simple Mixins
 ##  [Demo](/demos/1.\ simple-mixins.js)
 
@@ -96,6 +99,8 @@ var ValidatorMixin = Base => class extends Base {
 };
 ```
 
+<!-- attr: {showInPresentation:true, style:'font-size:0.9em'} -->
+
 # Creating mixins with ES2015 (cont.)
 
 - Create your class using the Mixin
@@ -118,6 +123,8 @@ class Person extends ValidationMixin(Object) {
 }
 ```
 
+<!-- attr: {showInPresentation:true, style:'font-size:0.9em'} -->
+
 # Creating mixins with ES2015 (cont.)
 
 -  Now, each person instance will have `_validateString()` and `_validateNumber()`
@@ -127,9 +134,13 @@ class Person extends ValidationMixin(Object) {
 let p = new Person("", 1);
 ```
 
+<!-- attr: {class:'slide-section demo'} -->
+
 #   Mixins with ES2015
 ##  [Demo](/demos/2. ES2015-mixins.js)
 
+
+<!-- attr: {showInPresentation:true, style:'font-size:0.9em'} -->
 
 # Using `super`
 
@@ -143,7 +154,7 @@ let HasNameInToStringMixin = Base => class inherits Base {
 };
 
 class Person extends HasNameInToStringMixin(Mammal)  {
-  connstructor(name, age){
+  constructor(name, age){
     super(age);
     this.name = name;
   }
@@ -153,6 +164,8 @@ class Person extends HasNameInToStringMixin(Mammal)  {
   }
 }
 ```
+
+<!-- attr: {class:'slide-section demo'} -->
 
 # Using `super`
 ##  Demo
@@ -175,4 +188,4 @@ class Person extends HasNameInToStringMixin(Mammal)  {
   - Telerik Software Academy Forums
     - [forums.academy.telerik.com](http://telerikacademy.com/Forum/Home)
 
-<!-- <img class="slide-image" showInPresentation="true"  src="imgs/pic00.png" style="top:58.18%; left:90.52%; width:16.97%; z-index:-1" /> -->
+<!-- <img class="slide-image" showInPresentation="false"  src="imgs/pic00.png" style="top:58.18%; left:90.52%; width:16.97%; z-index:-1" /> -->
