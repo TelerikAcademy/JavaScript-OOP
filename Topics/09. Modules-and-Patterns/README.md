@@ -20,13 +20,10 @@
 - Singleton pattern
 <!-- <img class="slide-image" showInPresentation="true" src="imgs/pic04.png" style="top:41.43%; left:51.46%; width:52.89%; z-index:-1" /> -->
 
-
-
 <!-- section start -->
 <!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # The Module Pattern -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs/pic05.png" style="top:45.26%; left:32.91%; width:32.55%; z-index:-1" /> -->
-
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # The Module Pattern:<br/>Pros and Cons
@@ -37,7 +34,6 @@
 - Cons: 
   - Not easy to extend 
   - Some complain about debugging
-
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Module Pattern: Structure
@@ -87,27 +83,22 @@ controls.getCalculator('First')
 <div class="fragment balloon" style="top:12%; left:58%; width:30%">The visible members create closures with them</div>
 <div class="fragment balloon" style="top:66%; left:17%; width:20%">Visible method</div>
 
-
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Module Pattern: Summary
 - Module pattern provides **encapsulation** of variables and functions 
 - Provides a way to **add visibility** (public versus private) to members 
 - Each object instance creates new copies of functions in memory
 
-
 <!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Module Pattern
 ## [Demo]() -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs/pic06.png" style="top:45%; left:10.30%; width:26%; z-index:-1" /> -->
-
-
 
 <!-- section start -->
 <!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # The Revealing Module Pattern
 ## Reveal the most interesting members -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs/pic07.png" style="top:8.04%; left:76.39%; width:22.92%; z-index:-1" /> -->
-
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
 # Revealing Module Pattern:<br/>Pros and Cons
@@ -121,7 +112,6 @@ controls.getCalculator('First')
   - Not easy to extend 
   - Some complain about debugging
   - Hard to mock hidden objects for testing
-
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Revealing Module Pattern: Structure
@@ -139,8 +129,6 @@ var module = (function() {
 	};
 }());
 ```
-
-
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
 # Revealing Module Pattern: _Example_
@@ -170,20 +158,16 @@ controls.getCalculator('First')
 
 <div class="fragment balloon" style="top:65%; left:42%; width:32.89%">Expose (reveal) only references to hidden member</div>
 
-
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Revealing Module Pattern: Summary
 - Module pattern provides **encapsulation** of variables and functions 
 - Provides a way to **add visibility** (public versus private) to members 
 - Extending objects can be difficult
 
-
 <!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Revealing Module Pattern
 ## [Demo]() -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs/pic08.png" style="top:45.63%; left:2%; width:35%; z-index:-1" /> -->
-
-
 
 <!-- section start -->
 <!-- attr: { class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
@@ -208,13 +192,10 @@ var module = module || {}; // if module exists
 }(module));
 ```
 
-
-
 <!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Augmenting Modules
 ## [Demo]() -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs/pic11.png" style="top:45%; left:0%; width:40%; z-index:-1" /> -->
-
 
 <!-- section start -->
 <!-- attr: { class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
@@ -276,7 +257,6 @@ export default function() {} // or 'export default class {}'
 - More info on [import](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import)
 - More info on [export](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/export)
 
-
 # Examples
 - In the module, we could use the following code
 ```js
@@ -299,7 +279,6 @@ console.log(foo);    // 4.555806215962888
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, class:"slide-questions", id:"questions" } -->
 <!-- # Modules and Patterns
 ## Questions? -->
-
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size: 0.9em' } -->
 # Free Trainings<br/>@ Telerik Academy
