@@ -24,4 +24,4 @@
 		- Unique params are Book title and Book ISBN
 		- Book ISBN is an unique code that contains either 10 or 13 digits
 		- If something is not valid - throw Error
-- **You are given a solution template in the [task/task-1.js](./task/task-1.js) file**
+- **You are given a solution template in the [tasks/task-1.js](./tasks/task-1.js) file**
