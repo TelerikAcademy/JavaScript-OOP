@@ -18,7 +18,8 @@
 - Revealing module pattern
 - Augmenting Modules
 - Modules in EcmaScript2015
-<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic04.png" style="top:41.43%; left:51.46%; width:52.89%; z-index:-1" /> -->
+
+<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic04.png" style="top:44%; left:55%; width:50%; z-index:-1" /> -->
 
 <!-- section start -->
 <!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
