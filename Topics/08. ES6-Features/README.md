@@ -23,6 +23,9 @@
 - Async operations
   - Promises
   - Callbacks with arrow functions
+
+<!-- attr: { id:'', showInPresentation:true, hasScriptWrapper:true } -->
+# Table of Contents
 - Modules
   - imports, exports, compitability
 - Strings
@@ -31,6 +34,10 @@
 - Numbers
   - Binary, Octal and hexadecimal literals
   - Math methods
+
+<!-- attr: { id:'', showInPresentation:true, hasScriptWrapper:true } -->
+# Table of Contents
+
 - Functions
   - Arrоw functions
     - Preserving `this`
@@ -39,6 +46,10 @@
   - `Array.of()`
   - `Array.from()`
   - spread operator
+
+<!-- attr: { id:'', showInPresentation:true, hasScriptWrapper:true } -->
+# Table of Contents
+
 - Data Types
   - Symbols
 - Objects
@@ -119,6 +130,8 @@ MAX_VALUE = 15; // throws exception
       console.log(`The number is ${number}`);
     }
     ```
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
+# Loops
 
   - Or iteratable objects (objects that have `Symbol.iterator`):
     - Discussed in detail later
@@ -180,86 +193,6 @@ for (let person of people){
 
 <!-- section start -->
 
-
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# Classes and Inheritance in ES6
-- ES6 introduces classes and a way to create classical OOP
-
-```javascript
-class Person extends Mammal {
-  constructor(fname, lname, age) {
-    super(age);
-    this._fname = fname;
-    this._lname = lname;
-  }
-  get fullname() {
-    //getter property of fullname
-  }
-  set fullname(newfullname) {
-    //setter property of fullname
-  }
-  // more class members…
-}
-```
-
-
-
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# Classes and Inheritance in ES6
-- ES6 introduces classes and a way to create classical OOP
-
-```javascript
-class Person extends Mammal {
-  constructor(fname, lname, age) {
-    super(age);
-    this._fname = fname;
-    this._lname = lname;
-  }
-  get fullname() {
-    //getter property of fullname
-  }
-  set fullname(newfullname) {
-    //setter property of fullname
-  }
-  // more class members…
-}
-```
-
-<div class="fragment balloon" style="top:35.42%; left:54.30%; width:41.45%">Constructor of the class</div>
-
-
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# Classes and Inheritance in ES6
-- ES6 introduces classes and a way to create classical OOP
-
-```javascript
-class Person extends Mammal {
-  constructor(fname, lname, age) {
-    super(age);
-    this._fname = fname;
-    this._lname = lname;
-  }
-  get fullname() {
-    //getter property of fullname
-  }
-  set fullname(newfullname) {
-    //setter property of fullname
-  }
-  // more class members…
-}
-```
-
-<div class="fragment balloon" style="top:56.84%; left:55.19%; width:41.45%">Getters and setters</div>
-<div class="fragment balloon" style="top:35.42%; left:54.30%; width:41.45%">Constructor of the class</div>
-
-
-
-
-
-
-<!-- section start -->
-
-
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Arrow Functions
 - Arrow functions easify the creation of functions:
@@ -268,52 +201,10 @@ class Person extends Mammal {
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Arrow Functions
 - Arrow functions easify the creation of functions:
-
-```javascript
-numbers.sort(function(a, b){
-  return b – a;
-});
-```
-
-
-
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# Arrow Functions
-- Arrow functions easify the creation of functions:
-
-```javascript
-numbers.sort(function(a, b){
-  return b – a;
-});
-```
-
 
 ```javascript
 numbers.sort((a, b) => b – a);
 ```
-
-
-```javascript
-Becomes
-```
-
-
-
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# Arrow Functions
-- Arrow functions easify the creation of functions:
-
-```javascript
-numbers.sort(function(a, b){
-  return b – a;
-});
-```
-
-
-```javascript
-numbers.sort((a, b) => b – a);
-```
-
 
 ```javascript
 var fullnames =
@@ -323,61 +214,6 @@ var fullnames =
      return person.fullname;
    });
 ```
-
-
-```javascript
-Becomes
-```
-
-
-
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# Arrow Functions
-- Arrow functions easify the creation of functions:
-
-```javascript
-numbers.sort(function(a, b){
-  return b – a;
-});
-```
-
-
-```javascript
-numbers.sort((a, b) => b – a);
-```
-
-
-```javascript
-var fullnames =
-   people.filter(function (person) {
-     return person.age >= 18;
-   }).map(function (person) {
-     return person.fullname;
-   });
-```
-
-
-```javascript
-var fullnames2 =
-  people.filter(p => p.age >= 18)
-    .map(p => p.fullname);
-```
-
-
-```javascript
-Becomes
-```
-
-
-```javascript
-Becomes
-```
-
-
-
-
-
-
 
 <!-- section start -->
 
@@ -400,44 +236,35 @@ let person = {
 
 ```javascript
 let name = 'Doncho Minkov';
-let person = {
-  name,
-  age
-};
+let person = { name, age };
 ```
-
-
-
-
-
-
 
 <!-- section start -->
 
 
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style: 'font-size: 0.9em' } -->
 # Destructuring Assignments
 - Destructuring assignments allow to set values to objects in an easier way:
   - Destructuring assignments with arrays:
 
-```javascript
-var [a,b] = [1,2]; //a = 1, b = 2
-var [x, , y] = [1, 2, 3] // x = 1, y = 3
-var [first, second, ...rest] = people;
-```
+    ```javascript
+    var [a,b] = [1,2]; //a = 1, b = 2
+    var [x, , y] = [1, 2, 3] // x = 1, y = 3
+    var [first, second, ...rest] = people;
+    ```
 
   - Swap values:
 
-```javascript
-[x, y] = [y, x]
-```
+    ```javascript
+    [x, y] = [y, x]
+    ```
 
   - Result of method:
 
-```javascript
-function get(){ return [1, 2, 3]; }
-var [x, y] = get();
-```
+    ```javascript
+    function get(){ return [1, 2, 3]; }
+    var [x, y] = get();
+    ```
 
 
 
@@ -490,42 +317,40 @@ import classes from './persons'
 import {Mammal, Person} form '.persons'
 ```
 
-
-```javascript
-persons.js
-```
-
-
-
-
-
-
-
 <!-- section start -->
 
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# Extenden parameter handling
+# Extended parameter handling
 - Simple and intuitive default values for function parameters
 - Aggregation of remaining arguments into single parameter of variadic functions
 - Spreading of elements of an interable collection
-- function f (x, y = 7, z = 42) { return x + y + z }
-- f(1) // 50
 
-```javascript
-function f (x, y, ...a) { return (x + y) * a.length }
-f(1, 2, "hello", true, 7) // 9
-```
+  ```javascript
+  function f (x, y = 7, z = 42) { return x + y + z }
+  f(1) // 50
 
-
-```javascript
-var params = [ "hello", true, 7 ]
-var other = [ 1, 2, ...params ]
-f(1, 2, ...params) // 9
-```
+  function f (x, y, ...a) { return (x + y) * a.length }
+  f(1, 2, "hello", true, 7) // 9
+  ```
 
 
 
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# JavaScript.next
-- http://academy.telerik.com
+<!-- Questions -->
+<!-- section start -->
+<!-- attr: { hasScriptWrapper:true, showInPresentation:true, class:"slide-questions", id:"questions" } -->
+<!-- # ES6 Classes and Class Constructors
+## Questions? -->
+
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size: 0.9em' } -->
+# Free Trainings @ Telerik Academy
+- "Web Design with HTML 5, CSS 3 and JavaScript" course @ Telerik Academy
+    - [javascript course](http://academy.telerik.com/student-courses/web-design-and-ui/javascript-fundamentals/about)
+  - Telerik Software Academy
+    - [academy.telerik.com](http://academy.telerik.com)
+  - Telerik Academy @ Facebook
+    - [facebook.com/TelerikAcademy](https://facebook.com/TelerikAcademy)
+  - Telerik Software Academy Forums
+    - [forums.academy.telerik.com](https://telerikacademy.com/Forum/Home)
+
+<!-- <img class="slide-image" showInPresentation="false" src="imgs/pic00.png" style="top:58.18%; left:90.52%; width:16.97%; z-index:-1" /> -->
