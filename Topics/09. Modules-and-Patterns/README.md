@@ -2,10 +2,10 @@
 <!-- attr: { id:'', class:'slide-title', showInPresentation:true, hasScriptWrapper:true } -->
 # JavaScript Patterns
 ## Modules and stuff
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic00.png" style="top:52.89%; left:66.12%; width:36.44%; z-index:-1" /> -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic01.png" style="top:45.54%; left:48.46%; width:26.89%; z-index:-1" /> -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic02.png" style="top:22.07%; left:3.90%; width:27.79%; z-index:-1" /> -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic03.png" style="top:6.25%; left:72.94%; width:23.58%; z-index:-1" /> -->
+<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic00.png" style="top:52.89%; left:66.12%; width:36.44%; z-index:-1" /> -->
+<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic01.png" style="top:45.54%; left:48.46%; width:26.89%; z-index:-1" /> -->
+<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic02.png" style="top:22.07%; left:3.90%; width:27.79%; z-index:-1" /> -->
+<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic03.png" style="top:6.25%; left:72.94%; width:23.58%; z-index:-1" /> -->
 <article class="signature">
 	<p class="signature-course">JavaScript OOP</p>
 	<p class="signature-initiative">Telerik Software Academy</p>
@@ -18,15 +18,12 @@
 - Module pattern
 - Revealing module pattern
 - Singleton pattern
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic04.png" style="top:41.43%; left:51.46%; width:52.89%; z-index:-1" /> -->
-
-
+<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic04.png" style="top:41.43%; left:51.46%; width:52.89%; z-index:-1" /> -->
 
 <!-- section start -->
 <!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # The Module Pattern -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic05.png" style="top:45.26%; left:32.91%; width:32.55%; z-index:-1" /> -->
-
+<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic05.png" style="top:45.26%; left:32.91%; width:32.55%; z-index:-1" /> -->
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # The Module Pattern:<br/>Pros and Cons
@@ -37,7 +34,6 @@
 - Cons: 
   - Not easy to extend 
   - Some complain about debugging
-
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Module Pattern: Structure
@@ -85,8 +81,7 @@ controls.getCalculator('First')
 ```
 
 <div class="fragment balloon" style="top:12%; left:58%; width:30%">The visible members create closures with them</div>
-<div class="fragment balloon" style="top:66%; left:17%; width:20%">Visiable method</div>
-
+<div class="fragment balloon" style="top:66%; left:17%; width:20%">Visible method</div>
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Module Pattern: Summary
@@ -94,20 +89,16 @@ controls.getCalculator('First')
 - Provides a way to **add visibility** (public versus private) to members 
 - Each object instance creates new copies of functions in memory
 
-
 <!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Module Pattern
 ## [Demo]() -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic06.png" style="top:45%; left:10.30%; width:26%; z-index:-1" /> -->
-
-
+<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic06.png" style="top:45%; left:10.30%; width:26%; z-index:-1" /> -->
 
 <!-- section start -->
 <!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # The Revealing Module Pattern
 ## Reveal the most interesting members -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic07.png" style="top:8.04%; left:76.39%; width:22.92%; z-index:-1" /> -->
-
+<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic07.png" style="top:8.04%; left:76.39%; width:22.92%; z-index:-1" /> -->
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
 # Revealing Module Pattern:<br/>Pros and Cons
@@ -121,7 +112,6 @@ controls.getCalculator('First')
   - Not easy to extend 
   - Some complain about debugging
   - Hard to mock hidden objects for testing
-
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Revealing Module Pattern: Structure
@@ -139,8 +129,6 @@ var module = (function() {
 	};
 }());
 ```
-
-
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
 # Revealing Module Pattern: _Example_
@@ -170,20 +158,16 @@ controls.getCalculator('First')
 
 <div class="fragment balloon" style="top:65%; left:42%; width:32.89%">Expose (reveal) only references to hidden member</div>
 
-
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Revealing Module Pattern: Summary
 - Module pattern provides **encapsulation** of variables and functions 
 - Provides a way to **add visibility** (public versus private) to members 
 - Extending objects can be difficult
 
-
 <!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Revealing Module Pattern
 ## [Demo]() -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic08.png" style="top:45.63%; left:2%; width:35%; z-index:-1" /> -->
-
-
+<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic08.png" style="top:45.63%; left:2%; width:35%; z-index:-1" /> -->
 
 <!-- section start -->
 <!-- attr: { class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
@@ -208,13 +192,10 @@ var module = module || {}; // if module exists
 }(module));
 ```
 
-
-
 <!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Augmenting Modules
 ## [Demo]() -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic11.png" style="top:45%; left:0%; width:40%; z-index:-1" /> -->
-
+<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic11.png" style="top:45%; left:0%; width:40%; z-index:-1" /> -->
 
 <!-- section start -->
 <!-- attr: { class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
@@ -276,7 +257,6 @@ export default function() {} // or 'export default class {}'
 - More info on [import](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import)
 - More info on [export](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/export)
 
-
 # Examples
 - In the module, we could use the following code
 ```js
@@ -287,7 +267,7 @@ export function cube(x) {
 const foo = Math.PI + Math.SQRT2;
 export { cube, foo };
 ```
-- in another script, we could have
+- In another script, we could have
 ```js
 import { cube as cb, foo } from 'my-module';
 console.log(cb(3)); // 27
@@ -300,17 +280,16 @@ console.log(foo);    // 4.555806215962888
 <!-- # Modules and Patterns
 ## Questions? -->
 
-
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size: 0.9em' } -->
 # Free Trainings<br/>@ Telerik Academy
 - "Web Design with HTML 5, CSS 3 and JavaScript" course @ Telerik Academy
     - [javascript course](http://academy.telerik.com/student-courses/web-design-and-ui/javascript-fundamentals/about)
-  - Telerik Software Academy
-    - [academy.telerik.com](academy.telerik.com)
-  - Telerik Academy @ Facebook
-    - [facebook.com/TelerikAcademy](facebook.com/TelerikAcademy)
-  - Telerik Software Academy Forums
-    - [forums.academy.telerik.com](http://telerikacademy.com/Forum/Home)
+- Telerik Software Academy
+  - [academy.telerik.com](academy.telerik.com)
+- Telerik Academy @ Facebook
+  - [facebook.com/TelerikAcademy](facebook.com/TelerikAcademy)
+- Telerik Software Academy Forums
+  - [forums.academy.telerik.com](http://telerikacademy.com/Forum/Home)
 
 <!-- <img class="slide-image" showInPresentation="true"  src="imgs/pic16.png" style="top:58.18%; left:90.52%; width:16.97%; z-index:-1" /> -->
 
