@@ -1,6 +1,16 @@
 <!-- section start -->
 
+<!-- attr: { id:'', class:'slide-title', showInPresentation:true, hasScriptWrapper:true } -->
+# ES 2015 Features
+##  The new cool stuff in JS
+<article class="signature">
+	<p class="signature-course">JavaScript OOP</p>
+	<p class="signature-initiative">Telerik Software Academy</p>
+	<a href="http://academy.telerik.com " class="signature-link">http://academy.telerik.com </a>
+</div>
+
 <!-- section start -->
+
 <!-- attr: { id:'', showInPresentation:true, hasScriptWrapper:true } -->
 # Table of Contents
 - JavaScript History
@@ -22,7 +32,7 @@
   - Binary, Octal and hexadecimal literals
   - Math methods
 - Functions
-  - Arraw functions
+  - Arrоw functions
     - Preserving `this`
   - Generators
 - Arrays
@@ -43,11 +53,7 @@
   - Default
   - rest operator
 
-
-
-
 <!-- section start -->
-
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # JavaScript History
@@ -56,31 +62,31 @@
   - Can be used as object-oriented language
   - Embedded in your HTML page
   - Interpreted by the Web browser
-- **Client-side**, **mobile**and**desktop** technology
+- **Client-side**, **mobile** and **desktop** technology
 - Simple and flexible
 - Powerful to manipulate the DOM
 
-
-
-
 <!-- section start -->
+
 
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# Using JavaScript.next
-- There are a few ways to use JavaScript.next today
-  - Enable tags in Chrome and Firefox
-  - Compile to JavaScript 5 using Traceur or Babel	
-- A compatibility table for ES6 support can be found at https://kangax.github.io/compat-table/es6/ 
+# Using ES 2015
+- There are a few ways to use ES 2015 today:
+  - Most browsers already support it
+  - Node.js 6.X supports it
+  - For support for older browsers (IE 8, 9):
+    - Transpilers: **Babel**, **Traceur**
+- A compatibility table for ES6 support can be found at https://kangax.github.io/compat-table/es6/
+
 
 <!-- section start -->
-
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # ES6 Variables
 - ES6 introduces new ways to declare variables:
-  - let – creates a scope variable
-    - Accessible only in its scope
+  - `let` – creates a scoped variable
+    - Accessible only in its own scope
 
 ```javascript
 for(let number of [1, 2, 3, 4]){
@@ -89,7 +95,7 @@ for(let number of [1, 2, 3, 4]){
 //accessing number here throws exception
 ```
 
-  - const – creates a constant variable
+  - `const` – creates a constant variable
     - Its value is read-only and cannot be changed
 
 ```javascript
@@ -99,50 +105,60 @@ MAX_VALUE = 15; // throws exception
 
 
 
-
-
-
-
 <!-- section start -->
+
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
+# Loops
+
+- ES 2015 has a new kind of `for` loop
+  - `for-of` iterates though the members of an array:
+
+    ```javascript
+    let numbers = [1, 2, 3, 5];
+    for(let number of numbers) {
+      console.log(`The number is ${number}`);
+    }
+    ```
+
+  - Or iteratable objects (objects that have `Symbol.iterator`):
+    - Discussed in detail later
+
+    ```javascript
+    let fib = {
+      [Symbol.iterator]() {
+        //magic code to return next Fibonacci number
+      }
+    };
+
+    let i = 0;
+    for (let number of obj) {
+        if (i > 10) {
+            break;
+        }
+        i += 1;
+        console.log(number);
+    }
+    ```
+
 
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# For-of loop
+# Data Structures
+- ES6 supports maps and sets natively
+  - They do pretty much the same as associative arrays, but in cleaner way:
 
-```javascript
-The for-of loop iterates over the values
-  Of an array
-```
-
-- function* generator(maxValue){
--   for(let i = 0; i < maxValue; i+=1) {
--     yield i;
--   }
-- }
-- let iter = generator(10);
-- for(let val of iter()){
--   console.log(val);
-- }
-
-```javascript
-let sum = 0;
-for(let number of [1, 2, 3]) { 
-  sum += number; }
-```
-
-
-```javascript
-  Of An iteratable object
-```
-
-
-
-
+    ```javascript
+    let names = new Set();
+    names.add('Doncho');
+    names.add('Nikolay');
+    names.add('Ivaylo');
+    names.add('Evlogi');
+    names.add('Doncho'); // won't be added
+    ```
 
 
 
 <!-- section start -->
-
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Templated Strings in ES6
@@ -300,7 +316,7 @@ numbers.sort((a, b) => b – a);
 
 
 ```javascript
-var fullnames = 
+var fullnames =
    people.filter(function (person) {
      return person.age >= 18;
    }).map(function (person) {
@@ -332,7 +348,7 @@ numbers.sort((a, b) => b – a);
 
 
 ```javascript
-var fullnames = 
+var fullnames =
    people.filter(function (person) {
      return person.age >= 18;
    }).map(function (person) {
@@ -342,7 +358,7 @@ var fullnames =
 
 
 ```javascript
-var fullnames2 = 
+var fullnames2 =
   people.filter(p => p.age >= 18)
     .map(p => p.fullname);
 ```
@@ -369,7 +385,7 @@ Becomes
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Object Literals
 - ES6 adds a new feature (rule) to the way of defining properties:
-  - Instead of 
+  - Instead of
 
 ```javascript
 let name = 'Doncho Minkov',
@@ -448,28 +464,6 @@ var {name, address: {city}} = person;
 
 
 
-<!-- section start -->
-
-
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# Maps and Sets
-- ES6 supports maps and sets natively
-  - They do pretty much the same as associative arrays, but in cleaner way:
-
-```javascript
-let names = new Set();
-names.add('Doncho');
-names.add('Nikolay');
-names.add('Ivaylo');
-names.add('Evlogi'); 
-names.add('Doncho'); // won't be added
-```
-
-
-
-
-
-
 
 <!-- section start -->
 
@@ -534,8 +528,4 @@ f(1, 2, ...params) // 9
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # JavaScript.next
-- http://academy.telerik.com 
-
-
-
-
+- http://academy.telerik.com
