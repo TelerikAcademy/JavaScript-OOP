@@ -1,8 +1,5 @@
 <!-- section start -->
 
-
-
-
 <!-- section start -->
 <!-- attr: { id:'', showInPresentation:true, hasScriptWrapper:true } -->
 # Table of Contents
@@ -75,9 +72,6 @@
   - Enable tags in Chrome and Firefox
   - Compile to JavaScript 5 using Traceur or Babel	
 - A compatibility table for ES6 support can be found at https://kangax.github.io/compat-table/es6/ 
-
-
-
 
 <!-- section start -->
 
