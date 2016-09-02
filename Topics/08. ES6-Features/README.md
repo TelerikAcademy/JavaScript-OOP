@@ -47,7 +47,7 @@
   - `Array.from()`
   - spread operator
 
-<!-- attr: { id:'', showInPresentation:true, hasScriptWrapper:true } -->
+<!-- attr: { id:'', showInPresentation:true, hasScriptWrapper:true, style: "font-size: 0.9em" } -->
 # Table of Contents
 
 - Data Types
