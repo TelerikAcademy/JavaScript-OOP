@@ -39,7 +39,7 @@
 # Table of Contents
 
 - Functions
-  - Arrоw functions
+  - Arrow functions
     - Preserving `this`
   - Generators
 - Arrays
