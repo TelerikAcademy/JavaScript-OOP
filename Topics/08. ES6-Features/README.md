@@ -6,8 +6,8 @@
 <article class="signature">
 	<p class="signature-course">JavaScript OOP</p>
 	<p class="signature-initiative">Telerik Software Academy</p>
-	<a href="http://academy.telerik.com " class="signature-link">http://academy.telerik.com </a>
-</div>
+	<a href="http://academy.telerik.com" class="signature-link">http://academy.telerik.com</a>
+</article>
 
 <!-- section start -->
 
@@ -16,7 +16,7 @@
 - JavaScript History
   - The ECMAScript standard
 - Variables
-  - var, let, const
+  - `var`, `let`, `const`
 - Data Structures
   - `Set` and `WeakSet`
   - `Map` and `WeakMap`
@@ -27,7 +27,7 @@
 <!-- attr: { id:'', showInPresentation:true, hasScriptWrapper:true } -->
 # Table of Contents
 - Modules
-  - imports, exports, compitability
+  - imports, exports, compatibility
 - Strings
   - templated strings
   - `repeat()`, `startsWith()`, `endsWith()`, `includes()`
@@ -39,7 +39,7 @@
 # Table of Contents
 
 - Functions
-  - Arrоw functions
+  - Arrow functions
     - Preserving `this`
   - Generators
 - Arrays
@@ -130,6 +130,7 @@ MAX_VALUE = 15; // throws exception
       console.log(`The number is ${number}`);
     }
     ```
+
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Loops
 
@@ -192,12 +193,6 @@ for (let person of people){
 
 
 <!-- section start -->
-
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# Arrow Functions
-- Arrow functions easify the creation of functions:
-
-
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Arrow Functions
 - Arrow functions easify the creation of functions:
@@ -235,7 +230,8 @@ let person = {
   - We can do just:
 
 ```javascript
-let name = 'Doncho Minkov';
+let name = 'Doncho Minkov',
+    age = 25;
 let person = { name, age };
 ```
 
