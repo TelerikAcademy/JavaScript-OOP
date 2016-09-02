@@ -9,16 +9,17 @@
 <article class="signature">
 	<p class="signature-course">JavaScript OOP</p>
 	<p class="signature-initiative">Telerik Software Academy</p>
-	<a href="http://academy.telerik.com " class="signature-link">http://academy.telerik.com </a>
+	<a href="http://academy.telerik.com" class="signature-link">http://academy.telerik.com</a>
 </article>
 
 <!-- attr: { id:'', showInPresentation:true, hasScriptWrapper:true } -->
 # Table of Contents
-- Public/Private fields in JavaScript
 - Module pattern
 - Revealing module pattern
-- Singleton pattern
-<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic04.png" style="top:41.43%; left:51.46%; width:52.89%; z-index:-1" /> -->
+- Augmenting Modules
+- Modules in EcmaScript2015
+
+<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic04.png" style="top:44%; left:55%; width:50%; z-index:-1" /> -->
 
 <!-- section start -->
 <!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
@@ -214,7 +215,7 @@ import * as myModule from "my-module";
 ```js
 import {myMember} from "my-module";
 ```
-Import multiple members of a module. This inserts both foo and bar into the current scope.
+- Import multiple members of a module. This inserts both foo and bar into the current scope.
 
 ```js
 import {foo, bar} from "my-module";
