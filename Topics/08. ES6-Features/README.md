@@ -53,7 +53,7 @@
 - Data Types
   - Symbols
 - Objects
-  - `Object.asign()`
+  - `Object.assign()`
   - Iterators
   - Properties
 - Destructuring
