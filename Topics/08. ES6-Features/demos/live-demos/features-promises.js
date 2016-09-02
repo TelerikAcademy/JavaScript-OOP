@@ -24,7 +24,6 @@ let asyncOperations = {
     }
 };
 
-
 asyncOperations.asyncOperationFuncPromise(1000)
     .then(function() {
         printerDiv.innerHTML += "<h1>1. It works with Promise</h1>";
