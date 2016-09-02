@@ -193,12 +193,6 @@ for (let person of people){
 
 
 <!-- section start -->
-
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# Arrow Functions
-- Arrow functions easify the creation of functions:
-
-
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Arrow Functions
 - Arrow functions easify the creation of functions:
