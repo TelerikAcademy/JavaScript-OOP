@@ -27,7 +27,7 @@
 <!-- attr: { id:'', showInPresentation:true, hasScriptWrapper:true } -->
 # Table of Contents
 - Modules
-  - imports, exports, compitability
+  - imports, exports, compatibility
 - Strings
   - templated strings
   - `repeat()`, `startsWith()`, `endsWith()`, `includes()`
