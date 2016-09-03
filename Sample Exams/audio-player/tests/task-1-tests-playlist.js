@@ -36,7 +36,7 @@ describe('Sample exam tests', function () {
             it('expect playlist.addPlayable() to exists, to be a function and to take a single parameter and to enable chaining', function () {
                 var name = 'Rock and roll',
                     playlist = result.getPlaylist(name),
-                    playable = {id: 1, name: 'Banana Rock', author: 'Wombles'};
+                    playable = {id: 1, title: 'Banana Rock', author: 'Wombles'};
 
                 expect(playlist.addPlayable).to.exist;
                 expect(playlist.addPlayable).to.be.a('function');
@@ -58,7 +58,7 @@ describe('Sample exam tests', function () {
                 var returnedPlayable,
                     name = 'Rock and roll',
                     playlist = result.getPlaylist(name),
-                    playable = {id: 1, name: 'Banana Rock', author: 'Wombles'};
+                    playable = {id: 1, title: 'Banana Rock', author: 'Wombles'};
 
                 returnedPlayable = playlist.addPlayable(playable).getPlayableById(1);
                 expect(returnedPlayable.id).to.equal(playable.id);
@@ -80,7 +80,7 @@ describe('Sample exam tests', function () {
                     plName = 'Banana Rock',
                     plAuthor = 'Wombles',
                     playlist = result.getPlaylist(name),
-                    playable = {id: 1, name: plName, author: plAuthor};
+                    playable = {id: 1, title: plName, author: plAuthor};
 
                 playlist.addPlayable(playable);
                 playlist.removePlayable(playable);
@@ -110,7 +110,7 @@ describe('Sample exam tests', function () {
                 playlist = result.getPlaylist(name);
 
                 for (i = 0; i < 35; i += 1) {
-                    playlist.addPlayable({id: (i + 1), name: 'Rock' + (9 - (i % 10))});
+                    playlist.addPlayable({id: (i + 1), title: 'Rock' + (9 - (i % 10))});
                 }
 
                 expect(playlist.listPlayables(2, 10).length).to.equal(10);
