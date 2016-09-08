@@ -108,7 +108,7 @@ has the following:
             *   Each item **must contain** the pattern as substring either in its **name** or in its **description**
         *   **Returns an empty array**, if **none of the items** contain the pattern
         *   The `pattern` is a string containing at least 1 character
-        *   The search is **case insensitive**
+        *   The search is **case sensitive**
 
 ##`BookCatalog`
 has the following:
