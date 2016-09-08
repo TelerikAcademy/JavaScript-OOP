@@ -178,10 +178,7 @@ function solve() {
 				throw 'Search pattern should be non-empty a string';
 			}
 
-			pattern = pattern; //.toLowerCase();
-
 			return this.items.filter(function(item) {
-				// toLowerCase()
 				return item.name.indexOf(pattern) >= 0
 					|| item.description.indexOf(pattern) >= 0;
 			});
