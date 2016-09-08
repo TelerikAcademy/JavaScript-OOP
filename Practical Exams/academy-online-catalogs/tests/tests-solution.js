@@ -1,9 +1,11 @@
 /* globals require, describe, it */
 var expect = require('chai').expect,
-    result = require('../tasks/solution')();
+    //     result = require("../tasks/solution-es2015-doncho")();
+
+    result = require("../tasks/solution-es2015-doncho")();
 
 /* beforeach: start */
-var utils = (function () {
+var utils = (function() {
     var CONSTS = {
         NAME: {
             MIN: 2,
@@ -36,7 +38,7 @@ var utils = (function () {
     };
 
     function getRandom(min, max) {
-        if (typeof (max) === 'undefined') {
+        if (typeof(max) === 'undefined') {
             max = min;
             min = 0;
         }
@@ -48,84 +50,84 @@ var utils = (function () {
     function getRandomString(chars, length) {
         return Array.apply(null, {
             length: length
-        }).map(function () {
+        }).map(function() {
             return chars[getRandom(chars.length)];
         }).join('');
     }
 
     var utils = {
         valid: {
-            getName: function () {
+            getName: function() {
                 var length = getRandom(CONSTS.NAME.MIN, CONSTS.NAME.MAX);
                 return getRandomString(CONSTS.CHARS, length);
             },
-            getISBN10: function () {
+            getISBN10: function() {
                 var length = 10;
                 return getRandomString(CONSTS.DIGIS, length);
             },
-            getISBN13: function () {
+            getISBN13: function() {
                 var length = 13;
                 return getRandomString(CONSTS.DIGIS, length);
             },
-            getGenre: function () {
+            getGenre: function() {
                 var length = getRandom(CONSTS.GENRE.MIN, CONSTS.GENRE.MAX);
                 return getRandomString(CONSTS.CHARS, length);
             },
-            getDescription: function () {
+            getDescription: function() {
                 var length = getRandom(CONSTS.DESCRIPTION.MIN, CONSTS.DESCRIPTION.MAX);
                 return getRandomString(CONSTS.CHARS, length);
             },
-            getDuration: function () {
+            getDuration: function() {
                 return getRandom(0, 1000);
             },
-            getRating: function () {
+            getRating: function() {
                 return getRandom(1, 5);
             }
         },
         invalid: {
-            getShorterName: function () {
+            getShorterName: function() {
                 var length = getRandom(0, CONSTS.NAME.MIN - 1);
                 return getRandomString(CONSTS.CHARS, length);
             },
-            getLongerName: function () {
+            getLongerName: function() {
                 var length = getRandom(CONSTS.NAME.MAX + 1, CONSTS.NAME.MAX * 2);
                 return getRandomString(CONSTS.CHARS, length);
             },
-            getInvalidISBN10WithLetters: function () {
+            getInvalidISBN10WithLetters: function() {
                 var isbn = utils.valid.getISBN10().split(''),
                     index = getRandom(isbn.length);
                 isbn.splice(index, 1, 'a');
                 return isbn;
             },
-            getInvalidISBN13WithLetters: function () {
+            getInvalidISBN13WithLetters: function() {
                 return utils.valid.getISBN13().substring(1);
             },
-            getInvalidISBNNot10or13: function () {
+            getInvalidISBNNot10or13: function() {
                 var isbn = utils.valid.getISBN13().split(''),
                     index = getRandom(isbn.length);
                 isbn.splice(index, 1, 'a');
                 return isbn;
             },
-            getShorterDescription: function () {
+            getShorterDescription: function() {
                 var length = getRandom(0, CONSTS.DESCRIPTION.MIN - 1);
                 return getRandomString(CONSTS.CHARS, length);
             },
-            getLongerDescription: function () {
+            getLongerDescription: function() {
                 var length = getRandom(CONSTS.DESCRIPTION.MAX + 1, CONSTS.DESCRIPTION.MAX * 2);
                 return getRandomString(CONSTS.CHARS, length);
             },
-            getShorterGenre: function () {
+            getShorterGenre: function() {
                 var length = getRandom(0, CONSTS.GENRE.MIN - 1);
                 return getRandomString(CONSTS.CHARS, length);
             },
-            getLongerGenre: function () {
+            getLongerGenre: function() {
                 var length = getRandom(CONSTS.GENRE.MAX + 1, CONSTS.GENRE.MAX * 2);
                 return getRandomString(CONSTS.CHARS, length);
             },
-            getSmallRating: function () {
+            getSmallRating: function() {
                 return 0;
             },
-            getLargeRating: function () {
+            getLargeRating: function() {
                 return getRandom(6, 1000);
             }
         }
@@ -135,11 +137,11 @@ var utils = (function () {
 }());
 /* beforeach: end */
 
-describe('Academy Catalogs', function () {
-    describe('Book tests', function () {
-        describe('Valid tests', function () {
+describe('Academy Catalogs', function() {
+    describe('Book tests', function() {
+        describe('Valid tests', function() {
             // test 1
-            it('expect getBook to exist, to be a function and to return object with properties unique id, name, description, isbn and ganre', function () {
+            it('expect getBook to exist, to be a function and to return object with properties unique id, name, description, isbn and ganre', function() {
                 var name,
                     isbn,
                     genre,
@@ -184,11 +186,12 @@ describe('Academy Catalogs', function () {
                 }
             });
         });
-        describe('Invalid tests', function () {
+        describe('Invalid tests', function() {
             // test 2
-            it('Expect invalid name to throw', function () {
+            it('Expect invalid name to throw', function() {
 
                 expect(result.getBook).to.exist;
+
                 function testName_undefined() {
                     result.getBook(undefined, utils.valid.getISBN10(), utils.valid.getGenre(), utils.valid.getDescription());
                 }
@@ -251,7 +254,7 @@ describe('Academy Catalogs', function () {
                 expect(testNameSetter_Long).to.throw();
             });
             // test 3
-            it('Expect invalid isbn to throw', function () {
+            it('Expect invalid isbn to throw', function() {
                 function testISBN_undefined() {
                     result.getBook(utils.valid.getName(), undefined, utils.valid.getGenre(), utils.valid.getDescription());
                 }
@@ -321,7 +324,7 @@ describe('Academy Catalogs', function () {
                 expect(testISBNSetter_not10or13).to.throw();
             });
             // test 4
-            it('Expect invalid genre to throw', function () {
+            it('Expect invalid genre to throw', function() {
                 function testGenre_undefined() {
                     result.getBook(utils.valid.getName(), utils.valid.getISBN10(), undefined, utils.valid.getDescription());
                 }
@@ -384,7 +387,7 @@ describe('Academy Catalogs', function () {
                 expect(testGenreSetter_Long).to.throw();
             });
             // test 5
-            it('Expect invalid description to throw', function () {
+            it('Expect invalid description to throw', function() {
 
                 function testDescription_undefined() {
                     result.getBook(utils.valid.getName(), utils.valid.getISBN10(), utils.valid.getGenre(), undefined);
@@ -424,10 +427,10 @@ describe('Academy Catalogs', function () {
         });
     });
 
-    describe('Media tests', function () {
-        describe('Valid tests', function () {
+    describe('Media tests', function() {
+        describe('Valid tests', function() {
             // test 6
-            it('expect getMedia to exist, to be a function and to return object with properties unique id, name, description, duration and rating', function () {
+            it('expect getMedia to exist, to be a function and to return object with properties unique id, name, description, duration and rating', function() {
                 var name,
                     duration,
                     rating,
@@ -469,9 +472,9 @@ describe('Academy Catalogs', function () {
                 }
             });
         });
-        describe('Invalid tests', function () {
+        describe('Invalid tests', function() {
             // test 7
-            it('Expect invalid name to throw', function () {
+            it('Expect invalid name to throw', function() {
 
                 function testName_undefined() {
                     /*jshint ignore: start */
@@ -574,7 +577,7 @@ describe('Academy Catalogs', function () {
                 expect(testNameSetter_Long).to.throw();
             });
             // test 8
-            it('Expect invalid description to throw', function () {
+            it('Expect invalid description to throw', function() {
 
                 function testDescription_undefined() {
                     var name = utils.valid.getName();
@@ -636,7 +639,7 @@ describe('Academy Catalogs', function () {
                 expect(testDescriptionSetter_EmptyString).to.throw();
             });
             // test 9
-            it('Expect invalid rating to throw', function () {
+            it('Expect invalid rating to throw', function() {
 
                 function testRating_undefined() {
                     var name = utils.valid.getName();
@@ -718,7 +721,7 @@ describe('Academy Catalogs', function () {
                 expect(testRatingSetter_Large).to.throw();
             });
             // test 10
-            it('Expect invalid duration to throw', function () {
+            it('Expect invalid duration to throw', function() {
 
                 function testDuration_undefined() {
                     var name = utils.valid.getName();
@@ -782,14 +785,15 @@ describe('Academy Catalogs', function () {
         });
     });
 
-    describe('BookCatalog tests', function () {
-        describe('Valid tests', function () {
+    describe('BookCatalog tests', function() {
+        describe('Valid tests', function() {
             // test 11
             beforeEach(function(done) {
-                result = require('../tasks/solution')();
+                //     result = require("../tasks/solution-es2015-doncho")();
+                result = require("../tasks/solution-es2015-doncho")();
                 done();
             });
-            it('expect getBookCatalog to exist, to be a function and to return object with properties name and unique id and methods: add(), find() with 1 param and search() with 1 param', function () {
+            it('expect getBookCatalog to exist, to be a function and to return object with properties name and unique id and methods: add(), find() with 1 param and search() with 1 param', function() {
                 var name = utils.valid.getName(),
                     catalog = result.getBookCatalog(name);
 
@@ -818,7 +822,7 @@ describe('Academy Catalogs', function () {
                 expect(catalog.getGenres.length).to.equal(0);
             });
             // test 12
-            it('expect bookCatalog.add() to add books only and to work with array or books separated with comma', function () {
+            it('expect bookCatalog.add() to add books only and to work with array or books separated with comma', function() {
                 var catalog,
                     name,
                     description,
@@ -855,7 +859,7 @@ describe('Academy Catalogs', function () {
                 expect(catalog.items[5]).to.equal(books[2]);
             });
             // test 13
-            it('expect bookCatalog.getGenres() to get unique genres', function () {
+            it('expect bookCatalog.getGenres() to get unique genres', function() {
                 var catalog,
                     genre,
                     book,
@@ -904,10 +908,10 @@ describe('Academy Catalogs', function () {
                 catalog = result.getBookCatalog(utils.valid.getName());
                 findResult = catalog.getGenres();
                 expect(findResult).to.exits;
-                expect(findResult.length).to.equal(0);//*/
+                expect(findResult.length).to.equal(0); //*/
             });
             // test 14
-            it('expect bookCatalog.find() by id to find the leftmost book in the items array or return null', function () {
+            it('expect bookCatalog.find() by id to find the leftmost book in the items array or return null', function() {
                 var catalog,
                     book,
                     i,
@@ -974,7 +978,7 @@ describe('Academy Catalogs', function () {
                 expect(testFindID_string).to.throw();
             });
             // test 15
-            it('expect bookCatalog.find() by options to find an array of book in the items array or return null', function () {
+            it('expect bookCatalog.find() by options to find an array of book in the items array or return null', function() {
                 var catalog,
                     book,
                     findResult,
@@ -990,10 +994,10 @@ describe('Academy Catalogs', function () {
                 }
 
                 expect(testFindById_Undefined).to.throw();
-                expect(catalog.find({name: 'nonexistent'})).to.exits;
-                expect(Array.isArray(catalog.find({name: 'nonexistent'}))).to.be.true;
-                expect(catalog.find({name: 'nonexistent'}).length).to.exits; // it is an array-like object
-                expect(catalog.find({name: 'nonexistent'}).length).to.equal(0);
+                expect(catalog.find({ name: 'nonexistent' })).to.exits;
+                expect(Array.isArray(catalog.find({ name: 'nonexistent' }))).to.be.true;
+                expect(catalog.find({ name: 'nonexistent' }).length).to.exits; // it is an array-like object
+                expect(catalog.find({ name: 'nonexistent' }).length).to.equal(0);
 
                 // test with one book
                 book = {
@@ -1004,7 +1008,7 @@ describe('Academy Catalogs', function () {
                     description: utils.valid.getDescription()
                 };
                 catalog.items.push(book);
-                findResult = catalog.find({id: id});
+                findResult = catalog.find({ id: id });
                 expect(findResult).to.exits;
                 expect(findResult.length).to.equal(1);
                 expect(findResult[0]).to.equal(book);
@@ -1023,22 +1027,22 @@ describe('Academy Catalogs', function () {
                     catalog.items.push(book);
                 }
 
-                findResult = catalog.find({name: 'myName'});
+                findResult = catalog.find({ name: 'myName' });
                 expect(findResult).to.exits;
                 expect(findResult.length).to.equal(len);
 
-                findResult = catalog.find({id: 2 + len, name: 'myName'});
+                findResult = catalog.find({ id: 2 + len, name: 'myName' });
                 expect(findResult).to.exits;
                 expect(findResult.length).to.equal(1);
                 expect(findResult[0]).to.equal(books[2]);
 
                 // test search by genre
-                findResult = catalog.find({genre: 'generic1'});
+                findResult = catalog.find({ genre: 'generic1' });
                 expect(findResult).to.exits;
                 expect(findResult.length).to.equal(1);
             });
             // test 16
-            it('expect bookCatalog.search() to return an array of found items or empty array', function () {
+            it('expect bookCatalog.search() to return an array of found items or empty array', function() {
                 var i,
                     catalog,
                     book,
@@ -1073,14 +1077,14 @@ describe('Academy Catalogs', function () {
                     catalog.items.push(book);
                 }
                 pattern = catalog.items[0].name.substr(1, 3);
-                var matchingBooks = catalog.items.filter(function (book) {
+                var matchingBooks = catalog.items.filter(function(book) {
                     return book.name.indexOf(pattern) >= 0 ||
                         book.description.indexOf(pattern) >= 0;
                 });
                 expect(catalog.search(pattern)).to.eql(matchingBooks);
             });
             // test 17
-            it('Expect bookCatalog.search() to return empty array, when no books in catalog and when no books that contain the pattern ', function () {
+            it('Expect bookCatalog.search() to return empty array, when no books in catalog and when no books that contain the pattern ', function() {
                 var catalog,
                     i,
                     pattern,
@@ -1101,13 +1105,13 @@ describe('Academy Catalogs', function () {
                 expect(catalog.search(pattern)).to.eql([]);
             });
         });
-        describe('Invalid tests', function () {
+        describe('Invalid tests', function() {
             // test 18
             beforeEach(function(done) {
-                result = require('../tasks/solution')();
+                    result = require("../tasks/solution-es2015-doncho")();
                 done();
             });
-            it('Expect bookCatalog.search() to throw if pattern is undefined, null or empty string ', function () {
+            it('Expect bookCatalog.search() to throw if pattern is undefined, null or empty string ', function() {
                 var catalog = result.getBookCatalog(utils.valid.getName());
 
                 function testSearch_Undefined() {
@@ -1127,7 +1131,7 @@ describe('Academy Catalogs', function () {
                 expect(testSearch_EmptyString).to.throw();
             });
             // test 19
-            it('expect invalid name to throw', function () {
+            it('expect invalid name to throw', function() {
                 var catalog,
                     name,
                     count,
@@ -1205,7 +1209,7 @@ describe('Academy Catalogs', function () {
                 expect(testNameSetter_Long).to.throw();
             });
             // test 20
-            it('expect bookCatalog.add() to throw', function () {
+            it('expect bookCatalog.add() to throw', function() {
                 var duration,
                     rating,
                     description,
@@ -1252,14 +1256,14 @@ describe('Academy Catalogs', function () {
             });
         });
     });
-    describe('MediaCatalog tests', function () {
-        describe('Valid tests', function () {
+    describe('MediaCatalog tests', function() {
+        describe('Valid tests', function() {
             // test 21
             beforeEach(function(done) {
-                result = require('../tasks/solution')();
+                    result = require("../tasks/solution-es2015-doncho")();
                 done();
             });
-            it('expect getMediaCatalog to exist, to be a function and to return object with properties name and unique id and methods: add(), find() with 1 param and search() with 1 param', function () {
+            it('expect getMediaCatalog to exist, to be a function and to return object with properties name and unique id and methods: add(), find() with 1 param and search() with 1 param', function() {
                 var name = utils.valid.getName(),
                     catalog = result.getMediaCatalog(name);
 
@@ -1292,7 +1296,7 @@ describe('Academy Catalogs', function () {
                 expect(catalog.getSortedByDuration.length).to.equal(0);
             });
             // test 22
-            it('expect mediaCatalog.add() to add media only and to work with array or media separated with comma', function () {
+            it('expect mediaCatalog.add() to add media only and to work with array or media separated with comma', function() {
                 var catalog,
                     name,
                     description,
@@ -1329,7 +1333,7 @@ describe('Academy Catalogs', function () {
                 expect(catalog.items[5]).to.equal(medias[2]);
             });
             // test 23
-            it('expect mediaCatalog.getTop() to get unique genres', function () {
+            it('expect mediaCatalog.getTop() to get unique genres', function() {
                 var catalog,
                     name,
                     rating,
@@ -1398,7 +1402,7 @@ describe('Academy Catalogs', function () {
                 expect(testGetTop_ltOne).to.throw();
             });
             // test 24
-            it('expect mediaCatalog.find() by id to find the leftmost media in the items array or return null', function () {
+            it('expect mediaCatalog.find() by id to find the leftmost media in the items array or return null', function() {
                 var catalog,
                     media,
                     book,
@@ -1458,10 +1462,10 @@ describe('Academy Catalogs', function () {
 
                 expect(testFindID_undefined).to.throw();
                 expect(testFindID_null).to.throw();
-                expect(testFindID_string).to.throw();//*/
+                expect(testFindID_string).to.throw(); //*/
             });
             // test 25
-            it('expect mediaCatalog.find() by options to find an array of media in the items array or return null', function () {
+            it('expect mediaCatalog.find() by options to find an array of media in the items array or return null', function() {
                 var catalog,
                     media,
                     findResult,
@@ -1477,10 +1481,10 @@ describe('Academy Catalogs', function () {
                 }
 
                 expect(testFindById_Undefined).to.throw();
-                expect(catalog.find({name: 'nonexistent'})).to.exits;
-                expect(Array.isArray(catalog.find({name: 'nonexistent'}))).to.be.true;
-                expect(catalog.find({name: 'nonexistent'}).length).to.exits; // it is an array-like object
-                expect(catalog.find({name: 'nonexistent'}).length).to.equal(0);
+                expect(catalog.find({ name: 'nonexistent' })).to.exits;
+                expect(Array.isArray(catalog.find({ name: 'nonexistent' }))).to.be.true;
+                expect(catalog.find({ name: 'nonexistent' }).length).to.exits; // it is an array-like object
+                expect(catalog.find({ name: 'nonexistent' }).length).to.equal(0);
 
                 // test with one book
                 media = {
@@ -1491,7 +1495,7 @@ describe('Academy Catalogs', function () {
                     description: utils.valid.getDescription()
                 };
                 catalog.items.push(media);
-                findResult = catalog.find({id: id});
+                findResult = catalog.find({ id: id });
                 expect(findResult).to.exits;
                 expect(findResult.length).to.equal(1);
                 expect(findResult[0]).to.equal(media);
@@ -1510,22 +1514,22 @@ describe('Academy Catalogs', function () {
                     catalog.items.push(media);
                 }
 
-                findResult = catalog.find({name: 'myName'});
+                findResult = catalog.find({ name: 'myName' });
                 expect(findResult).to.exits;
                 expect(findResult.length).to.equal(len);
 
-                findResult = catalog.find({id: 2 + len, name: 'myName'});
+                findResult = catalog.find({ id: 2 + len, name: 'myName' });
                 expect(findResult).to.exits;
                 expect(findResult.length).to.equal(1);
                 expect(findResult[0]).to.equal(medias[2]);
 
                 // test search by genre
-                findResult = catalog.find({rating: 4});
+                findResult = catalog.find({ rating: 4 });
                 expect(findResult).to.exits;
                 expect(findResult.length).to.equal(1);
             });
             // test 26
-            it('expect mediaCatalog.search() to return an array of found items or empty array', function () {
+            it('expect mediaCatalog.search() to return an array of found items or empty array', function() {
                 var i,
                     catalog,
                     media,
@@ -1560,14 +1564,14 @@ describe('Academy Catalogs', function () {
                     catalog.items.push(media);
                 }
                 pattern = catalog.items[0].name.substr(1, 3);
-                var matchingMedia = catalog.items.filter(function (media) {
+                var matchingMedia = catalog.items.filter(function(media) {
                     return media.name.indexOf(pattern) >= 0 ||
                         media.description.indexOf(pattern) >= 0;
                 });
                 expect(catalog.search(pattern)).to.eql(matchingMedia);
             });
             // test 27
-            it('Expect mediaCatalog.search() to return empty array, when no media in catalog and when no media that contain the pattern ', function () {
+            it('Expect mediaCatalog.search() to return empty array, when no media in catalog and when no media that contain the pattern ', function() {
                 var catalog,
                     i,
                     pattern,
@@ -1589,13 +1593,13 @@ describe('Academy Catalogs', function () {
                 expect(catalog.search(pattern)).to.eql([]);
             });
         });
-        describe('Invalid tests', function () {
+        describe('Invalid tests', function() {
             // test 28
             beforeEach(function(done) {
-                result = require('../tasks/solution')();
+                    result = require("../tasks/solution-es2015-doncho")();
                 done();
             });
-            it('Expect mediaCatalog.search() to throw if pattern is undefined, null or empty string ', function () {
+            it('Expect mediaCatalog.search() to throw if pattern is undefined, null or empty string ', function() {
                 var catalog = result.getMediaCatalog(utils.valid.getName());
 
                 function testSearch_Undefined() {
@@ -1615,7 +1619,7 @@ describe('Academy Catalogs', function () {
                 expect(testSearch_EmptyString).to.throw();
             });
             // test 29
-            it('expect invalid name to throw', function () {
+            it('expect invalid name to throw', function() {
                 var catalog,
                     name,
                     count,
@@ -1693,7 +1697,7 @@ describe('Academy Catalogs', function () {
                 expect(testNameSetter_Long).to.throw();
             });
             // test 30
-            it('expect mediaCatalog.add() to throw', function () {
+            it('expect mediaCatalog.add() to throw', function() {
                 var duration,
                     rating,
                     description,
