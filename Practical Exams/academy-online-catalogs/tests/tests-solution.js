@@ -141,7 +141,7 @@ describe('Academy Catalogs', function() {
     describe('Book tests', function() {
         describe('Valid tests', function() {
             // test 1
-            it('expect getBook to exist, to be a function and to return object with properties unique id, name, description, isbn and ganre', function() {
+            it('expect getBook to exist, to be a function and to return object with properties unique id, name, description, isbn and genre', function () {
                 var name,
                     isbn,
                     genre,
