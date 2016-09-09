@@ -157,7 +157,9 @@ has the following:
 		*	The media must sorted by:
 			*	descending by duration
 			*	ascending by id
-
+    *   find(options)
+        *   Extends find(options) from parent, but adds a key `rating`
+            *   i.e. books can be found by `id`, `name` and/or `rating`
 
 ##Example:
 
