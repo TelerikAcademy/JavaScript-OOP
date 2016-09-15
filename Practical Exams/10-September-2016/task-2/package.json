@@ -1,0 +1,19 @@
+{
+  "name": "battlemanager",
+  "version": "1.0.0",
+  "description": "exam task",
+  "main": "solution.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha -R spec ./tests/tests.js",
+    "build": "tsc --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  }
+}
