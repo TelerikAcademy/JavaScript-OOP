@@ -108,7 +108,7 @@ has the following:
             *   Each item **must contain** the pattern as substring either in its **name** or in its **description**
         *   **Returns an empty array**, if **none of the items** contain the pattern
         *   The `pattern` is a string containing at least 1 character
-        *   The search is **case insensitive**
+        *   The search is **case sensitive**
 
 ##`BookCatalog`
 has the following:
@@ -157,7 +157,9 @@ has the following:
 		*	The media must sorted by:
 			*	descending by duration
 			*	ascending by id
-
+    *   find(options)
+        *   Extends find(options) from parent, but adds a key `rating`
+            *   i.e. books can be found by `id`, `name` and/or `rating`
 
 ##Example:
 
@@ -168,7 +170,7 @@ has the following:
                 },
                 getMedia: function (name, rating, duration, description) {
                     //return a media instance
-                }
+                },
                 getBookCatalog: function (name) {
                     //return a book catalog instance
                 },

@@ -27,7 +27,7 @@
     };
   };
 
-  return { getCalculator: (name) => new Calculator(name };
+  return { getCalculator: (name) => new Calculator(name) };
 } ());
 
 var calc = controls.getCalculator('First');

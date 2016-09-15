@@ -44,7 +44,7 @@
         printName() {
           console.log(`My name is ${this.name}`);
         }
-    }
+    };
     ```
 
   -  Create your class:
