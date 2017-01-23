@@ -32,17 +32,17 @@
   - Diving into design of modern JS apps
 - Pretty much the same
   - Lectures 2 times a week
-  - Practical exam after 3 weeks
+  - Practical exam after 4 weeks
 - The course exam
   - Solve/extend one or more tasks
 
 <!-- section start -->
 <!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
-# JavaScript OOP: Course Program
+# Course Program
 ## Material to cover during the course
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# JavaScript OOP: Course Program
+<!-- # Course Program -->
 - **JavaScript OOP** course introduction
   - Course Program, Exams, Evaluation
 - JavaScript Transpilers and Babel
@@ -53,16 +53,14 @@
   - Function and global scope
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-/*# JavaScript OOP:Course Program */
-
+<!-- # Course Program -->
 - ES2015 classes
   - Creating Classes with JavaScript
   - Inheritancing other classes
   - Mixins
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-/*# JavaScript OOP:Course Program */
-
+<!-- # Course Program -->
 - Modules and Patterns in JavaScript
   - Modules
   - Revealing Module pattern
@@ -75,7 +73,7 @@
 ## Thank God There Are Bonuses!
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# JavaScript - Evaluation
+<!-- # Evaluation -->
 - Evaluation components
   - **Practical exam** - up to `80%`
   - **Homework** - up to `15%`
