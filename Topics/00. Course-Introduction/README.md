@@ -31,7 +31,7 @@
   - Continuation of JavaScript Fundamentals && JS UI & DOM
   - Diving into design of modern JS apps
 - Pretty much the same
-  - Lectures 2 times a week 
+  - Lectures 2 times a week
   - Practical exam after a 2 weeks
 - The course exam
   - Solve/extend one or more tasks
@@ -45,7 +45,7 @@
 # JavaScript OOP:Course Program
 - "JavaScript OOP" course introduction
   - Course Program, Exams, Evaluation
-- JavaScript Transpilers and Babel 
+- JavaScript Transpilers and Babel
   - Supporting ES2015/ES2016 to current Node.js and browsers
 - Functions and Function Expressions
   - Deeper dive into JavaScript Functions
@@ -71,7 +71,7 @@
 
 <!-- section start -->
 <!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
-# Evaluation 
+# Evaluation
 ## Thank God There Are Bonuses!
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
@@ -89,7 +89,7 @@
 - Homework tasks will be revealed on the day of the first delivery of the presentation
 - Deadline will be **1** **week** from the second delivery of the presentation
 - For each task students will have a set of unit tests that the solution must pass exactly
-  - Homework will be submitted in http://bgcoder.com 
+  - Homework will be submitted in http://bgcoder.com
   - The tests will be implemented using Mocha.js and Chai
 
 <!-- section start -->
@@ -100,7 +100,7 @@
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # JavaScript Resources
 - Mozilla Development Network (MDN)
-  - https://developer.mozilla.org 
+  - https://developer.mozilla.org
   - Mostly used for the presentations
 - Books:
   - Secrets of the JavaScript Ninja
@@ -112,9 +112,9 @@
   - Discuss the course exercises with your colleagues
   - Find solutions for the exercises
   - Share source code / discuss ideas
-  - https://telerikacademy.com/Forum/Category/28/javascript-oop 
+  - https://telerikacademy.com/Forum/Category/28/javascript-oop
 - The JavaScript OOP official web site:
-  - http://academy.telerik.com/student-courses/web-design-and-ui/javascript-oop 
+  - http://academy.telerik.com/student-courses/web-design-and-ui/javascript-oop
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 
