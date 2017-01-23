@@ -75,11 +75,11 @@
 ## Thank God There Are Bonuses!
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# JavaScript – Evaluation
+# JavaScript - Evaluation
 - Evaluation components
-  - **Practical exam** – up to `80%`
-  - **Homework** – up to `15%`
-  - **Attendance** in class – up to `5`
+  - **Practical exam** - up to `80%`
+  - **Homework** - up to `15%`
+  - **Attendance** in class - up to `5`
 
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic24.png" style="top:53.77%; left:58.01%; width:34.99%; z-index:-1" /> -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic25.png" style="top:53.77%; left:19.65%; width:28.21%; z-index:-1" /> -->
