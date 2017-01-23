@@ -5,7 +5,7 @@
 <article class="signature">
 	<p class="signature-course">JavaScript OOP</p>
 	<p class="signature-initiative">Telerik Software Academy</p>
-	<a href="http://academy.telerik.com" class="signature-link">http://academy.telerik.com</a>
+	<a href="https://telerikacademy.com" class="signature-link">https://telerikacademy.com</a>
 </div>
 
 <!-- section start -->
@@ -112,20 +112,20 @@
   - Discuss the course exercises with your colleagues
   - Find solutions for the exercises
   - Share source code / discuss ideas
-  - http://telerikacademy.com/Forum/Category/28/javascript-oop 
+  - https://telerikacademy.com/Forum/Category/28/javascript-oop 
 - The JavaScript OOP official web site:
   - http://academy.telerik.com/student-courses/web-design-and-ui/javascript-oop 
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 
 - The Telerik Integrated Learning System (TILS)
-  - www.telerikacademy.com
+  - https://telerikacademy.com
   - Important resource for all students
   - Homework submissions
   - Homework peer reviews
   - Presence cards with barcode
   - Reports about your results
-- telerikacademy.com/Courses/Courses/Details/245 
+- https://telerikacademy.com/Courses/Courses/Details/411
 
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic34.png" style="top:38.79%; left:71.61%; width:34.79%; z-index:-1" /> -->
 
@@ -162,4 +162,3 @@
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic40.png" style="top:13.79%; left:92.16%; width:13.45%; z-index:-1" /> -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic41.png" style="top:37.09%; left:68.14%; width:36.30%; z-index:-1" /> -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic42.png" style="top:58.79%; left:95.14%; width:10.85%; z-index:-1" /> -->
-
