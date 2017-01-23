@@ -28,11 +28,11 @@
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # What's Coming Next?
 - JavaScript OOP
-  - Continuation of JavaScript Fundamentals && JS UI & DOM
+  - Continuation of JavaScript Fundamentals
   - Diving into design of modern JS apps
 - Pretty much the same
   - Lectures 2 times a week
-  - Practical exam after a 2 weeks
+  - Practical exam after 3 weeks
 - The course exam
   - Solve/extend one or more tasks
 
@@ -42,8 +42,8 @@
 ## Material to cover during the course
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# JavaScript OOP:Course Program
-- "JavaScript OOP" course introduction
+# JavaScript OOP: Course Program
+- **JavaScript OOP** course introduction
   - Course Program, Exams, Evaluation
 - JavaScript Transpilers and Babel
   - Supporting ES2015/ES2016 to current Node.js and browsers
@@ -79,15 +79,15 @@
 - Evaluation components
   - **Practical exam** - up to `80%`
   - **Homework** - up to `15%`
-  - **Attendance** in class - up to `5`
+  - **Attendance** in class - up to `5%`
 
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic24.png" style="top:53.77%; left:58.01%; width:34.99%; z-index:-1" /> -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic25.png" style="top:53.77%; left:19.65%; width:28.21%; z-index:-1" /> -->
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Homework Peer Reviews
-- Homework tasks will be revealed on the day of the first delivery of the presentation
-- Deadline will be **1** **week** from the second delivery of the presentation
+- Homework tasks will be revealed on the day of the delivery of the presentation
+- Deadline will be **1** **week** from the delivery of the presentation
 - For each task students will have a set of unit tests that the solution must pass exactly
   - Homework will be submitted in http://bgcoder.com
   - The tests will be implemented using Mocha.js and Chai
@@ -117,7 +117,7 @@
   - http://academy.telerik.com/student-courses/web-design-and-ui/javascript-oop
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-
+<!-- # Course Web Site & Forums -->
 - The Telerik Integrated Learning System (TILS)
   - https://telerikacademy.com
   - Important resource for all students
@@ -142,7 +142,8 @@
 
 <!-- section start -->
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# JavaScript OOP - Course Introduction
+<!-- # JavaScript OOP - Course Introduction
+## Questions -->
 
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic37.png" style="top:50.25%; left:38.83%; width:32.62%; z-index:-1" /> -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic38.png" style="top:15.78%; left:10.44%; width:17.19%; z-index:-1" /> -->
