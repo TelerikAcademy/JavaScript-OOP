@@ -128,7 +128,6 @@
   - Sublime Text 2/3
   - JetBrains WebStorm
   - Atom
-  - Visual Studio Code
   - ViM
 
 <!-- section start -->
