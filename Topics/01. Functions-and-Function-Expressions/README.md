@@ -537,7 +537,7 @@ console.log(factorial2(5)); //logs 120 - correct
 - **IIFE** must be **always an expression**
   - Otherwise the browsers don't know what to do with the declaration
 
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
 # Valid IIFE
 - Valid **IIFEs**
 
