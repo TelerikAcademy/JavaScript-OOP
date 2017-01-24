@@ -7,8 +7,7 @@
 	<p class="signature-course">JavaScript OOP</p>
 	<p class="signature-initiative">Telerik Software Academy</p>
 	<a href="http://academy.telerik.com " class="signature-link">http://academy.telerik.com </a>
-</div>
-
+</article>
 
 <!-- attr: { id:'', showInPresentation:true, hasScriptWrapper:true } -->
 # Table of Contents
@@ -23,7 +22,6 @@
 - [Function methods](#function-methods)
 
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic01.png" style="top:32.88%; left:65.96%; width:38.79%; z-index:-1" /> -->
-
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Table of Contents -->
@@ -44,7 +42,6 @@
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic03.png" style="top:42.60%; left:60.72%; width:35.21%; z-index:-1" /> -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic04.png" style="top:42.60%; left:9.51%; width:37.91%; z-index:-1" /> -->
 
-
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style :"font-size:0.85em" } -->
 <!-- # Functions in JavaScript -->
 - Functions are small named snippets of code
@@ -64,7 +61,6 @@
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Functions in JavaScript -->
 - Different function usages:
-
   - _Example:_ Find max value in an array
 
 ```js
@@ -85,15 +81,11 @@ function printMsg(msg){
 <!-- # Functions in JavaScript
 ## [Demo]() -->
 
-
-
-
 <!-- section start -->
 
 <!-- attr: { id:'function-object', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
 # Function Object
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic06.png" style="top:42.75%; left:30.12%; width:38.44%; z-index:-1" /> -->
-
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em;' } -->
 <!-- # Function Object -->
@@ -111,7 +103,6 @@ console.log(max.length); //returns 1
 console.log(max.name); //returns "max"
 console.log((function(){}).name));
 ```
-
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Function Object -->
@@ -134,7 +125,6 @@ arr.sort(orderBy);
 <!-- # Function Object
 ## [Demo]() -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic07.png" style="top:56.88%; left:15.42%; width:70.04%; z-index:-1" /> -->
-
 
 <!-- section start -->
 
@@ -181,7 +171,6 @@ var printMsg = new Function("msg", 'console.log("msg");');
 ## [Demo]() -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic09.png" style="top:55.54%; left:35.30%; width:30.34%; z-index:-1" /> -->
 
-
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style: "font-size:0.9em" } -->
 # Function Expression
 - **Function expressions** are created using the **function literal**
@@ -225,11 +214,9 @@ var printMsg = function printMsg(msg) {
 var printMsg = (msg) => console.log(`Message: ${msg}`);
 ```
 
-
 <!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Function Expressions
 ## [Demo]() -->
-
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.85em' } -->
 # Function Constructors
@@ -252,16 +239,14 @@ new Function([optional arguments], body);
 <!-- # Function Constructor
 ## [Demo]() -->
 
-
 <!-- section start -->
 
 <!-- attr: { id:'function-properties', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
-<!-- # Function Properties
-## Object, Values, Methods -->
-
+# Function Properties
+## Object, Values, Methods
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# Function Properties
+<!-- # Function Properties -->
 - Each function is an object
   - Created either with **declaration**, **expression** or **constructor**
 - Functions have properties:
@@ -290,7 +275,7 @@ new Function([optional arguments], body);
   - `call` gets the arguments separated by comma
   - `apply` gets the arguments as an array of objects
 
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.8em' } -->
 # Call and Apply
 - `Math.max()`, `Math.min()`
 
@@ -321,12 +306,13 @@ new Function([optional arguments], body);
 
 <!-- section start -->
 <!-- attr: { id:'recursion', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
-<!-- # Recursion
-## Calling functions from themselves -->
+# Recursion
+## Calling functions from themselves
+
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic15.png" style="top:53.66%; left:32.63%; width:35.83%; z-index:-1" /> -->
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# Recursion
+<!-- # Recursion -->
 - When a function calls themselves, this is called **recursion**
 
 - _Example_:
@@ -342,7 +328,6 @@ function factorial(n) {
 ```
 
 <div class="fragment balloon" style="top:44.98%; left:47.74%; width:28%">A recursion must always have an exit condition!</div>
-
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Recursion -->
@@ -376,13 +361,11 @@ console.log(factorial(12)); //479001600
 - Using recursion to calculate factorial numbers
   - Using the formula `F(N) = F(N-1) * N`
 
-
 <!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Factorial
 ## [Demo]() -->
 
-
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.8em' } -->
 <!-- # Traversing the DOM -->
 
 - Traverse the DOM
@@ -399,7 +382,8 @@ function traverse(element) {
     spacing = spacing || " ";
 
     console.log(spacing + node.nodeName);
-    [...node.childNodes].forEach(child => traverseElement(child, spacing + "--"));
+    [...node.childNodes]
+		.forEach(child => traverseElement(child, spacing + "--"));
 
     console.log(spacing + "/" + node.nodeName);
   }
@@ -411,7 +395,6 @@ function traverse(element) {
 <!-- # DOM Traversal
 ## [Demo]() -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic17.png" style="top:35%; left:0%; width:52.13%; z-index:-1" /> -->
-
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Recursion with Function Expression
@@ -433,8 +416,8 @@ fact(5);
 ```
 Logs 120
 </div>
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic18.png" style="top:38.21%; left:95.79%; width:6.47%; z-index:-1" /> -->
 
+<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic18.png" style="top:38.21%; left:95.79%; width:6.47%; z-index:-1" /> -->
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Recursion with Function Expression
@@ -457,11 +440,10 @@ f(5);
 ```
 Still logs 120
 </div>
+
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic19.png" style="top:38.21%; left:95.79%; width:6.47%; z-index:-1" /> -->
 
 - Assign the function to a variable
-
-
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Recursion with Function Expression
@@ -485,12 +467,10 @@ var fact = function (n) {
 fact(5);
 ```
 
-
 ```javascript
 var f = fact;
 f(5);
 ```
-
 
 ```javascript
 fact = 5;
@@ -500,11 +480,9 @@ Throws TypeError (Number is not a function)
 </div>
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic23.png" style="top:56.31%; left:95.80%; width:6.46%; z-index:-1" /> -->
 
-
 <!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Buggy Recursion with Function Expressions
 ## [Demo]() -->
-
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Recursion with Function Expression -->
@@ -523,7 +501,6 @@ var factorial2 = factorial;
 factorial = 5;
 console.log(factorial2(5)); //logs 120 - correct
 ```
-
 
 <!-- section start -->
 
@@ -545,7 +522,6 @@ console.log(factorial2(5)); //logs 120 - correct
     - i.e. `y()` can be called only from inside of `x()`
   - _Note_: every time `x()` is invoked, a new `y()` is created!
 
-
 <!-- section start -->
 
 <!-- attr: { id:'iifes', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
@@ -561,7 +537,6 @@ console.log(factorial2(5)); //logs 120 - correct
 - **IIFE** must be **always an expression**
   - Otherwise the browsers don't know what to do with the declaration
 
-
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Valid IIFE
 - Valid **IIFEs**
@@ -571,8 +546,8 @@ console.log(factorial2(5)); //logs 120 - correct
     (function(){ console.log("invoked!"); }());
     (function(){ console.log("invoked!"); })();
     !function(){ console.log("invoked!"); }();
-    true && function(){console.log("invoked!"); }();
-    1 + function(){console.log("invoked!"); }();
+    true && function(){ console.log("invoked!"); }();
+    1 + function(){ console.log("invoked!"); }();
     ```
 
   - In all cases the browser must be explicitly told that the object before the `()` is an expression
@@ -582,7 +557,6 @@ console.log(factorial2(5)); //logs 120 - correct
 <!-- attr: { class:'slide-section demo', showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Immediately Invoked Function Expressions
 ## [Demo]() -->
-
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.95em' } -->
 # Modules
@@ -604,23 +578,21 @@ console.log(getNextId());     //prints 2
 console.log(lastId); //throws ReferenceError
 ```
 
-
 <!-- Questions -->
 <!-- section start -->
 <!-- attr: { hasScriptWrapper:true, class:"slide-questions", id:"questions" } -->
 # Functions Declarations, Function Expressions and IIFEs
 ## Questions?
 
-
 <!-- attr: { showInPresentation: true, hasScriptWrapper: true, style:'font-size: 0.9em' } -->
 # Free Trainings<br/>@ Telerik Academy
 - "Web Design with HTML 5, CSS 3 and JavaScript" course @ Telerik Academy
-    - [javascript course](http://academy.telerik.com/student-courses/web-design-and-ui/javascript-fundamentals/about)
-  - Telerik Software Academy
-    - [academy.telerik.com](academy.telerik.com)
-  - Telerik Academy @ Facebook
-    - [facebook.com/TelerikAcademy](facebook.com/TelerikAcademy)
-  - Telerik Software Academy Forums
-    - [forums.academy.telerik.com](http://telerikacademy.com/Forum/Home)
+  - [javascript course](http://academy.telerik.com/student-courses/web-design-and-ui/javascript-fundamentals/about)
+- Telerik Software Academy
+  - https://telerikacademy.com
+- Telerik Academy @ Facebook
+  - https://facebook.com/TelerikAcademy
+- Telerik Software Academy Forums
+  - https://telerikacademy.com/Forum/Home
 
 <!-- <img class="slide-image" showInPresentation="true"  src="imgs/pic00.png" style="top:58.18%; left:90.52%; width:16.97%; z-index:-1" /> -->
