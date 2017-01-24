@@ -18,7 +18,7 @@
 - Resources for the Course
 - Software
 
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic02.png" style="top:32.62%; left:65.02%; width:38.35%; z-index:-1" /> -->
+<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic02.png" style="top:32.62%; left:65.02%; width:38.35%; z-index:-1" /> -->
 
 <!-- section start -->
 <!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
@@ -74,8 +74,8 @@
   - **Homework** - up to `15%`
   - **Attendance** in class - up to `5%`
 
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic24.png" style="top:53.77%; left:58.01%; width:34.99%; z-index:-1" /> -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic25.png" style="top:53.77%; left:19.65%; width:28.21%; z-index:-1" /> -->
+<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic24.png" style="top:53.77%; left:58.01%; width:34.99%; z-index:-1" /> -->
+<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic25.png" style="top:53.77%; left:19.65%; width:28.21%; z-index:-1" /> -->
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Homework Peer Reviews
@@ -118,7 +118,7 @@
   - Reports about your results
 - https://telerikacademy.com/Courses/Courses/Details/411
 
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic34.png" style="top:38.79%; left:71.61%; width:34.79%; z-index:-1" /> -->
+<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic34.png" style="top:38.79%; left:71.61%; width:34.79%; z-index:-1" /> -->
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Required Software
@@ -136,9 +136,9 @@
 <!-- # JavaScript OOP - Course Introduction
 ## Questions -->
 
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic37.png" style="top:50.25%; left:38.83%; width:32.62%; z-index:-1" /> -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic38.png" style="top:15.78%; left:10.44%; width:17.19%; z-index:-1" /> -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic39.png" style="top:35%; left:85.21%; width:19.34%; z-index:-1" /> -->
+<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic37.png" style="top:50.25%; left:38.83%; width:32.62%; z-index:-1" /> -->
+<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic38.png" style="top:15.78%; left:10.44%; width:17.19%; z-index:-1" /> -->
+<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic39.png" style="top:35%; left:85.21%; width:19.34%; z-index:-1" /> -->
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Free Trainings @ Telerik Academy
@@ -151,6 +151,6 @@
 - Telerik Software Academy Forums
   - https://telerikacademy.com/Forum/Home
 
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic40.png" style="top:13.79%; left:92.16%; width:13.45%; z-index:-1" /> -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic41.png" style="top:37.09%; left:68.14%; width:36.30%; z-index:-1" /> -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic42.png" style="top:58.79%; left:95.14%; width:10.85%; z-index:-1" /> -->
+<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic40.png" style="top:13.79%; left:92.16%; width:13.45%; z-index:-1" /> -->
+<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic41.png" style="top:37.09%; left:68.14%; width:36.30%; z-index:-1" /> -->
+<!-- <img class="slide-image" showInPresentation="true" src="imgs/pic42.png" style="top:58.79%; left:95.14%; width:10.85%; z-index:-1" /> -->
