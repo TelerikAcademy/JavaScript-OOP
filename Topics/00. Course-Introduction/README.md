@@ -45,12 +45,13 @@
 <!-- # Course Program -->
 - **JavaScript OOP** course introduction
   - Course Program, Exams, Evaluation
-- JavaScript Transpilers and Babel
-  - Supporting ES2015/ES2016 to current Node.js and browsers
 - Functions and Function Expressions
   - Deeper dive into JavaScript Functions
 - Scopes and Closures
   - Function and global scope
+- Modules and Patterns in JavaScript
+  - Modules
+  - Revealing Module pattern
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Course Program -->
@@ -58,12 +59,6 @@
   - Creating Classes with JavaScript
   - Inheritancing other classes
   - Mixins
-
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-<!-- # Course Program -->
-- Modules and Patterns in JavaScript
-  - Modules
-  - Revealing Module pattern
 - ES2015 Features
   - Fat-arrow functions, spread operator, generators, etc...
 
@@ -85,7 +80,7 @@
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Homework Peer Reviews
 - Homework tasks will be revealed on the day of the delivery of the presentation
-- Deadline will be **1** **week** from the delivery of the presentation
+  - Deadline will be **1** **week** from the delivery of the presentation
 - For each task students will have a set of unit tests that the solution must pass exactly
   - Homework will be submitted in http://bgcoder.com
   - The tests will be implemented using Mocha.js and Chai
@@ -111,8 +106,6 @@
   - Find solutions for the exercises
   - Share source code / discuss ideas
   - https://telerikacademy.com/Forum/Category/28/javascript-oop
-- The JavaScript OOP official web site:
-  - http://academy.telerik.com/student-courses/web-design-and-ui/javascript-oop
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # Course Web Site & Forums -->
@@ -134,6 +127,9 @@
     - Microsoft **Visual Studio 2015** or Visual Studio Community 2015 (free version of VS 2015) are also good enough
   - Sublime Text 2/3
   - JetBrains WebStorm
+  - Atom
+  - Visual Studio Code
+  - ViM
 
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic35.png" style="top:63.47%; left:24.50%; width:59.61%; z-index:-1" /> -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic36.png" style="top:36.50%; left:76.72%; width:22.92%; z-index:-1" /> -->
@@ -150,13 +146,13 @@
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Free Trainings @ Telerik Academy
 - Web Design and UI Technologies @ Telerik Academy
-    - html5course.telerik.com
-  - Telerik Software Academy
-    - academy.telerik.com
-  - Telerik Academy @ Facebook
-    - facebook.com/TelerikAcademy
-  - Telerik Software Academy Forums
-    - forums.academy.telerik.com
+  - html5course.telerik.com
+- Telerik Software Academy
+  - https://telerikacademy.com
+- Telerik Academy @ Facebook
+  - https://facebook.com/TelerikAcademy
+- Telerik Software Academy Forums
+  - https://telerikacademy.com/Forum/Home
 
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic40.png" style="top:13.79%; left:92.16%; width:13.45%; z-index:-1" /> -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic41.png" style="top:37.09%; left:68.14%; width:36.30%; z-index:-1" /> -->
