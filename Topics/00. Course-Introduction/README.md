@@ -131,9 +131,6 @@
   - Visual Studio Code
   - ViM
 
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic35.png" style="top:63.47%; left:24.50%; width:59.61%; z-index:-1" /> -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic36.png" style="top:36.50%; left:76.72%; width:22.92%; z-index:-1" /> -->
-
 <!-- section start -->
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # JavaScript OOP - Course Introduction
@@ -141,7 +138,7 @@
 
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic37.png" style="top:50.25%; left:38.83%; width:32.62%; z-index:-1" /> -->
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic38.png" style="top:15.78%; left:10.44%; width:17.19%; z-index:-1" /> -->
-<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic39.png" style="top:19.31%; left:85.21%; width:19.34%; z-index:-1" /> -->
+<!-- <img class="slide-image" showInPresentation="true" src="imgs\pic39.png" style="top:35%; left:85.21%; width:19.34%; z-index:-1" /> -->
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Free Trainings @ Telerik Academy
