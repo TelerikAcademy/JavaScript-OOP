@@ -1,5 +1,5 @@
 /* globals describe, it */
-var solve = require('../tasks/task-1');
+var solve = require('../tasks/task-1')();
 var expect = require('chai').expect;
 
 describe('Tests for "Task 1"', function () {
