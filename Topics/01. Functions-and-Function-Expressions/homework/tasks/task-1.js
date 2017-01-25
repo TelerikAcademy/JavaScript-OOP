@@ -8,8 +8,9 @@
 
 */
 
-function sum() {
-	
+function solve() {
+	return function sum() {
+	}
 }
 
-module.exports = sum;
+module.exports = solve;
