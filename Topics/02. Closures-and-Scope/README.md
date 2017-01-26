@@ -35,7 +35,7 @@
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.85em' } -->
 <!-- # Scope -->
 - Scope is a place where variables are defined and can be accessed
-- JavaScript has only two types of scopes
+- JavaScript has only two types of scopes (pre ES2015)
   - **Global scope** and **function scope**
     - **Global scope** is the same for the whole web page
     - **Function scope** is different per function
@@ -81,7 +81,7 @@ function arrJoin(arr, separator) {
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 
-- The global scope is one of the **very worst parts**of JavaScript
+- The global scope is one of the **very worst parts** of JavaScript
   - Every object pollutes the global scope, making itself more visible
   - If two objects with the same identifier appear, the first one will be overridden
 
@@ -93,7 +93,7 @@ function arrJoin(arr, separator) {
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.8em' } -->
 # Function Scope
-- JavaScript **does not have a block scope** like other programming languages (C#, Java, C++)
+- JavaScript (pre ES2015) **does not have a block scope** like other programming languages (C#, Java, C++)
   - **{** and **}** does not create a scope!
 - Yet, JavaScript has a function scope
   - **Function expressions and declarations** create scope
@@ -155,8 +155,8 @@ function outer() {
 
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.8em' } -->
-# ECMAScript 6<br/>Way of Working with Scopes
-- ECMAScript 6 introduces a new way to handle scopes:
+# ECMAScript 2015<br/>Way of Working with Scopes
+- ECMAScript 2015 introduces a new way to handle scopes:
   - The key word '`let`'
 - `let` is much like `var` - creates a variable
 - But, **`let` creates a block scope**
@@ -177,6 +177,7 @@ console.log(z); // throws error - z is block scoped because of const
 <!-- section start -->
 <!-- attr: { id:'closures', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
 # Closures
+
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\closures.png" style="top:45%; left:32.5%; width:35%; border-radius: 15px" /> -->
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
@@ -247,10 +248,10 @@ var school = (function() {
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size: 0.9em' } -->
 # Free Trainings<br/>@ Telerik Academy
 - "Web Design with HTML 5, CSS 3 and JavaScript" course @ Telerik Academy
-    - [javascript course](http://academy.telerik.com/student-courses/web-design-and-ui/javascript-fundamentals/about)
-  - Telerik Software Academy
-    - [telerikacademy.com](https://telerikacademy.com)
-  - Telerik Academy @ Facebook
-    - [facebook.com/TelerikAcademy](https://facebook.com/TelerikAcademy)
-  - Telerik Software Academy Forums
-    - [https://telerikacademy.com/Forum/Home](https://telerikacademy.com/Forum/Home)
+  - [javascript course](http://academy.telerik.com/student-courses/web-design-and-ui/javascript-fundamentals/about)
+- Telerik Software Academy
+  - [telerikacademy.com](https://telerikacademy.com)
+- Telerik Academy @ Facebook
+  - [facebook.com/TelerikAcademy](https://facebook.com/TelerikAcademy)
+- Telerik Software Academy Forums
+  - [https://telerikacademy.com/Forum/Home](https://telerikacademy.com/Forum/Home)
