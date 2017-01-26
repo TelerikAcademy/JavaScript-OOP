@@ -9,26 +9,27 @@
 <article class="signature">
 	<p class="signature-course">JavaScript OOP</p>
 	<p class="signature-initiative">Telerik Software Academy</p>
-	<a href="http://academy.telerik.com" class="signature-link">http://academy.telerik.com</a>
+	<a href="https://telerikacademy.com" class="signature-link">https://telerikacademy.com</a>
 </article>
 
 <!-- section start -->
 <!-- attr: { id:'', showInPresentation:true, hasScriptWrapper:true } -->
 # Table of Contents
-- Module pattern
-- Revealing module pattern
-- Augmenting Modules
-- Modules in EcmaScript2015
+- [Module pattern](#module-pattern)
+- [Revealing module pattern](#revealing-module-pattern)
+- [Augmenting Modules](#augmenting-modules)
+- [Modules in EcmaScript2015](#modules-es2015)
 
 <!-- <img class="slide-image" showInPresentation="true" src="imgs/pic04.png" style="top:44%; left:55%; width:50%; z-index:-1" /> -->
 
 <!-- section start -->
-<!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
-<!-- # The Module Pattern -->
+<!-- attr: { id:'module-pattern', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
+# <a id="module-pattern"></a>The Module Pattern
+
 <!-- <img class="slide-image" showInPresentation="true" src="imgs/pic05.png" style="top:45.26%; left:32.91%; width:32.55%; z-index:-1" /> -->
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# The Module Pattern:<br/>Pros and Cons
+<!-- # The Module Pattern:<br/>Pros and Cons -->
 - Pros:
   - “Modularize” code into re-useable objects
   - Variables/functions not in global namespace
@@ -97,13 +98,14 @@ controls.getCalculator('First')
 <!-- <img class="slide-image" showInPresentation="true" src="imgs/pic06.png" style="top:45%; left:10.30%; width:26%; z-index:-1" /> -->
 
 <!-- section start -->
-<!-- attr: { id:'', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
-<!-- # The Revealing Module Pattern
-## Reveal the most interesting members -->
+<!-- attr: { id:'revealing-module-pattern', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
+# <a id="revealing-module-pattern"></a>The Revealing Module Pattern
+## Reveal the most interesting members
+
 <!-- <img class="slide-image" showInPresentation="true" src="imgs/pic07.png" style="top:8.04%; left:76.39%; width:22.92%; z-index:-1" /> -->
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
-# Revealing Module Pattern:<br/>Pros and Cons
+<!-- # Revealing Module Pattern:<br/>Pros and Cons -->
 - Pros: 
   - “Modularize” code into re-useable objects 
   - Variables/functions taken out of global namespace 
@@ -172,8 +174,8 @@ controls.getCalculator('First')
 <!-- <img class="slide-image" showInPresentation="true" src="imgs/pic08.png" style="top:45.63%; left:2%; width:35%; z-index:-1" /> -->
 
 <!-- section start -->
-<!-- attr: { class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
-# Augmenting Modules
+<!-- attr: { id:'augmenting-modules', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
+# <a id="augmenting-modules"></a>Augmenting Modules
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
 <!-- # Augmenting Modules -->
@@ -200,9 +202,9 @@ var module = module || {}; // if module exists
 <!-- <img class="slide-image" showInPresentation="true" src="imgs/pic11.png" style="top:45%; left:0%; width:40%; z-index:-1" /> -->
 
 <!-- section start -->
-<!-- attr: { class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
-<!-- # Importing and Exporting Modules
-## The EcmaScript2015 way -->
+<!-- attr: { id:'modules-es2015', class:'slide-section', showInPresentation:true, hasScriptWrapper:true } -->
+# <a id="modules-es2015"></a>Importing and Exporting Modules
+## The EcmaScript2015 way
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
 # Importing Modules
@@ -285,13 +287,12 @@ console.log(foo);    // 4.555806215962888
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size: 0.9em' } -->
 # Free Trainings<br/>@ Telerik Academy
 - "Web Design with HTML 5, CSS 3 and JavaScript" course @ Telerik Academy
-    - [javascript course](http://academy.telerik.com/student-courses/web-design-and-ui/javascript-fundamentals/about)
+  - [javascript course](http://academy.telerik.com/student-courses/web-design-and-ui/javascript-fundamentals/about)
 - Telerik Software Academy
-  - [academy.telerik.com](academy.telerik.com)
+  - [https://telerikacademy.com](https://telerikacademy.com)
 - Telerik Academy @ Facebook
-  - [facebook.com/TelerikAcademy](facebook.com/TelerikAcademy)
+  - [facebook.com/TelerikAcademy](https://facebook.com/TelerikAcademy)
 - Telerik Software Academy Forums
-  - [forums.academy.telerik.com](http://telerikacademy.com/Forum/Home)
+  - [https://telerikacademy.com/Forum/Home](https://telerikacademy.com/Forum/Home)
 
 <!-- <img class="slide-image" showInPresentation="true"  src="imgs/pic16.png" style="top:58.18%; left:90.52%; width:16.97%; z-index:-1" /> -->
-
