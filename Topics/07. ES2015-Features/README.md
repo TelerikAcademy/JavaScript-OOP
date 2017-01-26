@@ -10,7 +10,6 @@
 </article>
 
 <!-- section start -->
-
 <!-- attr: { id:'', showInPresentation:true, hasScriptWrapper:true } -->
 # Table of Contents
 - JavaScript History

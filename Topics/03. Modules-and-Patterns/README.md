@@ -12,6 +12,7 @@
 	<a href="http://academy.telerik.com" class="signature-link">http://academy.telerik.com</a>
 </article>
 
+<!-- section start -->
 <!-- attr: { id:'', showInPresentation:true, hasScriptWrapper:true } -->
 # Table of Contents
 - Module pattern
