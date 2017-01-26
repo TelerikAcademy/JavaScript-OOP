@@ -1,6 +1,6 @@
 <!-- section start -->
 <!-- attr: { id:'', class:'slide-title', showInPresentation:true, hasScriptWrapper:true } -->
-# Scopes and Closures
+# Closures and Scope
 ## Things start to get serious
 
 <!-- <img class="slide-image" showInPresentation="true" src="imgs\pic01.png" style="top:48.48%; left:65.53%; width:38.79%; z-index:-1" /> -->
