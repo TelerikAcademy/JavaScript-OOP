@@ -38,6 +38,7 @@
     - a `Product` or Product-like object
   - **Behavior**:
     - Removes the left-most object from the `products` array in the `ShoppingCart` instance, that has the same `name`, `price` and `productType`
+    - **Should provide chaining**
   - **Throws** when:
     - The `ShoppingCart` instance does not contain the product
     - There are not products in the `ShoppingCart` instance
