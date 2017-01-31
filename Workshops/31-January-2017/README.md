@@ -95,16 +95,16 @@ let cart = getShoppingCart();
 let pr1 = getProduct("Sweets", "Shokolad Milka", 2);
 cart.add(pr1);
 console.log(cart.showCost());
-//prints `2`
+// prints `2`
 
 let pr2 = getProduct("Groceries", "Salad", 0.5);
 cart.add(pr2);
 cart.add(pr2);
 console.log(cart.showCost());
-//prints `3`
+// prints `3`
 
 console.log(cart.showProductTypes());
-//prints ["Sweets", "Groceries"]
+// prints [ 'Groceries', 'Sweets' ]
 
 console.log(cart.getInfo());
 /* prints
@@ -123,7 +123,7 @@ console.log(cart.getInfo());
 */
 
 cart.remove({name:"salad", productType: "Groceries", price: 0.5})
-//throws: "salad" is not equal to "Salad"
+// throws: "salad" is not equal to "Salad"
 
 cart.remove({name:"Salad", productType: "Groceries", price: 0.5})
 console.log(cart.getInfo());
