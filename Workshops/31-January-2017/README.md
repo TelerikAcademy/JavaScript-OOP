@@ -62,6 +62,7 @@
           - The `name` of the products
           - Their total cost
           - The quantity of products with the name in the `ShoppingCart` instance
+        - The groups must be **sorted alphabetically** by name
       - `totalPrice`: The total price of all products in the `ShoppingCart` instance
     - Returns an object with `totalPrice` equal to `0` and `products` - an empty array, when no products in the `ShoppingCart` instance
 
