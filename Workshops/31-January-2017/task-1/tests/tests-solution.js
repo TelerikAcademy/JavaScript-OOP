@@ -1,62 +1,69 @@
 /* globals require, describe, beforeEach it console */
 const expect = require("chai").expect;
-
+const result = require("../task/solution.js");
 
 describe("Tests", () => {
-    let result;
-    beforeEach(() => {
-        result = require("../task/solution")();
-    });
-
     describe("Zero tests", () => {
-        it("Zero test 1: expect `Product` class to be a function", () => {
-            expect(result.Product).to.be.a("function");
-        });
+		describe("Product tests", () => {
+			it("expect `getProduct` to be a function", () => {
+				expect(result.getProduct).to.be.a("function");
+			});
 
-        it("Zero test 2: expect `ShoppingCart to be a function", () => {
-            expect(result.ShoppingCart).to.be.a("function");
-        });
+			it("expect `getProduct` to return an object", () => {
+				expect(result.getProduct()).to.be.an("object");
+			});
+		});
 
-        it("Zero test 3: expect `ShoppingCart.prototype` to has method `add()`", () => {
-            expect(result.ShoppingCart.prototype.add).to.be.a("function");
-        });
+		describe("ShoppingCart tests", () => {
+			it("expect `getShoppingCart` to be a function", () => {
+				expect(result.getShoppingCart).to.be.a("function");
+			});
 
-        it("Zero test 4: expect `ShoppingCart.prototype` to has method `remove()`", () => {
-            expect(result.ShoppingCart.prototype.remove).to.be.a("function");
-        });
+			it("expect `getShoppingCart` to return an object", () => {
+				expect(result.getShoppingCart()).to.be.an("object");
+			});
 
-        it("Zero test 5: expect `ShoppingCart.prototype` to has method `showCost()`", () => {
-            expect(result.ShoppingCart.prototype.showCost).to.be.a("function");
-        });
+			it("expect ShoppingCart object to have method `add()`", () => {
+				expect(result.getShoppingCart().add).to.be.a("function");
+			});
 
-        it("Zero test 6: expect `ShoppingCart.prototype` to has method `showProductTypes()`", () => {
-            expect(result.ShoppingCart.prototype.showProductTypes).to.be.a("function");
-        });
+			it("expect ShoppingCart object to have method `remove()`", () => {
+				expect(result.getShoppingCart().remove).to.be.a("function");
+			});
 
-        it("Zero test 7: expect `ShoppingCart.prototype` to has method `getInfo()`", () => {
-            expect(result.ShoppingCart.prototype.getInfo).to.be.a("function");
-        });
+			it("expect ShoppingCart object to have method `showCost()`", () => {
+				expect(result.getShoppingCart().showCost).to.be.a("function");
+			});
+
+			it("expect ShoppingCart object to have method `showProductTypes()`", () => {
+				expect(result.getShoppingCart().showProductTypes).to.be.a("function");
+			});
+
+			it("expect ShoppingCart object to have method `getInfo()`", () => {
+				expect(result.getShoppingCart().getInfo).to.be.a("function");
+			});
+		});
     });
 
     describe("Regular tests", () => {
-        it("Regular test 1: expect creating a product to has properties `name`, `price` and `productType` set", () => {
+        it("expect creating a product to has properties `name`, `price` and `productType` set", () => {
             const name = "Sample",
                 price = 1.7,
                 productType = "Type #1";
 
-            let product = new result.Product(productType, name, price);
+            let product = result.getProduct(productType, name, price);
             expect(product.name).to.equal(name);
             expect(product.price).to.equal(price);
             expect(product.productType).to.equal(productType);
         });
 
-        it("Regular test 2: expect `cart.products` to contain a single element, after `cart.add(product)` is performed", () => {
+        it("expect `cart.products` to contain a single element, after `cart.add(product)` is performed", () => {
             const name = "Sample",
                 price = 1.7,
                 productType = "Type #1";
-            let product = new result.Product(productType, name, price);
+            let product = result.getProduct(productType, name, price);
 
-            let cart = new result.ShoppingCart();
+            let cart = result.getShoppingCart();
 
             cart.add(product);
 
@@ -64,27 +71,27 @@ describe("Tests", () => {
             expect(cart.products[0]).to.equal(product);
         });
 
-        it("Regular test 2: expect `cart.add(product)` to provide chaining", () => {
+        it("expect `cart.add(product)` to provide chaining", () => {
             const name = "Sample",
                 price = 1.7,
                 productType = "Type #1";
-            let product = new result.Product(productType, name, price);
-            let cart = new result.ShoppingCart();
+            let product = result.getProduct(productType, name, price);
+            let cart = result.getShoppingCart();
 
             let otherCart = cart.add(product);
             expect(cart).to.equal(otherCart);
         });
 
-        it("Regular test 3: expect `cart.remove(product)` to remove the product from the `cart.products` array", () => {
+        it("expect `cart.remove(product)` to remove the product from the `cart.products` array", () => {
             const count = 5,
                 productType = "type",
                 price = 3.5;
 
             let products = Array.from({ length: count })
-                .map((_, i) => new result.Product(productType, `Product #${i}`, price));
+                .map((_, i) => result.getProduct(productType, `Product #${i}`, price));
 
             let product = products[0 | (products.length / 2)];
-            let cart = new result.ShoppingCart();
+            let cart = result.getShoppingCart();
 
             cart.products = cart.products || [];
             products.forEach(pr => cart.products.push(pr));
@@ -95,7 +102,7 @@ describe("Tests", () => {
         });
 
 
-        it("Regular test 4: expect `cart.remove(product)` to throw an exception, if the `product` is missing from the `cart.products` array", () => {
+        it("expect `cart.remove(product)` to throw an exception, if the `product` is missing from the `cart.products` array", () => {
             expect(result.ShoppingCart.prototype.remove).to.be.a("function");
 
             const count = 5,
@@ -103,10 +110,10 @@ describe("Tests", () => {
                 price = 3.5;
 
             let products = Array.from({ length: count })
-                .map((_, i) => new result.Product(productType, `Product #${i}`, price));
+                .map((_, i) => result.getProduct(productType, `Product #${i}`, price));
 
-            let product = new result.Product("Test", "Test", 1.3);
-            let cart = new result.ShoppingCart();
+            let product = result.getProduct("Test", "Test", 1.3);
+            let cart = result.getShoppingCart();
 
             cart.products = cart.products || [];
             products.forEach(pr => cart.products.push(pr));
@@ -118,15 +125,15 @@ describe("Tests", () => {
             expect(removeMissingProduct).to.throw();
         });
 
-        it("Regular test 5: expect `cart.remove()` executed with all products to leave empty `cart.products` array", () => {
+        it("expect `cart.remove()` executed with all products to leave empty `cart.products` array", () => {
             const count = 5,
                 productType = "type",
                 price = 3.5;
 
             let products = Array.from({ length: count })
-                .map((_, i) => new result.Product(productType, `Product #${i}`, price));
+                .map((_, i) => result.getProduct(productType, `Product #${i}`, price));
 
-            let cart = new result.ShoppingCart();
+            let cart = result.getShoppingCart();
 
             cart.products = cart.products || [];
             products.forEach(pr => cart.products.push(pr));
@@ -137,8 +144,8 @@ describe("Tests", () => {
         });
 
 
-        it("Regular test 6: expect `cart.remove()` on empty `cart.products` to throw an exception", () => {
-            let cart = new result.ShoppingCart();
+        it("expect `cart.remove()` on empty `cart.products` to throw an exception", () => {
+            let cart = result.getShoppingCart();
 
             expect(cart.remove).to.be.a("function");
 
@@ -148,20 +155,20 @@ describe("Tests", () => {
             expect(removeThrowsWhenEmpty).to.throw();
         });
 
-        it("Regular test 7: expect `cart.showCost()` to return `0` when no products are added", () => {
-            let cart = new result.ShoppingCart();
+        it("expect `cart.showCost()` to return `0` when no products are added", () => {
+            let cart = result.getShoppingCart();
             expect(cart.showCost()).to.equal(0);
         });
 
-        it("Regular test 8: expect `cart.showCost()` to work when `cart.products` is not empty", () => {
-            let cart = new result.ShoppingCart();
+        it("expect `cart.showCost()` to work when `cart.products` is not empty", () => {
+            let cart = result.getShoppingCart();
 
             const count = 5,
                 productType = "type",
                 price = 3.5;
 
             let products = Array.from({ length: count })
-                .map((_, i) => new result.Product(productType, `Product #${i}`, price));
+                .map((_, i) => result.getProduct(productType, `Product #${i}`, price));
 
             cart.products = cart.products || [];
             products.forEach(pr => cart.products.push(pr));
@@ -172,20 +179,20 @@ describe("Tests", () => {
         });
 
 
-        it("Regular test 9: expect `cart.showProductTypes()` to return an empty array when `cart.products` is empty", () => {
-            let cart = new result.ShoppingCart();
+        it("expect `cart.showProductTypes()` to return an empty array when `cart.products` is empty", () => {
+            let cart = result.getShoppingCart();
 
             expect(cart.showProductTypes()).to.has.length(0);
         });
 
         it("Regular test 10: expect `cart.showProductTypes()` to return only the unique product types, when no repeating product types", () => {
-            let cart = new result.ShoppingCart();
+            let cart = result.getShoppingCart();
 
             const count = 5,
                 price = 3.5;
 
             let products = Array.from({ length: count })
-                .map((_, i) => new result.Product(`Type #${i + 1}`, `Product #${i}`, price));
+                .map((_, i) => result.getProduct(`Type #${i + 1}`, `Product #${i}`, price));
 
             cart.products = cart.products || [];
             products.forEach(pr => cart.products.push(pr));
@@ -194,14 +201,14 @@ describe("Tests", () => {
         });
 
         it("Regular test 11: expect `cart.showProductTypes()` to return only the sorted unique product types, when there are repeating product types", () => {
-            let cart = new result.ShoppingCart();
+            let cart = result.getShoppingCart();
 
             const count = 15,
                 productTypes = ["type 3", "type 2", "type 1"],
                 price = 3.5;
 
             let products = Array.from({ length: count })
-                .map((_, i) => new result.Product(`${productTypes[i % productTypes.length]}`, `Product #${i}`, price));
+                .map((_, i) => result.getProduct(`${productTypes[i % productTypes.length]}`, `Product #${i}`, price));
 
             cart.products = cart.products || [];
             products.forEach(pr => cart.products.push(pr));
@@ -215,7 +222,7 @@ describe("Tests", () => {
         });
 
         it("Regular test 12: expect `cart.getInfo()` to return an object with empty `product` array and `totalPrice` equal to `0`, when `cart.products` is empty", () => {
-            let cart = new result.ShoppingCart();
+            let cart = result.getShoppingCart();
 
             let info = cart.getInfo();
             expect(info.products).to.has.length(0);
@@ -223,17 +230,17 @@ describe("Tests", () => {
         });
 
         it("Regular test 13: expect `cart.getInfo()` to return an object with `product` array with 2 products and `totalPrice` equal to `20`, when `cart.products` has products", () => {
-            let cart = new result.ShoppingCart();
+            let cart = result.getShoppingCart();
             cart.products = cart.products || [];
-            cart.products.push(new result.Product("Type 1", "Pr 1", 1));
-            cart.products.push(new result.Product("Type 1", "Pr 1", 2));
-            cart.products.push(new result.Product("Type 1", "Pr 1", 2));
-            cart.products.push(new result.Product("Type 1", "Pr 1", 2));
-            cart.products.push(new result.Product("Type 1", "Pr 1", 3));
+            cart.products.push(result.getProduct("Type 1", "Pr 1", 1));
+            cart.products.push(result.getProduct("Type 1", "Pr 1", 2));
+            cart.products.push(result.getProduct("Type 1", "Pr 1", 2));
+            cart.products.push(result.getProduct("Type 1", "Pr 1", 2));
+            cart.products.push(result.getProduct("Type 1", "Pr 1", 3));
 
 
-            cart.products.push(new result.Product("Type 1", "Pr 2", 5));
-            cart.products.push(new result.Product("Type 1", "Pr 2", 5));
+            cart.products.push(result.getProduct("Type 1", "Pr 2", 5));
+            cart.products.push(result.getProduct("Type 1", "Pr 2", 5));
 
             let info = cart.getInfo();
             expect(info.products).to.has.length(2);
