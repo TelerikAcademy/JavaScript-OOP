@@ -185,7 +185,7 @@ describe("Tests", () => {
             expect(cart.showProductTypes()).to.has.length(0);
         });
 
-        it("Regular test 10: expect `cart.showProductTypes()` to return only the unique product types, when no repeating product types", () => {
+        it("expect `cart.showProductTypes()` to return only the unique product types, when no repeating product types", () => {
             let cart = result.getShoppingCart();
 
             const count = 5,
@@ -200,7 +200,7 @@ describe("Tests", () => {
             expect(cart.showProductTypes()).to.has.length(products.length);
         });
 
-        it("Regular test 11: expect `cart.showProductTypes()` to return only the sorted unique product types, when there are repeating product types", () => {
+        it("expect `cart.showProductTypes()` to return only the sorted unique product types, when there are repeating product types", () => {
             let cart = result.getShoppingCart();
 
             const count = 15,
@@ -221,7 +221,7 @@ describe("Tests", () => {
             }
         });
 
-        it("Regular test 12: expect `cart.getInfo()` to return an object with empty `product` array and `totalPrice` equal to `0`, when `cart.products` is empty", () => {
+        it("expect `cart.getInfo()` to return an object with empty `product` array and `totalPrice` equal to `0`, when `cart.products` is empty", () => {
             let cart = result.getShoppingCart();
 
             let info = cart.getInfo();
@@ -229,7 +229,7 @@ describe("Tests", () => {
             expect(info.totalPrice).to.equal(0);
         });
 
-        it("Regular test 13: expect `cart.getInfo()` to return an object with `product` array with 2 products and `totalPrice` equal to `20`, when `cart.products` has products", () => {
+        it("expect `cart.getInfo()` to return an object with `product` array with 2 products and `totalPrice` equal to `20`, when `cart.products` has products", () => {
             let cart = result.getShoppingCart();
             cart.products = cart.products || [];
             cart.products.push(result.getProduct("Type 1", "Pr 1", 1));
