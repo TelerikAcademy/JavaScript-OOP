@@ -5,7 +5,7 @@
 <article class="signature">
 	<p class="signature-course">JavaScript OOP</p>
 	<p class="signature-initiative">Telerik Software Academy</p>
-	<a href="http://academy.telerik.com" class="signature-link">http://academy.telerik.com</a>
+	<a href="https://telerikacademy.com" class="signature-link">https://telerikacademy.com</a>
 </article>
 
 <!-- <img src="imgs/es6.png" showInPresentation="true" class="slide-image" style="top: 55%; right: 10%; width: 15%" /> -->
@@ -128,7 +128,7 @@ const gosho = new Superhero();
 - "Web Design with HTML 5, CSS 3 and JavaScript" course @ Telerik Academy
     - [javascript course](http://academy.telerik.com/student-courses/web-design-and-ui/javascript-fundamentals/about)
   - Telerik Software Academy
-    - [academy.telerik.com](http://academy.telerik.com)
+    - [telerikacademy.com](https://telerikacademy.com)
   - Telerik Academy @ Facebook
     - [facebook.com/TelerikAcademy](https://facebook.com/TelerikAcademy)
   - Telerik Software Academy Forums
