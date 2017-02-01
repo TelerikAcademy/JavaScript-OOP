@@ -48,7 +48,7 @@ console.log(typeof Superhero); // logs 'function'
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style: 'font-size: 0.85em;' } -->
 <!-- # ES6 Classes -->
 - Lets create a class that has some data and use the class to create an object of that type:
-  - an object of a class is created by calling the `class name` as a function with the `new` operator.
+  - an object of a class is created by calling the **class name** as a function with the `new` operator.
 
 ```js
 class Horse {
@@ -86,7 +86,7 @@ console.log(f); // { prop: 'hello' }
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style: 'font-size: 0.85em;', id:'constructors' } -->
 # <a id="constructors"></a>The `class constructor`
 - The `class constructor` is a kind-of-function that is called with `new` and is executed when an object of a class is created
-- In the following example the `class constructor` will be called with its context set to a new object `{}`
+- In the following example the **class constructor** will be called with its context set to a new object `{}`
 
 ```js
 class Horse {
@@ -102,7 +102,7 @@ const horse = new Horse('Trendafil', 'brown', 2);
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 <!-- # The `class constructor` -->
-- `Class constructors` are obligatory and can be omitted. The following two snippets are equivalent:
+- **Class constructors** are obligatory and can be omitted. The following two snippets are equivalent:
 
 ```js
 class Superhero { }

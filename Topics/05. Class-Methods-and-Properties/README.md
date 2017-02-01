@@ -156,10 +156,10 @@ console.log(maria);
 
 <!-- attr: { hasScriptWrapper: true, style: 'font-size: 0.9em' } -->
 # Static methods and properties
-- `Static methods and properties` are class methods or properties that are **not associated with any particular instance of the class**
-  - `Static methods and properties` are defined with the keyword `static`
-  - `Static methods and properties` do not have access to a class instance via the `this` keyword
-  - `Static methods and properties` are called from the class function
+- **Static methods and properties** are class methods or properties that are **not associated with any particular instance of the class**
+  - **Static methods and properties** are defined with the keyword `static`
+  - **Static methods and properties** do not have access to a class instance via the `this` keyword
+  - **Static methods and properties** are called from the class function
 
 <!-- attr: { hasScriptWrapper: true, style: 'font-size: 0.8em' } -->
 # Defining static methods and properties
@@ -186,7 +186,7 @@ class Point2D {
 ```
 
 # Using static methods and properties
-- After defining the static properties and methods, we can use them via the `class function`:
+- After defining the static properties and methods, we can use them via the **class function**:
 
 ```js
 console.log(Point2D.ZERO); // { _x: 0, _y: 0 }
@@ -205,7 +205,7 @@ console.log(distanceAB); // 1
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
 # Prototypes
 - Class methods, getters and setters aren't directly attached to the objects
-  - They're attached to their `prototypes`
+  - They're attached to their `prototype`
   - In JavaScript, objects inherit from other objects
   - Consider the `SelfPrintingCat` example:
 
