@@ -13,14 +13,14 @@
 <!-- section start -->
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
 # Table of Contents
-- What are ES6 classes?
+- [What is a class?](#classes)
+  - [What are ES6 classes?](#es6-classes)
 - Creating and using ES6 classes
-  - Constructors
-  - Methods and properties
+  - [Constructors](#constructors)
 
 <!-- section start -->
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true, class:'slide-section' } -->
-# Classes
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, class:'slide-section', id:'classes' } -->
+# <a id="classes"></a>Classes
 ## What is a class?
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style: 'font-size: 0.85em;' } -->
@@ -31,8 +31,8 @@
   - Hide implementation details and expose only what is needed - **encapsulation** and **abstraction**
   - Treat objects that have similar behaviour, but different concrete types, the same - **polymorphism**
 
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
-# ES6 Classes
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, id:'es6-classes' } -->
+# <a id="es6-classes"></a>ES6 Classes
 - ES6 introduces the `class` keyword
   - Classes in JavaScript are actually functions
 
@@ -46,7 +46,7 @@ console.log(typeof Superhero); // logs 'function'
 
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style: 'font-size: 0.85em;' } -->
-# ES6 Classes
+<!-- # ES6 Classes -->
 - Lets create a class that has some data and use the class to create an object of that type:
   - an object of a class is created by calling the `class name` as a function with the `new` operator.
 
@@ -78,12 +78,13 @@ const f = new F();
 console.log(f); // { prop: 'hello' }
 ```
 
-# The `new` keyword
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
+<!-- # The `new` keyword -->
 - The `new` keyword sets the **context** of the function to a new object
 - The result of the function execution will be the new object
 
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style: 'font-size: 0.85em;' } -->
-# The `class constructor`
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style: 'font-size: 0.85em;', id:'constructors' } -->
+# <a id="constructors"></a>The `class constructor`
 - The `class constructor` is a kind-of-function that is called with `new` and is executed when an object of a class is created
 - In the following example the `class constructor` will be called with its context set to a new object `{}`
 
@@ -99,7 +100,8 @@ class Horse {
 const horse = new Horse('Trendafil', 'brown', 2);
 ```
 
-# The `class constructor`
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
+<!-- # The `class constructor` -->
 - `Class constructors` are obligatory and can be omitted. The following two snippets are equivalent:
 
 ```js
