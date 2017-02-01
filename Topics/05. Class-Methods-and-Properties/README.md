@@ -1,13 +1,12 @@
 <!-- section start -->
 <!-- attr: { class:'slide-title', hasScriptWrapper:true } -->
-# Class methods and Properties
+# Class methods and properties
 
 <article class="signature">
 	<p class="signature-course">JavaScript OOP</p>
 	<p class="signature-initiative">Telerik Software Academy</p>
 	<a href="https://telerikacademy.com" class="signature-link">https://telerikacademy.com</a>
 </article>
-
 
 <!-- section start -->
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
@@ -240,7 +239,6 @@ SelfPrintingCat.prototype.meow = function () {
 ```js
 new SelfPrintingCat('Tom').meow();
 ```
-
 
 <!-- Questions -->
 <!-- section start -->
