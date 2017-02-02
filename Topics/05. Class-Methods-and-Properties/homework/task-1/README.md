@@ -113,5 +113,5 @@ console.log(list.toString()); // 1 -> 2 -> 3 -> 4 -> 5 -> 6
 - Try to reuse already implemented functionalities. Implemented iteration can be used for `toArray`. `toArray` can be used for `toString`. You can also reuse code between `append`, `prepend` and `insert`.
 
 #### Running the tests locally
-- Run `npm install` in this directory to download the dependencies in `package.json`(mocha and chai).
+- Run `npm install` in this directory to download the dependencies in `package.json` (mocha and chai).
 - Run `npm test` to run the tests.
