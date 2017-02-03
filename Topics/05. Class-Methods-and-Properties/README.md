@@ -34,7 +34,7 @@ class Cat {
     }
 
     meow() {
-        console.log(this.name + ': meow!');
+        console.log(this._name + ': meow!');
     }
 }
 
