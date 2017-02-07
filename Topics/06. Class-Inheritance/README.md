@@ -21,7 +21,7 @@
 
 <!-- attr: { hasScriptWrapper:true, showInPresentation:true } -->
 <!-- # Inheritance -->
-- Inheritance allows child classes to inherit the characteristics of an existing parent (base) class
+- **Inheritance** allows child classes to inherit the characteristics of an existing parent (base) class
   - Attributes (fields and properties)
   - Operations (methods)
 - Child class can extend the parent class
@@ -30,7 +30,7 @@
 
 <!-- attr: { hasScriptWrapper:true, showInPresentation:true } -->
 <!-- # Inheritance -->
-- Inheritance has a lot of benefits
+- **Inheritance** has a lot of benefits
   - Extensibility
   - Reusability (`code reuse`)
   - Provides abstraction
@@ -42,7 +42,7 @@
 
 <!-- attr: { hasScriptWrapper:true, showInPresentation:true } -->
 <!-- # Inheritance -->
-- Inheritance implicitly gains all members from another class
+- **Inheritance** implicitly gains all members from another class
   - All fields, methods, properties, events, …
   - Some members could be inaccessible (hidden)
 - The class whose methods are inherited is called base (parent) class
