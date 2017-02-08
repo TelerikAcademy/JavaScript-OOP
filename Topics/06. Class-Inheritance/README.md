@@ -67,7 +67,7 @@ class Mammal {
 
 <!-- attr: { hasScriptWrapper:true, showInPresentation:true, style:'font-size:0.9em' } -->
 <!-- # Classes and Inheritance in ES6 -->
-- Sub classing is done using the `extend` keyword
+- Sub classing is done using the `extends` keyword
 
 ```javascript
 class Mammal {
