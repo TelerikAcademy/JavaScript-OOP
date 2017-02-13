@@ -179,7 +179,7 @@ numbers.sort((a, b) => b - a);
 ```
 
 ```javascript
-var fullnames =
+let fullnames =
    people.filter(function (person) {
      return person.age >= 18;
    }).map(function (person) {
@@ -217,9 +217,9 @@ let person = { name, age };
   - Destructuring assignments with arrays:
 
     ```javascript
-    var [a, b] = [1, 2]; //a = 1, b = 2
-    var [x, , y] = [1, 2, 3] // x = 1, y = 3
-    var [first, second, ...rest] = people;
+    let [a, b] = [1, 2]; //a = 1, b = 2
+    let [x, , y] = [1, 2, 3] // x = 1, y = 3
+    let [first, second, ...rest] = people;
     ```
 
   - Swap values:
@@ -232,7 +232,7 @@ let person = { name, age };
 
     ```javascript
     function get() { return [1, 2, 3]; }
-    var [x, y] = get();
+    let [x, y] = get();
     ```
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
@@ -241,7 +241,7 @@ let person = { name, age };
   - Destructuring assignments with objects:
 
 ```javascript
-var person = {
+let person = {
   name: 'Doncho Minkov',
   address: {
     city: 'Sofia',
@@ -249,7 +249,7 @@ var person = {
   }
 };
 
-var {name, address: {city}} = person;
+let {name, address: {city}} = person;
 ```
 
 <!-- section start -->
