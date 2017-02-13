@@ -21,7 +21,6 @@
   - `Map` and `WeakMap`
 - Async operations
   - Promises
-  - Callbacks with arrow functions
 
 <!-- attr: { id:'', showInPresentation:true, hasScriptWrapper:true } -->
 # Table of Contents
@@ -35,8 +34,13 @@
   - Math methods
 
 <!-- attr: { id:'', showInPresentation:true, hasScriptWrapper:true } -->
-# Table of Contents
-
+<!-- # Table of Contents -->
+- Data Types
+  - Symbols
+- Objects
+  - `Object.assign()`
+  - Iterators
+  - Properties
 - Functions
   - Arrow functions
     - Preserving `this`
@@ -47,21 +51,14 @@
   - spread operator
 
 <!-- attr: { id:'', showInPresentation:true, hasScriptWrapper:true, style: "font-size: 0.9em" } -->
-# Table of Contents
-
-- Data Types
-  - Symbols
-- Objects
-  - `Object.assign()`
-  - Iterators
-  - Properties
-- Destructuring
+<!-- # Table of Contents -->
+- Destructuring assignments
   - Arrays
   - Objects
   - rest operator
 - Parameters
   - Default
-  - rest operator
+  - destructuring
 
 <!-- section start -->
 
