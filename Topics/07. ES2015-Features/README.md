@@ -1,6 +1,6 @@
 <!-- section start -->
 <!-- attr: { id:'', class:'slide-title', showInPresentation:true, hasScriptWrapper:true } -->
-# ES 2015 Features
+# ES2015 Features
 ##  The new cool stuff in JS
 <article class="signature">
 	<p class="signature-course">JavaScript OOP</p>
@@ -161,7 +161,7 @@ MAX_VALUE = 15; // throws exception
 
 ```javascript
 let people = [new Person('Doncho', 'Minkov'), … ];
-for (let person of people){
+for (let person of people) {
    log(`Fullname: ${person.fname} ${person.lname}`);
 }
 ```
@@ -293,7 +293,7 @@ import {Mammal, Person} form '.persons'
 <!-- Questions -->
 <!-- section start -->
 <!-- attr: { hasScriptWrapper:true, showInPresentation:true, class:"slide-questions", id:"questions" } -->
-<!-- # ES2015 Classes and Class Constructors
+<!-- # ES2015 Features
 ## Questions? -->
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size: 0.9em' } -->
