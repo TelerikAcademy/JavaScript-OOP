@@ -44,13 +44,13 @@
   - Arrow functions
     - Preserving `this`
   - Generators
+
+<!-- attr: { id:'', showInPresentation:true, hasScriptWrapper:true, style: "font-size: 0.9em" } -->
+<!-- # Table of Contents -->
 - Arrays
   - `Array.of()`
   - `Array.from()`
   - spread operator
-
-<!-- attr: { id:'', showInPresentation:true, hasScriptWrapper:true, style: "font-size: 0.9em" } -->
-<!-- # Table of Contents -->
 - Destructuring assignments
   - Arrays
   - Objects
@@ -123,20 +123,13 @@ MAX_VALUE = 15; // throws exception
     - Discussed in detail later
 
     ```javascript
-    let fib = {
+    const fib = {
       [Symbol.iterator]() {
-        //magic code to return next Fibonacci number
+        // magic code to return next Fibonacci number
       }
     };
 
-    let i = 0;
-    for (let number of obj) {
-        if (i > 10) {
-            break;
-        }
-        i += 1;
-        console.log(number);
-    }
+	for(const n of fib) { /* ... */ }
     ```
 
 <!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
@@ -188,7 +181,7 @@ let fullnames =
 ```
 
 <!-- section start -->
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size: 0.9em' } -->
 # Object Literals
 - ES2015 adds a new feature (rule) to the way of defining properties:
   - Instead of
@@ -211,7 +204,7 @@ let person = { name, age };
 ```
 
 <!-- section start -->
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style: 'font-size: 0.9em' } -->
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size: 0.9em' } -->
 # Destructuring Assignments
 - Destructuring assignments allow to set values to objects in an easier way:
   - Destructuring assignments with arrays:
@@ -253,7 +246,7 @@ let {name, address: {city}} = person;
 ```
 
 <!-- section start -->
-<!-- attr: { showInPresentation:true, hasScriptWrapper:true } -->
+<!-- attr: { showInPresentation:true, hasScriptWrapper:true, style:'font-size:0.9em' } -->
 # ES2015 Modules
 - ES2015 supports modules
   - A way to write JavaScript in different files
