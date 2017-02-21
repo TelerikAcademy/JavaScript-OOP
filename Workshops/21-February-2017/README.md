@@ -138,9 +138,11 @@ that inherits `Playable` and adds the following:
 *	You can use any Inheritance in JavaScript you like
 	*	For example: Prototypal or Classical
 
-## The module should look as follows:
+## Solution template
 
-	var module = {
+```javascript
+function solve() {
+	const module = {
 		getPlayer: function (name){
 			// returns a new player instance with the provided name
 		},
@@ -154,3 +156,9 @@ that inherits `Playable` and adds the following:
 			//returns a new video instance with the provided title, author and imdbRating
 		}
 	};
+
+	return module;
+}
+
+module.exports = solve;
+```
