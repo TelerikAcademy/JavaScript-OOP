@@ -1,4 +1,4 @@
-# JavaScript OOP 2015 - Audio Player
+# Audio Player
 *	Create an object (module) that enables creation of the following:
 		
 ##	`Player`
