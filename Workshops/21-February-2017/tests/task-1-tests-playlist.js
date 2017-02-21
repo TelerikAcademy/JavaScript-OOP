@@ -77,7 +77,7 @@ describe('Audio Player test', function () {
 		});
 
 		it('expect Videos to have a number id', function() {
-			const item = result.getVideo('Title', 'Author', 42);
+			const item = result.getVideo('Title', 'Author', 2);
 			expect(item.id).to.be.a('number');
 			expect(item.id > 0).to.be.true;
 		});
