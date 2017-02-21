@@ -2,6 +2,106 @@ const {expect} = require('chai');
 const result = require('../tasks/task-1')();
 
 describe('Audio Player test', function () {
+	describe('Audio tests', function() {
+		it('expect getAudio() to exist', function() {
+			expect(result.getAudio).to.be.a('function');
+			expect(result.getAudio).to.have.length(3);
+		});
+
+		it('expect getAudio() to set Audio properties', function() {
+			const title = 'Title';
+			const author = 'Author';
+			const length = 42;
+
+			const item = result.getAudio(title, author, length);
+
+			expect(item.title).to.equal(title);
+			expect(item.author).to.equal(author);
+			expect(item.length).to.equal(length);
+		});
+
+		it('expect getAudio() to throw when invalid length is specified', function() {
+			expect(function() { result.getAudio('Title', 'Author', -3); }).to.throw();
+		});
+
+		it('expect Audios to have a number id', function() {
+			const item = result.getAudio('Title', 'Author', 42);
+			expect(item.id).to.be.a('number');
+			expect(item.id > 0).to.be.true;
+		});
+
+		it('expect Audio ids to be unique', function() {
+			const items = Array.from({ length: 100 })
+				.map((_, i) => result.getAudio('Title', 'Author', i));
+			const ids = items.map(x => x.id)
+				.sort()
+				.forEach((x, i, arr) => {
+					expect(x).not.to.equal(arr[i - 1]);
+				});
+		});
+
+		it('expect Audio.play() to return the correct string', function() {
+			const title = 'Title';
+			const author = 'Author';
+			const length = 42;
+
+			const item = result.getAudio(title, author, length);
+			expect(item.play()).to.equal(`[${item.id}]. [${title}] - [${author}] - [${length}]`);
+		});
+	});
+
+	describe('Video tests', function() {
+		it('expect getVideo() to exist', function() {
+			expect(result.getVideo).to.be.a('function');
+			expect(result.getVideo).to.have.length(3);
+		});
+
+		it('expect getVideo() to set Video properties', function() {
+			const title = 'Title';
+			const author = 'Author';
+			const imdbRating = 42;
+
+			const item = result.getVideo(title, author, imdbRating);
+
+			expect(item.title).to.equal(title);
+			expect(item.author).to.equal(author);
+			expect(item.imdbRating).to.equal(imdbRating);
+		});
+
+		it('expect getVideo() to throw when invalid imdbRating is specified', function() {
+			expect(function() { result.getVideo('Title', 'Author', -1); }).to.throw();
+		});
+
+		it('expect getVideo() to throw when invalid imdbRating is specified', function() {
+			expect(function() { result.getVideo('Title', 'Author', 7); }).to.throw();
+		});
+
+		it('expect Videos to have a number id', function() {
+			const item = result.getVideo('Title', 'Author', 42);
+			expect(item.id).to.be.a('number');
+			expect(item.id > 0).to.be.true;
+		});
+
+		it('expect Video ids to be unique', function() {
+			const items = Array.from({ length: 100 })
+				.map((_, i) => result.getVideo('Title', 'Author', i % 5 + 1));
+			const ids = items.map(x => x.id)
+				.sort()
+				.forEach((x, i, arr) => {
+					expect(x).not.to.equal(arr[i - 1]);
+				});
+		});
+
+		it('expect Video.play() to return the correct string', function() {
+			const title = 'Title';
+			const author = 'Author';
+			const imdbRating = 4;
+
+			const item = result.getVideo(title, author, imdbRating);
+			expect(item.play()).to.equal(`[${item.id}]. [${title}] - [${author}] - [${imdbRating}]`);
+		});
+	});
+
     describe('PlayList', function () {
         describe('With valid input', function () {
             it('expect getPlaylist to exist, to be a function and to take a single parameter and to enable chaining', function () {
